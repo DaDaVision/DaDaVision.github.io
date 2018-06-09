@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="文本爬取12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#encoding:utf-8import requests,urllib3.request,time,osimport rand">
+<meta name="keywords" content="Python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/Python爬虫/index.html">
+<meta property="og:site_name" content="DaDaVision">
+<meta property="og:description" content="文本爬取12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#encoding:utf-8import requests,urllib3.request,time,osimport rand">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-09T12:19:31.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python爬虫">
+<meta name="twitter:description" content="文本爬取12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970#encoding:utf-8import requests,urllib3.request,time,osimport rand">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/09/Python爬虫/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python爬虫 | DaDaVision</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DaDaVision</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/Python爬虫/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tengda Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaDaVision">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python爬虫
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-09 18:32:02 / 修改时间：20:19:31" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:02+08:00">2018-06-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="文本爬取"><a href="#文本爬取" class="headerlink" title="文本爬取"></a><strong>文本爬取</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#encoding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> requests,urllib3.request,time,os</span><br><span class="line"><span class="keyword">import</span> random,csv,socket,http.client</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_contend</span><span class="params">(url, data = None)</span>:</span>  <span class="comment">#获取网页中html代码</span></span><br><span class="line">    header=&#123;<span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'</span>,</span><br><span class="line">        <span class="string">'Accept-Encoding'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">        <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.8'</span>,</span><br><span class="line">        <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'</span></span><br><span class="line">        &#125;</span><br><span class="line">    timeout = random.choice(range(<span class="number">80</span>,<span class="number">180</span>))</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            rep = requests.get(url,headers = header,timeout=timeout)</span><br><span class="line">            rep.encoding = <span class="string">'utf-8'</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> socket.timeout <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'3'</span>,e)</span><br><span class="line">            time.sleep(random.choice.range(<span class="number">8</span>,<span class="number">15</span>))</span><br><span class="line">        <span class="keyword">except</span> socket.error <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'4'</span>,e)</span><br><span class="line">            time.sleep(random.choice.range(<span class="number">20</span>,<span class="number">60</span>))</span><br><span class="line">        <span class="keyword">except</span> http.client.BadStatusLine <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'5'</span>,e)</span><br><span class="line">            time.sleep(random.choice.range(<span class="number">30</span>,<span class="number">80</span>))</span><br><span class="line">        <span class="keyword">except</span> http.client.IncompleteRead <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">print</span> (<span class="string">'6'</span>,e)</span><br><span class="line">            time.sleep(random.choice.range(<span class="number">5</span>,<span class="number">15</span>))</span><br><span class="line">    <span class="keyword">return</span> rep.text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data</span><span class="params">(html_text)</span>:</span></span><br><span class="line">    final = []</span><br><span class="line">    bs = BeautifulSoup(html_text,<span class="string">'html.parser'</span>) <span class="comment">#创建BeautifulSoup对象</span></span><br><span class="line">    body = bs.body  <span class="comment">#获取body部分</span></span><br><span class="line">    data = body.find(<span class="string">'div'</span>,&#123;<span class="string">'id'</span>:<span class="string">'7d'</span>&#125;) <span class="comment">#找到需要爬取部分的div</span></span><br><span class="line">    ul = data.find(<span class="string">'ul'</span>)   <span class="comment">#获取ul部分</span></span><br><span class="line">    li = ul.find_all(<span class="string">'li'</span>)  <span class="comment">#获取所有的li</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> day <span class="keyword">in</span> li:  <span class="comment">#对li标签中内容进行遍历</span></span><br><span class="line">        temp = []</span><br><span class="line">        date =day.find(<span class="string">'h1'</span>).string <span class="comment">#找到日期</span></span><br><span class="line">        temp.append(date)   <span class="comment">#将日期添加到temp中</span></span><br><span class="line">        p = day.find_all(<span class="string">'p'</span>)   <span class="comment">#找到每个li中的所有p标签</span></span><br><span class="line">        temp.append(p[<span class="number">0</span>].string,)    <span class="comment">#第一个p标签中的天气状况添加到temp</span></span><br><span class="line">        <span class="keyword">if</span> p[<span class="number">1</span>].find(<span class="string">'span'</span>) == <span class="keyword">None</span>:</span><br><span class="line">            t_highest = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            t_highest = p[<span class="number">1</span>].find(<span class="string">'span'</span>).string    <span class="comment">#找到最高温</span></span><br><span class="line">            t_highest = t_highest.replace(<span class="string">'C'</span>,<span class="string">''</span>)</span><br><span class="line">        t_lowest = p[<span class="number">1</span>].find(<span class="string">'i'</span>).string  <span class="comment"># 找到最低温</span></span><br><span class="line">        t_lowest = t_lowest.replace(<span class="string">'C'</span>,<span class="string">''</span>)</span><br><span class="line">        temp.append(t_highest)</span><br><span class="line">        temp.append(t_lowest)</span><br><span class="line">        final.append(temp)</span><br><span class="line">    <span class="keyword">return</span> final</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_data</span><span class="params">(data,name)</span>:</span>  <span class="comment">#将数据写入文件</span></span><br><span class="line">    file_name = name</span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'a'</span>, errors=<span class="string">'ignore'</span>, newline=<span class="string">''</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f_csv = csv.writer(f)</span><br><span class="line">        f_csv.writerows(data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    url = <span class="string">'http://www.weather.com.cn/weather/101190401.shtml'</span></span><br><span class="line">    html = get_contend(url)</span><br><span class="line">    result = get_data(html)</span><br><span class="line">    print(result)</span><br><span class="line">    write_data(result,<span class="string">'weather.csv'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="图虫图片爬取"><a href="#图虫图片爬取" class="headerlink" title="图虫图片爬取"></a><strong>图虫图片爬取</strong></h2><h2 id="按标签爬取"><a href="#按标签爬取" class="headerlink" title="按标签爬取"></a><strong>按标签爬取</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">__author__ = <span class="string">'Result_Lv'</span></span><br><span class="line"><span class="comment">#encoding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(url)</span>:</span></span><br><span class="line">    header = &#123;<span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'</span>,</span><br><span class="line">              <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate, br'</span>,</span><br><span class="line">              <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">              <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">              <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'</span></span><br><span class="line">              &#125;</span><br><span class="line">    rep = requests.get(url, headers = header)   <span class="comment">#请求json地址</span></span><br><span class="line">    json_dict = json.loads(rep.text)            <span class="comment">#解析json</span></span><br><span class="line">    <span class="keyword">return</span> json_dict                            <span class="comment">#返回json字典</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_album_name</span><span class="params">(json_dict)</span>:</span></span><br><span class="line">    album_name = []</span><br><span class="line">    postlist = json_dict[<span class="string">'postList'</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(postlist)):</span><br><span class="line">        <span class="keyword">if</span> postlist[i][<span class="string">'title'</span>] == <span class="string">''</span>:                  <span class="comment">#图集标题为空时，命名为默认</span></span><br><span class="line">            album_name.append(<span class="string">'Default'</span> + str(i))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            album_name.append(postlist[i][<span class="string">'title'</span>])</span><br><span class="line">    <span class="keyword">return</span> album_name</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_photo_id</span><span class="params">(json_dict)</span>:</span>   <span class="comment">#获得所有照片的ID</span></span><br><span class="line">    author_id = []</span><br><span class="line">    album_id = []</span><br><span class="line">    post_list = json_dict[<span class="string">'postList'</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(post_list)):                                     <span class="comment">#获取每个图集的照片ID</span></span><br><span class="line">        photo_id = []</span><br><span class="line">        author_id.append(post_list[i][<span class="string">'author_id'</span>])                     <span class="comment"># 获取每个图集作者ID</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(post_list[i][<span class="string">'images'</span>])):</span><br><span class="line">            photo_id.append(post_list[i][<span class="string">'images'</span>][j][<span class="string">'img_id'</span>])        <span class="comment">#将所有每个图集里的照片全部添加到list</span></span><br><span class="line">        album_id.append(photo_id)</span><br><span class="line">    <span class="keyword">return</span> author_id,album_id</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_album</span><span class="params">(path,album_name,author_id,album_id)</span>:</span>     <span class="comment">#下载图集</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(album_id)):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path + album_name[i]):        <span class="comment">#若不存在对应图集的文件夹</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                os.makedirs(path + album_name[i])           <span class="comment">#以图集名创建文件夹</span></span><br><span class="line">            <span class="keyword">except</span> OSError <span class="keyword">as</span> e:</span><br><span class="line">                print(e)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">        print(<span class="string">'正在下载第'</span> + str(i + <span class="number">1</span>) + <span class="string">'个图册:'</span> + album_name[i])</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(album_id[i])):</span><br><span class="line">            fileurl = <span class="string">'https://photo.tuchong.com/'</span> + str(author_id[i]) +<span class="string">'/f/'</span> + str(album_id[i][j]) + <span class="string">'.jpg'</span>    <span class="comment">#生成每张照片Url</span></span><br><span class="line">            filename = path + album_name[i] + <span class="string">'/'</span> + str(j+<span class="number">1</span>) + <span class="string">'.jpg'</span>                                           <span class="comment">#命名照片</span></span><br><span class="line">            print(<span class="string">'    正在下载第'</span> + str(j+<span class="number">1</span>) + <span class="string">'张照片:'</span> + fileurl)</span><br><span class="line">            <span class="keyword">with</span> open(filename,<span class="string">'w'</span>):</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    request.urlretrieve(fileurl,filename)   <span class="comment">#下载照片</span></span><br><span class="line">                    time.sleep(np.random.rand())            <span class="comment">#下载间隔</span></span><br><span class="line">                <span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">                    print(e)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    page = <span class="number">3</span>              <span class="comment">#爬取页数</span></span><br><span class="line">    path = <span class="string">'F:/少女/'</span>     <span class="comment">#存放路径</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(page):</span><br><span class="line">        url = <span class="string">'https://tuchong.com/rest/tags/少女/posts?page='</span> + str(i+<span class="number">1</span>) + <span class="string">'&amp;count=20&amp;order=weekly'</span>  <span class="comment">#tag的json地址</span></span><br><span class="line">        json_dict = get_json(url)</span><br><span class="line">        album_name = get_album_name(json_dict)</span><br><span class="line">        para = get_photo_id(json_dict)</span><br><span class="line">        author_id = para[<span class="number">0</span>]</span><br><span class="line">        album_id = para[<span class="number">1</span>]</span><br><span class="line">        download_album(path,album_name,author_id,album_id)</span><br></pre></td></tr></table></figure>
+<h3 id="按作者爬取"><a href="#按作者爬取" class="headerlink" title="按作者爬取"></a><strong>按作者爬取</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#encoding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request,error</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_json</span><span class="params">(url)</span>:</span>  <span class="comment">#解析json</span></span><br><span class="line">    header = &#123;<span class="string">'Accept'</span>: <span class="string">'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8'</span>,</span><br><span class="line">              <span class="string">'Accept-Encoding'</span>: <span class="string">'gzip, deflate, br'</span>,</span><br><span class="line">              <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.9'</span>,</span><br><span class="line">              <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">              <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36'</span></span><br><span class="line">              &#125;</span><br><span class="line">    rep = requests.get(url, headers = header)   <span class="comment">#请求json地址</span></span><br><span class="line">    json_dict = json.loads(rep.text)            <span class="comment">#解析json</span></span><br><span class="line">    <span class="keyword">return</span> json_dict                            <span class="comment">#返回json字典</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_all_photo_id</span><span class="params">(json_dict)</span>:</span>   <span class="comment">#获得所有照片的ID</span></span><br><span class="line">    <span class="comment">#post_id = []</span></span><br><span class="line">    photo_id = []</span><br><span class="line">    post_list = json_dict[<span class="string">'post_list'</span>]</span><br><span class="line">    author_id = post_list[<span class="number">0</span>][<span class="string">'author_id'</span>]                               <span class="comment">#获取作者ID</span></span><br><span class="line">    author_name = post_list[<span class="number">0</span>][<span class="string">'site'</span>][<span class="string">'name'</span>]                          <span class="comment">#获取作者姓名</span></span><br><span class="line">    <span class="comment"># for i in range(len(post_list)):                                   #获取所有图集ID</span></span><br><span class="line">    <span class="comment">#     post_id.append(post_list[i]['post_id'])</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(post_list)):                                     <span class="comment">#获取每个图集的照片ID</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(post_list[i][<span class="string">'images'</span>])):</span><br><span class="line">            photo_id.append(post_list[i][<span class="string">'images'</span>][j][<span class="string">'img_id'</span>])        <span class="comment">#将所有每个图集里的照片全部添加到list</span></span><br><span class="line">    <span class="keyword">return</span> author_name,author_id,photo_id</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_photo</span><span class="params">(path,author_id,photo_id)</span>:</span>    <span class="comment">#下载全部照片</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">        os.makedirs(path)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(photo_id)):</span><br><span class="line">        filename = path + <span class="string">'/'</span> + str(i+<span class="number">1</span>) + <span class="string">'.jpg'</span></span><br><span class="line">        fileurl = <span class="string">'https://photo.tuchong.com/'</span> + str(author_id) + <span class="string">'/f/'</span> + str(photo_id[i]) + <span class="string">'.jpg'</span></span><br><span class="line">        print(<span class="string">'    第'</span> + str(i + <span class="number">1</span>) + <span class="string">'张图片:'</span> + fileurl)</span><br><span class="line">        <span class="keyword">with</span> open(filename,<span class="string">'w'</span>):</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                request.urlretrieve(fileurl,filename)   <span class="comment">#下载照片</span></span><br><span class="line">                time.sleep(np.random.rand())            <span class="comment">#下载间隔</span></span><br><span class="line">            <span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">                print(e)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    page = <span class="number">3</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(page):</span><br><span class="line">        url = <span class="string">'https://thomaskksj.tuchong.com/rest/2/sites/395013/posts?count=20&amp;page='</span> + str(i + <span class="number">1</span>)  <span class="comment">#作者主页的json地址</span></span><br><span class="line">        print(<span class="string">'正在下载第'</span> + str(i+<span class="number">1</span>) + <span class="string">'页:'</span> + url)</span><br><span class="line">        json_dict = get_json(url)</span><br><span class="line">        para = get_all_photo_id(json_dict)</span><br><span class="line">        author_name = para[<span class="number">0</span>]</span><br><span class="line">        author_id = para[<span class="number">1</span>]</span><br><span class="line">        photo_id = para[<span class="number">2</span>]</span><br><span class="line">        path = <span class="string">'F:/'</span> + author_name + <span class="string">'/page'</span> + str(i + <span class="number">1</span>)</span><br><span class="line">        download_photo(path,author_id,photo_id)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/09/查准率precision和查全率recall、F1/" rel="next" title="查准率precision和查全率recall、F1">
+                <i class="fa fa-chevron-left"></i> 查准率precision和查全率recall、F1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/09/DP+回溯-单词拆分 II/" rel="prev" title="DP+回溯-单词拆分 II">
+                DP+回溯-单词拆分 II <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tengda Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/DaDaVision" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="zhaotengda@whu.edu.cn" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/dadavisionwhu" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文本爬取"><span class="nav-number">1.</span> <span class="nav-text">文本爬取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图虫图片爬取"><span class="nav-number">2.</span> <span class="nav-text">图虫图片爬取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按标签爬取"><span class="nav-number">3.</span> <span class="nav-text">按标签爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#按作者爬取"><span class="nav-number">3.1.</span> <span class="nav-text">按作者爬取</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tengda Zhao</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

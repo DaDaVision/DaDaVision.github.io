@@ -108,28 +108,25 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
+<meta name="keywords" content="算法,回溯,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/06/08/hello-world/index.html">
+<meta property="og:title" content="最长公共子串-最长公共子序列">
+<meta property="og:url" content="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/06/08/hello-world/hello-world_files/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2018/06/08/hello-world/hello-world_files/2.jpg">
-<meta property="og:image" content="http://img1.ph.126.net/2SQWgzFB-8DEOeD4mIvoLw==/1913466891779385955.png">
-<meta property="og:updated_time" content="2018-06-09T10:49:42.182Z">
+<meta property="og:updated_time" content="2018-06-09T12:14:33.226Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/08/hello-world/hello-world_files/1.jpg">
+<meta name="twitter:title" content="最长公共子串-最长公共子序列">
+<meta name="twitter:description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/08/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/"/>
 
 
 
@@ -139,7 +136,7 @@
   };
 </script>
 
-  <title>Hello World | DaDaVision</title>
+  <title>最长公共子串-最长公共子序列 | DaDaVision</title>
   
 
 
@@ -308,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -325,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">最长公共子串-最长公共子序列
               
             
           </h1>
@@ -350,28 +347,34 @@
                 
               
 
-              <time title="创建时间：2018-06-08 22:20:01" itemprop="dateCreated datePublished" datetime="2018-06-08T22:20:01+08:00">2018-06-08</time>
+              <time title="创建时间：2018-06-09 18:32:02 / 修改时间：20:14:33" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:02+08:00">2018-06-09</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-09 18:49:42" itemprop="dateModified" datetime="2018-06-09T18:49:42+08:00">2018-06-09</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试题/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -400,17 +403,9 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<p><img src="hello-world_files/1.jpg" alt=""><br><img src="hello-world_files/2.jpg" alt=""><br><img src="http://img1.ph.126.net/2SQWgzFB-8DEOeD4mIvoLw==/1913466891779385955.png" alt=""></p>
-
+        <h3 id="最长公共子串"><a href="#最长公共子串" class="headerlink" title="最长公共子串"></a><strong>最长公共子串</strong></h3><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubStr</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> len1 = str1.length();</span><br><span class="line">	<span class="keyword">int</span> len2 = str2.length();</span><br><span class="line">	<span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span> [len1][len2];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len2; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">				<span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span>;	<span class="comment">// 状态转移</span></span><br><span class="line">					<span class="keyword">if</span>(dp[i][j] &gt; result) &#123;</span><br><span class="line">						result = dp[i][j];</span><br><span class="line">						index = i;	<span class="comment">// 记录最大子串的最后一个下标</span></span><br><span class="line">					&#125;</span><br><span class="line">				<span class="comment">//	result = result &gt; dp[i][j] ? result : dp[i][j];	</span></span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					dp[i][j] = <span class="number">1</span>;</span><br><span class="line">					result = result &gt; dp[i][j] ? result : dp[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(result);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = index - result + <span class="number">1</span>; i &lt;= index; i++) &#123;</span><br><span class="line">		System.out.print(str1.charAt(i) + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a><strong>最长公共子序列</strong></h3><p>####动态规划<br>假设Z=&lt;z1,z2,⋯,zk&gt;是X与Y的LCS， 我们观察到<br>如果Xm=Yn，则Zk=Xm=Yn，有Zk−1是Xm−1与Yn−1的LCS；<br>如果Xm≠Yn，则Zk是Xm与Yn−1的LCS，或者是Xm−1与Yn的LCS。<br>因此，求解LCS的问题则变成递归求解的两个子问题。但是，上述的递归求解的办法中，重复的子问题多，效率低下。改进的办法——用空间换时间，用数组保存中间状态，方便后面的计算。这就是动态规划（DP)的核心思想了。<br>DP求解LCS<br>用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程</p>
+<h3 id="DP实现-1"><a href="#DP实现-1" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubSequence</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len1 = str1.length();</span><br><span class="line">	<span class="keyword">int</span> len2 = str2.length();</span><br><span class="line">	<span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len1][len2];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len2; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j] &gt; dp[i][j-<span class="number">1</span>] ? dp[i-<span class="number">1</span>][j] : dp[i][j-<span class="number">1</span>];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">				dp[i][j] = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(dp[len1 - <span class="number">1</span>][len2 - <span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">return</span> dp[len1-<span class="number">1</span>][len2-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -428,6 +423,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+            <a href="/tags/回溯/" rel="tag"># 回溯</a>
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
 
       
       
@@ -437,14 +442,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/09/DP+回溯-单词拆分 II/" rel="next" title="DP+回溯-单词拆分 II">
+                <i class="fa fa-chevron-left"></i> DP+回溯-单词拆分 II
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/09/回溯法思想/" rel="prev" title="回溯法思想">
-                回溯法思想 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/09/偏差、方差、噪声/" rel="prev" title="偏差、方差、噪声">
+                偏差、方差、噪声 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最长公共子串"><span class="nav-number">1.</span> <span class="nav-text">最长公共子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP实现"><span class="nav-number">2.</span> <span class="nav-text">DP实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长公共子序列"><span class="nav-number">3.</span> <span class="nav-text">最长公共子序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP实现-1"><span class="nav-number">4.</span> <span class="nav-text">DP实现</span></a></li></ol></div>
             
 
           </div>

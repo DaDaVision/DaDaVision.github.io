@@ -108,18 +108,23 @@
 
 
 
-  <meta name="description" content="评估方法：留出法、交叉验证法、自助法（西瓜书p27）。为什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set)验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{">
+  <meta name="description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
 <meta name="keywords" content="机器学习,模型评估">
 <meta property="og:type" content="article">
-<meta property="og:title" content="tags">
+<meta property="og:title" content="交叉验证集、测试集">
 <meta property="og:url" content="http://yoursite.com/2018/06/09/交叉验证集、测试集/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="评估方法：留出法、交叉验证法、自助法（西瓜书p27）。为什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set)验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{">
+<meta property="og:description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-09T10:54:17.845Z">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsCA84.tmp.png">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsCA94.tmp.png">
+<meta property="og:image" content="c:/Users/ADMINI~1/AppData/Local/Temp/1528542486293.png">
+<meta property="og:image" content="http://img0.ph.126.net/2V0udHo4Azq_EBTafvELxw==/2968716579467654289.png">
+<meta property="og:updated_time" content="2018-06-09T11:57:33.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="评估方法：留出法、交叉验证法、自助法（西瓜书p27）。为什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set)验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{">
+<meta name="twitter:title" content="交叉验证集、测试集">
+<meta name="twitter:description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
+<meta name="twitter:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsCA84.tmp.png">
 
 
 
@@ -136,7 +141,7 @@
   };
 </script>
 
-  <title>tags | DaDaVision</title>
+  <title>交叉验证集、测试集 | DaDaVision</title>
   
 
 
@@ -322,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">tags
+          <h1 class="post-title" itemprop="name headline">交叉验证集、测试集
               
             
           </h1>
@@ -347,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2018-06-09 18:32:04 / 修改时间：18:54:17" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:04+08:00">2018-06-09</time>
+              <time title="创建时间：2018-06-09 18:32:04 / 修改时间：19:57:33" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:04+08:00">2018-06-09</time>
             
 
             
@@ -403,9 +408,19 @@
       
 
       
-        <p>评估方法：留出法、交叉验证法、自助法（西瓜书p27）。<br>为什么有交叉验证：<strong>主要是因为训练集较小</strong>。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。<br>最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set)<br>验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}中隐含层的节点个数、网络层数、迭代次数、学习率)而测试集只是用于评估模型的精确度(即泛化能力)！<br>举个例子：假设建立一个BP神经网络，对于隐含层的节点数目，我们并没有很好的方法去确定。一般将节点数设定为某一具体的值，通过训练集训练出相应的参数后，再由交叉验证集去检测该模型的误差；然后再改变节点数，重复上述过程，直到交叉验证误差最小。此时的节点数可以认为是最优节点数，即该节点数(这个参数)是通过交叉验证集得到的。<br>而测试集是在确定了所有参数之后，根据测试误差来评判这个学习模型的；也可以说是用来评估模型的泛化能力。所以，验证集主要主要是用于模型的调参。</p>
-<p>“交叉验证法” (cross validation)先将数据集D 划分为k 个大小相似的互斥子集， 即D = D1 ∪ D2 ∪… ∪ Dk, Di ∩ Dj = ø (i≠j) . 每个子集Di 都尽可能保持数据分布的一致性，即从D 中通过分层采样得到. 然后，每次用k-1 个子集的并集作为训练集，余下的那个子集作为测试集;这样就可获得k组训练/测试集，从而可进行k 次训练和测试，最终返回的是这k 个测试结果的均值。显然，交叉验证法评估结果的稳定性和保真性在很大程度上取决于k的取值，为强调这一点，通常把交叉验证法称为” k 折/倍交叉验证” (k-fold cross validation). k 最常用的取值是10 ，此时称为10折交叉验证; 其他常用的k 值有5、20 等.</p>
-<p>与留出法相似，将数据集D 划分为k 个子集同样存在多种划分方式.为减小因样本划分不同而引入的差别，k折交叉验证通常要随机使用不同的划分重复p 次。最终的评估结果是这p 次k 折交叉验证结果的均值，例如常见的有”10 次10 折交叉验证。<br>假定数据集D中包含m个样本，若令k=m ，则得到了交叉验证法的一个特例:留一法(Leave- One-Out比，简称LOO) . 显然，留一法不受随机样本划分方式的影响，因为m个样本只有唯一的方式划分为m个子集—每个子集包含一个样本;留一法使用的训练集与初始数据集相比只少了一个样本，这就使得在绝大多数情况下，留一法中被实际评估的模型与期望评估的用D 训练出的模型很相似.因此，留一法的评估结果往往被认为比较准确.然而，留一法也有其缺陷:在数据集比较大时，训练m个模型的计算开销可能是难以忍受的(例如数据集包含1 百万个样本，则需训练1 百万个模型)，而这还是在未考虑算法调参的情况下.另外，留一法的估计结果也未必永远比其他评估方法准确;”没有免费的午餐”定理对实验评估方法同样适用.</p>
+        <p>什么有交叉验证：主要是<strong>因为训练集较小</strong>。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。</p>
+<p>最佳的数据分类情况是把数据集分为三部分，分别为：<strong>训练集</strong>(train set)，<strong>验证集</strong>(validation set)和<strong>测试集</strong>(test set)</p>
+<p>验证集和测试集两者的主要区别是：<strong>验证集</strong>用于<strong>进一步确定模型中的超参数</strong>(例如正则项系数、ANN{Artificial Neural Network}中隐含层的节点个数、网络层数、迭代次数、学习率)而<strong>测试集</strong>只是<strong>用于评估模型的精确度(即泛化能力)</strong>！</p>
+<p>举个例子：假设建立一个BP神经网络，对于隐含层的节点数目，我们并没有很好的方法去确定。一般将节点数设定为某一具体的值，通过训练集训练出相应的参数后，再<strong>由交叉验证集去检测该模型的误差</strong>；<strong>然后再改变节点数，重复上述过程，直到交叉验证误差最小</strong>。此时的节点数可以认为是最优节点数，即该节点数(<strong>这个参数)是通过交叉验证集得到的</strong>。</p>
+<p>而<strong>测试集</strong>是在<strong>确定了所有参数之后，根据测试误差来评判这个学习模型的；也可以说是用来评估模型的泛化能力</strong>。所以，<strong>验证集</strong>主要主要是<strong>用于模型的调参</strong>。</p>
+<p>“<strong>交叉验证法</strong>“ (cross validation)先将数据集<strong>D</strong> <strong>划分为k 个大小相似的互斥子集</strong>， 即<strong>D = D**</strong>1<strong> </strong>∪<strong> </strong>D<strong>**2</strong> <strong>∪**</strong>…<strong> </strong>∪<strong> </strong>D<strong><strong>k</strong></strong>, Di<strong> </strong>∩<strong> </strong>Dj = ø (<strong><strong>i≠</strong></strong>j)<strong> . </strong>每个子集Di 都尽可能保持数据分布的一致性<strong>，即从D 中通过</strong>分层采样<strong>得到. 然后，每次用k-1 个子集的并集作为训练集，余下的那个子集作为测试集;这样就可获得k组训练/测试集，从而可进行k 次训练和测试，最终返回的是这</strong>k 个测试结果的均值<strong>**。</strong>显然，<strong>交叉验证法评估结果的稳定性和保真性在很大程度上取决于k的取值</strong>，为强调这一点，通常把交叉验证法称为” <strong>k 折**</strong>/倍<strong>**交叉验证</strong>“ (k-fold cross validation). k 最常用的取值是<strong>10</strong> ，此时称为10折交叉验证; 其他常用的k 值有5、20 等.</p>
+<p>为了<strong>避免其他属性携带的信息被训练集中未出现的属性值”抹去</strong>”，在估计概率值时通常要进行”平滑” (smoothing) ，常用”<strong>拉普拉斯修正</strong>“，所以，P(c)和P(xi|c)修正为：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsCA84.tmp.png" alt="img">     <img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsCA94.tmp.png" alt="img"></p>
+<p>其中N 表示训练集D 中可能的类别数，Ni表示第</p>
+<p><img src="C:\Users\ADMINI~1\AppData\Local\Temp\1528542486293.png" alt=""></p>
+<p><img src="http://img0.ph.126.net/2V0udHo4Azq_EBTafvELxw==/2968716579467654289.png" alt=""></p>
+<p>与留出法相似，将数据集D 划分为k 个子集同样存在多种划分方式.为<strong>减小因样本划分不同而引入的差别</strong>，<strong>k折交叉验证通常要随机使用不同的划分重复p 次</strong>。最终的评估结果是这<strong>p 次k 折交叉验证结果的均值</strong>，例如常见的有”10 次10 折交叉验证。</p>
+<p>假定数据集D中包含m个样本，若令<strong>k=m</strong> ，则得到了<strong>交叉验证法的一个特例</strong>:<strong>留一法</strong>(Leave- One-Out比，简称LOO) . 显然，<strong>留一法不受随机样本划分方式的影响</strong>，因为m个样本只有唯一的方式划分为<strong>m个子集**</strong>—<strong>**每个子集包含一个样本</strong>;留一法使用的训练集与初始数据集相比只少了一个样本，这就使得在绝大多数情况下，<strong>留一法中被实际评估的模型与期望评估的用D 训练出的模型很相似</strong>.因此，<strong>留一法的评估结果往往被认为比较准确</strong>.然而，留一法也有其<strong>缺陷:在数据集比较大时</strong>，训练m个模型的计算开销可能是难以忍受的(例如数据集包含1 百万个样本，则需训练1 百万个模型)，而这还是在未考虑算法调参的情况下.另外，留一法的估计结果也未必永远比其他评估方法准确;”没有免费的午餐”定理对实验评估方法同样适用.</p>
 
       
     </div>
@@ -441,8 +456,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/分糖果/" rel="next" title="交叉验证集">
-                <i class="fa fa-chevron-left"></i> 交叉验证集
+              <a href="/2018/06/09/DP-单词拆分 I/" rel="next" title="DP-单词拆分 I">
+                <i class="fa fa-chevron-left"></i> DP-单词拆分 I
               </a>
             
           </div>
@@ -450,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/09/Mnist手写数字识别/" rel="prev" title="Mnist手写数字识别">
+                Mnist手写数字识别 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,7 +533,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -529,7 +548,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -546,7 +573,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -556,6 +605,25 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/DaDaVision" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="zhaotengda@whu.edu.cn" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/dadavisionwhu" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
           
 
           
