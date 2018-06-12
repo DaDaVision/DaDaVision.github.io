@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/06/12/win10-Anaconda-tensorflow1-8-pytorch0-4-0%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</loc>
-    <lastmod>2018-06-12T14:23:03.905Z</lastmod>
+    <lastmod>2018-06-12T14:27:21.105Z</lastmod>
     <data>
         <display>
         <title>win10+Anaconda+tensorflow1.8+pytorch0.4.0注意事项</title>
@@ -39,9 +39,9 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>PyTorch</tag>
-         
         <tag>深度学习</tag>
+         
+        <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
          
@@ -196,9 +196,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -290,11 +290,11 @@
         <title>Mnist手写数字识别</title>
         <pubTime>2018-06-09T10:32:05.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>Keras</tag>
-         
-        <tag>Python</tag>
          
          
            
