@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/06/11/PyTorch0.4.0%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/</loc>
+    
+    <lastmod>2018-06-12T01:09:52.805Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/06/08/hello-world/</loc>
     
     <lastmod>2018-06-11T05:08:14.464Z</lastmod>

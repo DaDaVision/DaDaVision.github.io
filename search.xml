@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>PyTorch0.4.0重大更新</title>
+      <link href="/2018/06/11/PyTorch0.4.0%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/"/>
+      <url>/2018/06/11/PyTorch0.4.0%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/</url>
+      <content type="html"><![CDATA[<p><strong>一、重大核心变化包括</strong></p><ul><li>Tensor/Variable 合并</li><li>零维张量</li><li>数据类型</li><li>迁移指南</li></ul><p><strong>二、现添加的新特征包括</strong></p><ul><li>Tensors：</li><li>全面支持高级索引</li><li>快速傅立叶变换</li><li>神经网络：</li><li>计算时的存储权衡</li><li>bottleneck-识别代码中热点（hotspots）的工具</li><li>torch.distributions</li><li>24 个基础的概率分布</li><li>增加cdf、方差、信息熵、困惑度等</li><li>分布式训练</li><li>易于使用的 Launcher utility</li><li>NCCL2 后端</li><li>C++拓展</li><li>Windows 支持</li><li>ONNX 改进</li><li>RNN 支持</li></ul><p><strong>三、性能改进</strong></p><p><strong>四、Bug 修复</strong></p><h3 id="五、torchvision的一些变化"><a href="#五、torchvision的一些变化" class="headerlink" title="五、torchvision的一些变化"></a><strong>五、torchvision的一些变化</strong></h3><p>1.torchvision.transform中函数<code>torchvision.transforms.`</code>Scale<code>(*args, **kwargs)即将被函数</code>torchvision.transforms.<code></code>Resize`(size, interpolation=2)代替。（参考官方文档：<a href="http://pytorch.org/docs/stable/torchvision/transforms.html#torchvision.transforms.Resize" target="_blank" rel="noopener">点击打开链接</a>）</p><p>2.torchvision.transform中函数<code>torchvision.transforms.`</code>RandomSizedCrop<code>(*args, **kwargs)即将被函数</code>torchvision.transforms.<code></code>RandomResizedCrop`(size, scale=(0.08, 1.0), ratio=(0.75, 1.3333333333333333), interpolation=2)代替。（参考官方文档：<a href="http://pytorch.org/docs/stable/torchvision/transforms.html#torchvision.transforms.RandomResizedCrop" target="_blank" rel="noopener">点击打开链接</a>）</p><h3 id="六、安装方式——Windows安装"><a href="#六、安装方式——Windows安装" class="headerlink" title="六、安装方式——Windows安装"></a><strong>六、安装方式——Windows安装</strong></h3><p>【方法一】pip直接安装。官网（<a href="http://pytorch.org/" target="_blank" rel="noopener">点击打开链接</a>）给出的安装步骤如下图所示（根据CUDA版本以及Python版本选择）。</p><p><img src="http://img0.ph.126.net/CToULoCCx_lmxB2-e1IPCg==/5717505544412384805.png" alt=""></p><p>Run this command:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-win_amd64.whl </span><br><span class="line">pip3 install torchvision</span><br></pre></td></tr></table></figure><p>这里我是下载好torch-0.4.0-cp36-cp36m-win_amd64.whl文件到本地之后才安装的。<br>进入Anaconda Prompt，然后进入文件所在目录：</p><ol><li><p>打开cmd命令提示符，先利用anaconda创建一个虚拟环境，命名为pytorch4</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch4 python=3.6</span><br></pre></td></tr></table></figure></li><li><p>激活刚才创建好的虚拟环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate pytorch4</span><br></pre></td></tr></table></figure></li><li><p>安装pytorch0.4.0</p></li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch-0.4.0-cp35-cp35m-win_amd64.whl</span><br></pre></td></tr></table></figure><p>注：根据自己的配置选择whl下载来链接</p><ol start="4"><li>安装torchvision<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torchvision</span><br></pre></td></tr></table></figure></li></ol><p>简单测试安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">import torch</span><br><span class="line">print(torch.__version__)</span><br></pre></td></tr></table></figure></p><p>如果输出0.4.0，那么恭喜Windows下的PyTorch0.4.0安装成功！</p>]]></content>
+      
+      <categories>
+          
+          <category> PyTorch </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PyTorch </tag>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Mnist手写数字识别</title>
       <link href="/2018/06/09/Mnist%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/"/>
       <url>/2018/06/09/Mnist%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E8%AF%86%E5%88%AB/</url>
@@ -17,11 +44,11 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> 深度学习 </tag>
             
             <tag> Keras </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -67,9 +94,9 @@
             
             <tag> 机器学习 </tag>
             
-            <tag> 性能评估 </tag>
-            
             <tag> 笔记 </tag>
+            
+            <tag> 性能评估 </tag>
             
         </tags>
       
@@ -115,9 +142,9 @@
       
         <tags>
             
-            <tag> 爬虫 </tag>
-            
             <tag> Python </tag>
+            
+            <tag> 爬虫 </tag>
             
         </tags>
       
@@ -149,6 +176,31 @@
     </entry>
     
     <entry>
+      <title>查准率precision和查全率recall、F1</title>
+      <link href="/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/"/>
+      <url>/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/</url>
+      <content type="html"><![CDATA[<p>真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：</p><table><thead><tr><th>真实情况</th><th>预测结果</th><th></th></tr></thead><tbody><tr><td>正例</td><td>反例</td><td></td></tr><tr><td>正例</td><td>TP（真正例）</td><td>FN（假反例）</td></tr><tr><td>反例</td><td>FP（假正例）</td><td>TN（真反例）</td></tr></tbody></table><p><img src="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png" alt=""></p><a id="more"></a><p>查准率（precision）：<strong>被认定为正例的里面，判断正确的比例</strong>。</p><p>查全率（recall）：<strong>真实正例里，被判断出为正例的比例</strong>。</p><p>查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;而查全率高时，查准率往往偏低,可以通过P-R曲线来取两者的平衡值</p><p><img src="http://img0.ph.126.net/y0wS5Mk_91uJ6Byf-_1W5Q==/6608245202842946148.png" alt=""></p><p>若一个学习器P-R曲线被另一个学习器的曲线完全”<strong>包住</strong>“,则可断言<strong>后者的性能优于前者</strong>， 例如图中学习器A 的性能优于学习器C; 如果两个学习器的P-R 曲线发生了交叉7,例如图中的A 与B ，则难以一般性地断言两者孰优孰劣，只能在具体的查准率或查全率条件下进行比较然而，在很多情形下，人们往往仍希望把学习器A 与B 比出个高低. 这时一个比较合理的判据是比较<strong>P-R 曲线节面积</strong>的大小。</p><p>“<strong>平衡点</strong>“是”<strong>查准率=查全率</strong>“时的取值。</p><p>但更常用的使用<strong>F1</strong>来衡量查准率与查全率；</p><p>F1基于查准率与查全率的<strong>调和平均：</strong><img src="http://img0.ph.126.net/yg8YAE8RHL175oCy3vjc3g==/6632743421421514260.png" alt=""></p><p><img src="http://img0.ph.126.net/jpR5P7LKuB3AzZtvxzj_EA==/6631628516633222094.png" alt="">，sum为样例总数，</p><p>具体应用中可能对P和R有不同的倚重。比如<strong>商品推荐</strong>中，为了尽可能少打扰用户，更希望推荐内容确是用户感兴趣的，这时候<strong>查准率更重要</strong>。而在<strong>逃犯检索系统</strong>中，更希望尽可能少漏掉逃犯，此时<strong>查全率更重要</strong>。</p><p>F1度量的一般形式<strong>F**</strong>β<strong>（</strong>加权调和平均**）就可以表达这种偏好。 </p><p><img src="http://img2.ph.126.net/QSkXIzD2uBJSYNeqVKXbnA==/2291206310525129759.png" alt="">即  <img src="http://img2.ph.126.net/mlX2uGe9BlIO58oi64A-6w==/6632646664398271337.png" alt=""></p><p><strong>ß = 1时退化为标准的F1,当β&gt;1意味着P占比重更大</strong>，<strong>反之则是R</strong>。</p><h5 id="ROC、AUC"><a href="#ROC、AUC" class="headerlink" title="ROC、AUC"></a><strong>ROC、AUC</strong></h5><p><strong>ROC</strong>:全称“<strong>受试者工作特征</strong>”，<strong>表达了模型的泛化能力</strong>。其纵坐标为“<strong>TPR真正例率</strong>”；横坐标为“<strong>FPR假正例率</strong>”。</p><p><strong>ROC曲线根据模型的排序结果，一个个划分正负</strong>，每次得出两个值TPR,FPR。很多学习器是为测试样本产生一个<strong>实值</strong>或<strong>概率预测</strong>，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。为啥在ROC曲线画一个y=x呢，那表示<strong>随机猜测的ROC</strong>。</p><p><strong>AUC:ROC曲线下的面积</strong>.AUC=1,是完美分类器(并不存在)；0.5。<strong>AUC 越大，意味着辨别能力越强</strong>。</p><p>与P-R图相似，如果一条ROC曲线<strong>包含另一条</strong>ROC曲线，则<strong>前者的学习器性能更优越</strong>。如果<strong>曲线有交叉</strong>，则可以通过<strong>计算AUC</strong>大小得到。</p><h5 id="代价敏感错误率、代价曲线"><a href="#代价敏感错误率、代价曲线" class="headerlink" title="代价敏感错误率、代价曲线"></a><strong>代价敏感错误率、代价曲线</strong></h5><p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p><p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p>]]></content>
+      
+      <categories>
+          
+          <category> 机器学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 机器学习 </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 性能评估 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>最长公共子串-最长公共子序列</title>
       <link href="/2018/06/09/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
       <url>/2018/06/09/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/</url>
@@ -168,31 +220,6 @@
             <tag> 回溯 </tag>
             
             <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>查准率precision和查全率recall、F1</title>
-      <link href="/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/"/>
-      <url>/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/</url>
-      <content type="html"><![CDATA[<p>真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：</p><table><thead><tr><th>真实情况</th><th>预测结果</th><th></th></tr></thead><tbody><tr><td>正例</td><td>反例</td><td></td></tr><tr><td>正例</td><td>TP（真正例）</td><td>FN（假反例）</td></tr><tr><td>反例</td><td>FP（假正例）</td><td>TN（真反例）</td></tr></tbody></table><p><img src="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png" alt=""></p><a id="more"></a><p>查准率（precision）：<strong>被认定为正例的里面，判断正确的比例</strong>。</p><p>查全率（recall）：<strong>真实正例里，被判断出为正例的比例</strong>。</p><p>查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;而查全率高时，查准率往往偏低,可以通过P-R曲线来取两者的平衡值</p><p><img src="http://img0.ph.126.net/y0wS5Mk_91uJ6Byf-_1W5Q==/6608245202842946148.png" alt=""></p><p>若一个学习器P-R曲线被另一个学习器的曲线完全”<strong>包住</strong>“,则可断言<strong>后者的性能优于前者</strong>， 例如图中学习器A 的性能优于学习器C; 如果两个学习器的P-R 曲线发生了交叉7,例如图中的A 与B ，则难以一般性地断言两者孰优孰劣，只能在具体的查准率或查全率条件下进行比较然而，在很多情形下，人们往往仍希望把学习器A 与B 比出个高低. 这时一个比较合理的判据是比较<strong>P-R 曲线节面积</strong>的大小。</p><p>“<strong>平衡点</strong>“是”<strong>查准率=查全率</strong>“时的取值。</p><p>但更常用的使用<strong>F1</strong>来衡量查准率与查全率；</p><p>F1基于查准率与查全率的<strong>调和平均：</strong><img src="http://img0.ph.126.net/yg8YAE8RHL175oCy3vjc3g==/6632743421421514260.png" alt=""></p><p><img src="http://img0.ph.126.net/jpR5P7LKuB3AzZtvxzj_EA==/6631628516633222094.png" alt="">，sum为样例总数，</p><p>具体应用中可能对P和R有不同的倚重。比如<strong>商品推荐</strong>中，为了尽可能少打扰用户，更希望推荐内容确是用户感兴趣的，这时候<strong>查准率更重要</strong>。而在<strong>逃犯检索系统</strong>中，更希望尽可能少漏掉逃犯，此时<strong>查全率更重要</strong>。</p><p>F1度量的一般形式<strong>F**</strong>β<strong>（</strong>加权调和平均**）就可以表达这种偏好。 </p><p><img src="http://img2.ph.126.net/QSkXIzD2uBJSYNeqVKXbnA==/2291206310525129759.png" alt="">即  <img src="http://img2.ph.126.net/mlX2uGe9BlIO58oi64A-6w==/6632646664398271337.png" alt=""></p><p><strong>ß = 1时退化为标准的F1,当β&gt;1意味着P占比重更大</strong>，<strong>反之则是R</strong>。</p><h5 id="ROC、AUC"><a href="#ROC、AUC" class="headerlink" title="ROC、AUC"></a><strong>ROC、AUC</strong></h5><p><strong>ROC</strong>:全称“<strong>受试者工作特征</strong>”，<strong>表达了模型的泛化能力</strong>。其纵坐标为“<strong>TPR真正例率</strong>”；横坐标为“<strong>FPR假正例率</strong>”。</p><p><strong>ROC曲线根据模型的排序结果，一个个划分正负</strong>，每次得出两个值TPR,FPR。很多学习器是为测试样本产生一个<strong>实值</strong>或<strong>概率预测</strong>，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。为啥在ROC曲线画一个y=x呢，那表示<strong>随机猜测的ROC</strong>。</p><p><strong>AUC:ROC曲线下的面积</strong>.AUC=1,是完美分类器(并不存在)；0.5。<strong>AUC 越大，意味着辨别能力越强</strong>。</p><p>与P-R图相似，如果一条ROC曲线<strong>包含另一条</strong>ROC曲线，则<strong>前者的学习器性能更优越</strong>。如果<strong>曲线有交叉</strong>，则可以通过<strong>计算AUC</strong>大小得到。</p><h5 id="代价敏感错误率、代价曲线"><a href="#代价敏感错误率、代价曲线" class="headerlink" title="代价敏感错误率、代价曲线"></a><strong>代价敏感错误率、代价曲线</strong></h5><p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p><p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p>]]></content>
-      
-      <categories>
-          
-          <category> 机器学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 机器学习 </tag>
-            
-            <tag> 性能评估 </tag>
-            
-            <tag> 笔记 </tag>
             
         </tags>
       

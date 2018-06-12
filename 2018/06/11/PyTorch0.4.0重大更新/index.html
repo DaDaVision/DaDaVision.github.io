@@ -117,13 +117,20 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DaDaVision">
-<meta property="og:url" content="http://yoursite.com/tags/算法/index.html">
+  <meta name="description" content="一、重大核心变化包括  Tensor/Variable 合并 零维张量 数据类型 迁移指南  二、现添加的新特征包括  Tensors： 全面支持高级索引 快速傅立叶变换 神经网络： 计算时的存储权衡 bottleneck-识别代码中热点（hotspots）的工具 torch.distributions 24 个基础的概率分布 增加cdf、方差、信息熵、困惑度等 分布式训练 易于使用的 Launc">
+<meta name="keywords" content="PyTorch,深度学习,机器学习,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch0.4.0重大更新">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/PyTorch0.4.0重大更新/index.html">
 <meta property="og:site_name" content="DaDaVision">
+<meta property="og:description" content="一、重大核心变化包括  Tensor/Variable 合并 零维张量 数据类型 迁移指南  二、现添加的新特征包括  Tensors： 全面支持高级索引 快速傅立叶变换 神经网络： 计算时的存储权衡 bottleneck-识别代码中热点（hotspots）的工具 torch.distributions 24 个基础的概率分布 增加cdf、方差、信息熵、困惑度等 分布式训练 易于使用的 Launc">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://img0.ph.126.net/CToULoCCx_lmxB2-e1IPCg==/5717505544412384805.png">
+<meta property="og:updated_time" content="2018-06-12T01:09:52.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DaDaVision">
+<meta name="twitter:title" content="PyTorch0.4.0重大更新">
+<meta name="twitter:description" content="一、重大核心变化包括  Tensor/Variable 合并 零维张量 数据类型 迁移指南  二、现添加的新特征包括  Tensors： 全面支持高级索引 快速傅立叶变换 神经网络： 计算时的存储权衡 bottleneck-识别代码中热点（hotspots）的工具 torch.distributions 24 个基础的概率分布 增加cdf、方差、信息熵、困惑度等 分布式训练 易于使用的 Launc">
+<meta name="twitter:image" content="http://img0.ph.126.net/CToULoCCx_lmxB2-e1IPCg==/5717505544412384805.png">
 
 
 
@@ -132,7 +139,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/算法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/PyTorch0.4.0重大更新/"/>
 
 
 
@@ -142,7 +149,7 @@
   };
 </script>
 
-  <title>标签: 算法 | DaDaVision</title>
+  <title>PyTorch0.4.0重大更新 | DaDaVision</title>
   
 
 
@@ -189,7 +196,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 		
 		
@@ -246,7 +253,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -326,196 +333,274 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>算法<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/PyTorch0.4.0重大更新/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tengda Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img1.ph.126.net/Xs_jpOoevKFqwxuIfkKGVA==/2984760653140182352.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaDaVision">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/09/DP-单词拆分 I/" itemprop="url">
-              
-                <span itemprop="name">DP-单词拆分 I</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PyTorch0.4.0重大更新
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-11 18:32:02" itemprop="dateCreated datePublished" datetime="2018-06-11T18:32:02+08:00">2018-06-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-12 09:09:52" itemprop="dateModified" datetime="2018-06-12T09:09:52+08:00">2018-06-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PyTorch/" itemprop="url" rel="index"><span itemprop="name">PyTorch</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/DP+回溯-单词拆分 II/" itemprop="url">
-              
-                <span itemprop="name">DP+回溯-单词拆分 II</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/最长公共子串-最长公共子序列/" itemprop="url">
-              
-                <span itemprop="name">最长公共子串-最长公共子序列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/分糖果/" itemprop="url">
-              
-                <span itemprop="name">分糖果</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:01+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/回溯法思想/" itemprop="url">
-              
-                <span itemprop="name">回溯法思想</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:00+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p><strong>一、重大核心变化包括</strong></p>
+<ul>
+<li>Tensor/Variable 合并</li>
+<li>零维张量</li>
+<li>数据类型</li>
+<li>迁移指南</li>
+</ul>
+<p><strong>二、现添加的新特征包括</strong></p>
+<ul>
+<li>Tensors：</li>
+<li>全面支持高级索引</li>
+<li>快速傅立叶变换</li>
+<li>神经网络：</li>
+<li>计算时的存储权衡</li>
+<li>bottleneck-识别代码中热点（hotspots）的工具</li>
+<li>torch.distributions</li>
+<li>24 个基础的概率分布</li>
+<li>增加cdf、方差、信息熵、困惑度等</li>
+<li>分布式训练</li>
+<li>易于使用的 Launcher utility</li>
+<li>NCCL2 后端</li>
+<li>C++拓展</li>
+<li>Windows 支持</li>
+<li>ONNX 改进</li>
+<li>RNN 支持</li>
+</ul>
+<p><strong>三、性能改进</strong></p>
+<p><strong>四、Bug 修复</strong></p>
+<h3 id="五、torchvision的一些变化"><a href="#五、torchvision的一些变化" class="headerlink" title="五、torchvision的一些变化"></a><strong>五、torchvision的一些变化</strong></h3><p>1.torchvision.transform中函数<code>torchvision.transforms.`</code>Scale<code>(*args, **kwargs)即将被函数</code>torchvision.transforms.<code></code>Resize`(size, interpolation=2)代替。（参考官方文档：<a href="http://pytorch.org/docs/stable/torchvision/transforms.html#torchvision.transforms.Resize" target="_blank" rel="noopener">点击打开链接</a>）</p>
+<p>2.torchvision.transform中函数<code>torchvision.transforms.`</code>RandomSizedCrop<code>(*args, **kwargs)即将被函数</code>torchvision.transforms.<code></code>RandomResizedCrop`(size, scale=(0.08, 1.0), ratio=(0.75, 1.3333333333333333), interpolation=2)代替。（参考官方文档：<a href="http://pytorch.org/docs/stable/torchvision/transforms.html#torchvision.transforms.RandomResizedCrop" target="_blank" rel="noopener">点击打开链接</a>）</p>
+<h3 id="六、安装方式——Windows安装"><a href="#六、安装方式——Windows安装" class="headerlink" title="六、安装方式——Windows安装"></a><strong>六、安装方式——Windows安装</strong></h3><p>【方法一】pip直接安装。官网（<a href="http://pytorch.org/" target="_blank" rel="noopener">点击打开链接</a>）给出的安装步骤如下图所示（根据CUDA版本以及Python版本选择）。</p>
+<p><img src="http://img0.ph.126.net/CToULoCCx_lmxB2-e1IPCg==/5717505544412384805.png" alt=""></p>
+<p>Run this command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install http://download.pytorch.org/whl/cu90/torch-0.4.0-cp36-cp36m-win_amd64.whl </span><br><span class="line">pip3 install torchvision</span><br></pre></td></tr></table></figure>
+<p>这里我是下载好torch-0.4.0-cp36-cp36m-win_amd64.whl文件到本地之后才安装的。<br>进入Anaconda Prompt，然后进入文件所在目录：</p>
+<ol>
+<li><p>打开cmd命令提示符，先利用anaconda创建一个虚拟环境，命名为pytorch4</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n pytorch4 python=3.6</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>激活刚才创建好的虚拟环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate pytorch4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装pytorch0.4.0</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torch-0.4.0-cp35-cp35m-win_amd64.whl</span><br></pre></td></tr></table></figure>
+<p>注：根据自己的配置选择whl下载来链接</p>
+<ol start="4">
+<li>安装torchvision<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install torchvision</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>简单测试安装是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line">import torch</span><br><span class="line">print(torch.__version__)</span><br></pre></td></tr></table></figure></p>
+<p>如果输出0.4.0，那么恭喜Windows下的PyTorch0.4.0安装成功！</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+		<div>
+		
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+		
+			</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PyTorch/" <i class="fa fa-tag"></i> PyTorch</a>
+          
+            <a href="/tags/深度学习/" <i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/09/Mnist手写数字识别/" rel="next" title="Mnist手写数字识别">
+                <i class="fa fa-chevron-left"></i> Mnist手写数字识别
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -538,8 +623,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -696,6 +790,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#五、torchvision的一些变化"><span class="nav-number">1.</span> <span class="nav-text">五、torchvision的一些变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、安装方式——Windows安装"><span class="nav-number">2.</span> <span class="nav-text">六、安装方式——Windows安装</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -844,6 +954,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 

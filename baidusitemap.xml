@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/06/11/PyTorch0.4.0%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/</loc>
+    <lastmod>2018-06-12T01:09:52.805Z</lastmod>
+    <data>
+        <display>
+        <title>PyTorch0.4.0重大更新</title>
+        <pubTime>2018-06-11T10:32:02.000Z</pubTime>
+        
+        <tag>PyTorch</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>机器学习</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="PyTorch" url="http://yoursite.com/categories/PyTorch/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/06/08/hello-world/</loc>
     <lastmod>2018-06-11T05:08:14.464Z</lastmod>
     <data>
@@ -52,9 +78,9 @@
         
         <tag>机器学习</tag>
          
-        <tag>性能评估</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>性能评估</tag>
          
          
            
@@ -142,9 +168,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -166,9 +192,9 @@
         
         <tag>机器学习</tag>
          
-        <tag>性能评估</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>性能评估</tag>
          
          
            
@@ -236,11 +262,11 @@
         <title>Mnist手写数字识别</title>
         <pubTime>2018-06-09T10:32:05.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>深度学习</tag>
          
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            
