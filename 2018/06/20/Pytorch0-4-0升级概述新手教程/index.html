@@ -133,19 +133,19 @@
 
 
 
-  <meta name="description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)Tensors与NumPy的ndarrays类似，另外可以使用GPU加速计">
+  <meta name="description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
 <meta name="keywords" content="深度学习,Pytorch,Pytorch0.4.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pytorch0.4.0升级概述新手教程">
 <meta property="og:url" content="http://yoursite.com/2018/06/20/Pytorch0-4-0升级概述新手教程/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)Tensors与NumPy的ndarrays类似，另外可以使用GPU加速计">
+<meta property="og:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fb68bfe5f7c4d22e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-20T12:50:11.049Z">
+<meta property="og:updated_time" content="2018-06-20T12:54:13.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch0.4.0升级概述新手教程">
-<meta name="twitter:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)Tensors与NumPy的ndarrays类似，另外可以使用GPU加速计">
+<meta name="twitter:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-fb68bfe5f7c4d22e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -411,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2018-06-20 20:41:27 / 修改时间：20:50:11" itemprop="dateCreated datePublished" datetime="2018-06-20T20:41:27+08:00">2018-06-20</time>
+              <time title="创建时间：2018-06-20 20:41:27 / 修改时间：20:54:13" itemprop="dateCreated datePublished" datetime="2018-06-20T20:41:27+08:00">2018-06-20</time>
             
 
             
@@ -477,7 +477,8 @@
       
         <p>pytorch0.4支持了Windows系统的开发，在<a href="https://pytorch.org/" target="_blank" rel="noopener">首页</a>即可使用pip安装pytorch和torchvision。<br> 说白了，以下文字就是来自<a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html" target="_blank" rel="noopener">官方文档60分钟入门的简要翻译</a>.</p>
 <h2 id="pytorch是啥"><a href="#pytorch是啥" class="headerlink" title="pytorch是啥"></a>pytorch是啥</h2><p>python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化</p>
-<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><h4 id="Tensors-张量"><a href="#Tensors-张量" class="headerlink" title="Tensors(张量)"></a>Tensors(张量)</h4><p>Tensors与NumPy的ndarrays类似，另外可以使用GPU加速计算</p>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><h4 id="Tensors-张量"><a href="#Tensors-张量" class="headerlink" title="Tensors(张量)"></a>Tensors(张量)</h4><a id="more"></a>
+<p>Tensors与NumPy的ndarrays类似，另外可以使用GPU加速计算</p>
 <p>未初始化的5*3的矩阵:<code>x = torch.empty(5, 3)</code><br> 随机初始化的矩阵:<code>x = torch.rand(5, 3)</code><br> 全零矩阵,定义数据类型:<code>x = torch.zeros(5, 3, dtype=torch.long)</code><br> 由数据构造矩阵:<code>x = torch.tensor([5.5, 3])</code><br> 由已存在张量构造矩阵，性质与之前张量一致:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = x.new_ones(5, 3, dtype=torch.double) </span><br><span class="line">x = torch.randn_like(x, dtype=torch.float)</span><br></pre></td></tr></table></figure>
 <p>获取维度:<code>print(x.size())</code></p>
