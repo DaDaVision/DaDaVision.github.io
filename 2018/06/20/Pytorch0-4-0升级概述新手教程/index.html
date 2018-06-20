@@ -142,7 +142,7 @@
 <meta property="og:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fb68bfe5f7c4d22e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-20T12:54:13.304Z">
+<meta property="og:updated_time" content="2018-06-20T13:01:19.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pytorch0.4.0升级概述新手教程">
 <meta name="twitter:description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
@@ -411,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2018-06-20 20:41:27 / 修改时间：20:54:13" itemprop="dateCreated datePublished" datetime="2018-06-20T20:41:27+08:00">2018-06-20</time>
+              <time title="创建时间：2018-06-20 20:41:27 / 修改时间：21:01:19" itemprop="dateCreated datePublished" datetime="2018-06-20T20:41:27+08:00">2018-06-20</time>
             
 
             
@@ -487,15 +487,15 @@
 <li></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">y = torch.rand(5, 3)</span><br><span class="line">print(x + y)</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="2">
 <li></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(torch.add(x, y))</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="3">
 <li></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">result = torch.empty(5, 3)</span><br><span class="line">torch.add(x, y, out=result)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
-<ol>
+<ol start="4">
 <li></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># adds x to y</span><br><span class="line">y.add_(x)</span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
