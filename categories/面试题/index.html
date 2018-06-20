@@ -23,11 +23,15 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
 <script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
-                history.back();
+                if (history.length === 1) {
+                    location.replace("https://dadavision.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
             }
         }
     })();

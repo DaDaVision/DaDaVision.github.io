@@ -23,11 +23,15 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
 <script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
-                history.back();
+                if (history.length === 1) {
+                    location.replace("https://dadavision.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
             }
         }
     })();
@@ -530,8 +534,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/查准率precision和查全率recall、F1/" rel="next" title="查准率precision和查全率recall、F1">
-                <i class="fa fa-chevron-left"></i> 查准率precision和查全率recall、F1
+              <a href="/2018/06/09/分糖果/" rel="next" title="分糖果">
+                <i class="fa fa-chevron-left"></i> 分糖果
               </a>
             
           </div>
@@ -540,8 +544,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/09/DP+回溯-单词拆分 II/" rel="prev" title="DP+回溯-单词拆分 II">
-                DP+回溯-单词拆分 II <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/09/偏差、方差、噪声/" rel="prev" title="偏差、方差、噪声">
+                偏差、方差、噪声 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

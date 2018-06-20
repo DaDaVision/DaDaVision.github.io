@@ -23,11 +23,15 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
 <script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
                 alert('密码错误！');
-                history.back();
+                if (history.length === 1) {
+                    location.replace("https://dadavision.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
             }
         }
     })();
@@ -548,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/Python爬虫/" rel="next" title="Python爬虫">
-                <i class="fa fa-chevron-left"></i> Python爬虫
+              <a href="/2018/06/09/最长公共子串-最长公共子序列/" rel="next" title="最长公共子串-最长公共子序列">
+                <i class="fa fa-chevron-left"></i> 最长公共子串-最长公共子序列
               </a>
             
           </div>
@@ -558,8 +562,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/09/交叉验证集、测试集/" rel="prev" title="交叉验证集、测试集">
-                交叉验证集、测试集 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/09/DP+回溯-单词拆分 II/" rel="prev" title="DP+回溯-单词拆分 II">
+                DP+回溯-单词拆分 II <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
