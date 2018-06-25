@@ -36,11 +36,11 @@
       <category term="Pytorch" scheme="http://yoursite.com/categories/Pytorch/"/>
     
     
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="Pytorch" scheme="http://yoursite.com/tags/Pytorch/"/>
     
       <category term="Pytorch0.4.0" scheme="http://yoursite.com/tags/Pytorch0-4-0/"/>
+    
+      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -145,13 +145,13 @@
       <category term="PyTorch" scheme="http://yoursite.com/categories/PyTorch/"/>
     
     
-      <category term="PyTorch" scheme="http://yoursite.com/tags/PyTorch/"/>
-    
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="PyTorch" scheme="http://yoursite.com/tags/PyTorch/"/>
     
   </entry>
   
@@ -173,11 +173,11 @@
       <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
-    
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   
@@ -210,6 +210,36 @@
   </entry>
   
   <entry>
+    <title>偏差、方差、噪声</title>
+    <link href="http://yoursite.com/2018/06/09/%E5%81%8F%E5%B7%AE%E3%80%81%E6%96%B9%E5%B7%AE%E3%80%81%E5%99%AA%E5%A3%B0/"/>
+    <id>http://yoursite.com/2018/06/09/偏差、方差、噪声/</id>
+    <published>2018-06-09T10:32:02.000Z</published>
+    <updated>2018-06-11T05:05:26.783Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p><p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p><h4 id="偏差（Bias）和方差（Variance）"><a href="#偏差（Bias）和方差（Variance）" class="headerlink" title="偏差（Bias）和方差（Variance）"></a><strong>偏差（Bias）和方差（Variance）</strong></h4><p><strong>偏差（Bias）</strong>：描述的是<strong>预测值（估计值）的期望与真实值之间的差距</strong>。<strong>偏差越大，越偏离真实数据</strong>。</p><p><strong>方差（Variance）</strong>：描述的是<strong>预测值的变化范围，离散程度</strong>，也就是离其期望值的距离。<strong>方差越大，数据的分布越分散</strong>。</p><p><img src="http://img2.ph.126.net/r1haOaQD_onwqs9zl_4gqw==/6632693943398259845.png" alt=""></p><a id="more"></a><p><strong>偏差：形容数据跟我们期望的中心差得有多远</strong>，算是“有监督的”，有人的知识参与指标；</p><p><strong>方差：形容数据分散程度</strong>的，算是“无监督的”，客观的指标。</p><p><strong>噪声</strong>：表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即<strong>刻画了学习问题本身的难度</strong>.</p><p>偏差一方差分解说明，<strong>泛化性能</strong>是由<strong>学习算法的能力</strong>、<strong>数据的充分性</strong>以及<strong>学习任务本身的难度</strong>所共同决定的.</p><p>给定学习任务，为了取得好的泛化性能，则需使<strong>偏差较小</strong>，即<strong>能够充分拟合数据</strong>，并且使<strong>方差较小</strong>，即<strong>使得数据扰动产生的影响小</strong>.</p><p>一般来说偏差与方差是有冲突的，这称为<strong>偏差—方差窘境</strong>，给定学习任务，假定我们能控制学习算法的<strong>训练程度</strong>（例如<strong>决策树可控制层数</strong>，<strong>神经网络可控制训练轮数</strong>，<strong>集成学习方法可控制基学习器个数</strong>），则在<strong>训练不足时</strong>，<strong>学习器的拟合能力不够强</strong>，训练数据的扰动不足以便学习器产生显著变化，此时<strong>偏差主导了泛化错误率</strong>;<strong>随着训练程度的加深</strong>，<strong>学习器的拟合能力逐渐增强</strong>，训练数据发生的扰动渐渐能被学习器学到，<strong>方差逐渐主导了泛化错误率</strong>;<strong>在训练程度充足后，学习器的拟合能力已非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合</strong>.</p><p><img src="http://img0.ph.126.net/Pf_BHxPZBFJ3I9qDD82fFA==/6597626119542477447.png" alt=""></p><p>为什么<strong>KNN</strong>（k最近邻k-Nearest Neighbor）算法在<strong>增大k时，偏差会变大</strong>；但<strong>RF</strong>（Random Forest随机森林）<strong>增大树的数目时偏差却保持不变</strong>；<strong>GBDT</strong>（Gradient Boosting）在<strong>增大树的数目时偏差却又能变小</strong>。</p><p>对于KNN算法，<strong>k值越大，表示模型的学习能力越弱</strong>，因为<strong>k越大，它越倾向于从“面”上考虑做出判断，而不是具体地考虑一个样本近身的情况来做出判断</strong>，所以，它的<strong>偏差会越来越大</strong>。</p><p>对于<strong>RF</strong>，我们实际上是<strong>部分实现了多次训练取均值的效果</strong>，<strong>每次训练得到的树都是一个很强的学习者</strong>，<strong>每一个的方差都比较大，但综合起来就会比较小</strong>。好比一个很强的学习者学习时，刮着西风，它会据此调整自己的瞄准方法，另一个很强的学习者学习时刮着东风，（西风、东风可以理解为不同训练集中的<strong>噪声</strong>）它也会据此调整自己的瞄准方法，在测试样本时，<strong>一个误差向西，一个误差向东，刚好起到互相抵消的作用，所以方差会比较小。但是由于每棵树的偏差都差不多，所以，我们取平均时，偏差不会怎么变化</strong>。</p><p>为什么说是<strong>部分</strong>实现了多次训练取均值的效果而不是全部呢？因为我们在训练各棵树时，是通过<strong>抽样样本集来实现多次训练</strong>的，<strong>不同的训练集中不可避免地会有重合的情况</strong>，此时，就<strong>不能认为是独立的多次训练了，各个训练得到的树之间的方差会产生一定的相关性</strong>，训练集中重合的样本越多，则两棵树之间的方差的相关性越强，就越难达成方差互相抵消的效果。</p><p>对于<strong>GBDT</strong>，<strong>N棵树之间根本就不是一种多次训练取均值的关系，而是N棵树组成了相关关联，层层递进的超级学习者</strong>，可想而知，它的<strong>方差一定是比较大</strong>的。但由于它的<strong>学习能力比较强</strong>，所以，它的<strong>偏差是很小</strong>的，而且树的<strong>棵树越多，学习能力就越强，偏差就越小</strong>。也就是说，只要学习次数够多，预测的均值会无限接近于目标。简单讲就是<strong>GBDT的N棵树实际上是一个有机关联的模型，不能认为是N个模型</strong>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;代价敏感错误率&lt;/strong&gt;：&lt;strong&gt;为不同错误类型赋予不同的权重&lt;/strong&gt;。&lt;strong&gt;不同类型的错误所造成的后果不同&lt;/strong&gt;.例如在&lt;strong&gt;医疗诊断&lt;/strong&gt;中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，&lt;strong&gt;门禁系统&lt;/strong&gt;错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可&lt;strong&gt;为错误赋予”非均等代价”&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”&lt;strong&gt;代价曲线&lt;/strong&gt;“ 则可达到该目的.代价曲线图的&lt;strong&gt;横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;偏差（Bias）和方差（Variance）&quot;&gt;&lt;a href=&quot;#偏差（Bias）和方差（Variance）&quot; class=&quot;headerlink&quot; title=&quot;偏差（Bias）和方差（Variance）&quot;&gt;&lt;/a&gt;&lt;strong&gt;偏差（Bias）和方差（Variance）&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;偏差（Bias）&lt;/strong&gt;：描述的是&lt;strong&gt;预测值（估计值）的期望与真实值之间的差距&lt;/strong&gt;。&lt;strong&gt;偏差越大，越偏离真实数据&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方差（Variance）&lt;/strong&gt;：描述的是&lt;strong&gt;预测值的变化范围，离散程度&lt;/strong&gt;，也就是离其期望值的距离。&lt;strong&gt;方差越大，数据的分布越分散&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://img2.ph.126.net/r1haOaQD_onwqs9zl_4gqw==/6632693943398259845.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="性能评估" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/"/>
+    
+      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python爬虫</title>
     <link href="http://yoursite.com/2018/06/09/Python%E7%88%AC%E8%99%AB/"/>
     <id>http://yoursite.com/2018/06/09/Python爬虫/</id>
@@ -227,35 +257,9 @@
       <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
       <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
     
-  </entry>
-  
-  <entry>
-    <title>DP-单词拆分 I</title>
-    <link href="http://yoursite.com/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/"/>
-    <id>http://yoursite.com/2018/06/09/DP-单词拆分 I/</id>
-    <published>2018-06-09T10:32:02.000Z</published>
-    <updated>2018-06-11T05:04:33.326Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。<br>说明：<br>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入: s = “leetcode”, wordDict = [“leet”, “code”]<br>输出: true<br>解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。</p><a id="more"></a><p>示例 2：<br>输入: s = “applepenapple”, wordDict = [“apple”, “pen”]<br>输出: true<br>解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。<br>注意你可以重复使用字典中的单词。</p><p>示例 3：<br>输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出: false</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>动态规划的思路：<br>将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。<br>用公式表示就是：</p><font color="red" size="5"><strong>dp[j]&amp;&amp;s.substring[j,i+1]∈dict</strong></font><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;;</span><br><span class="line">        <span class="keyword">boolean</span> [] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>]；</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+<span class="number">1</span>)))&#123;</span><br><span class="line">                    dp[i+<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="DFS解法，超时"><a href="#DFS解法，超时" class="headerlink" title="DFS解法，超时"></a><strong>DFS解法，超时</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, <span class="keyword">int</span> index)</span></span>&#123; <span class="comment">// 超时</span></span><br><span class="line">        String left = s.substring(index, s.length());</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(left))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; s.length(); i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                list.add(i+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(Integer each:list) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dfs(s, wordDict, each))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(s, wordDict, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;strong&gt;题目描述&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。&lt;br&gt;说明：&lt;br&gt;拆分时可以重复使用字典中的单词。&lt;br&gt;你可以假设字典中没有重复的单词。&lt;br&gt;示例 1：&lt;br&gt;输入: s = “leetcode”, wordDict = [“leet”, “code”]&lt;br&gt;输出: true&lt;br&gt;解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
   </entry>
   
@@ -312,36 +316,6 @@
   </entry>
   
   <entry>
-    <title>偏差、方差、噪声</title>
-    <link href="http://yoursite.com/2018/06/09/%E5%81%8F%E5%B7%AE%E3%80%81%E6%96%B9%E5%B7%AE%E3%80%81%E5%99%AA%E5%A3%B0/"/>
-    <id>http://yoursite.com/2018/06/09/偏差、方差、噪声/</id>
-    <published>2018-06-09T10:32:02.000Z</published>
-    <updated>2018-06-11T05:05:26.783Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p><p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p><h4 id="偏差（Bias）和方差（Variance）"><a href="#偏差（Bias）和方差（Variance）" class="headerlink" title="偏差（Bias）和方差（Variance）"></a><strong>偏差（Bias）和方差（Variance）</strong></h4><p><strong>偏差（Bias）</strong>：描述的是<strong>预测值（估计值）的期望与真实值之间的差距</strong>。<strong>偏差越大，越偏离真实数据</strong>。</p><p><strong>方差（Variance）</strong>：描述的是<strong>预测值的变化范围，离散程度</strong>，也就是离其期望值的距离。<strong>方差越大，数据的分布越分散</strong>。</p><p><img src="http://img2.ph.126.net/r1haOaQD_onwqs9zl_4gqw==/6632693943398259845.png" alt=""></p><a id="more"></a><p><strong>偏差：形容数据跟我们期望的中心差得有多远</strong>，算是“有监督的”，有人的知识参与指标；</p><p><strong>方差：形容数据分散程度</strong>的，算是“无监督的”，客观的指标。</p><p><strong>噪声</strong>：表达了在当前任务上任何学习算法所能达到的期望泛化误差的下界，即<strong>刻画了学习问题本身的难度</strong>.</p><p>偏差一方差分解说明，<strong>泛化性能</strong>是由<strong>学习算法的能力</strong>、<strong>数据的充分性</strong>以及<strong>学习任务本身的难度</strong>所共同决定的.</p><p>给定学习任务，为了取得好的泛化性能，则需使<strong>偏差较小</strong>，即<strong>能够充分拟合数据</strong>，并且使<strong>方差较小</strong>，即<strong>使得数据扰动产生的影响小</strong>.</p><p>一般来说偏差与方差是有冲突的，这称为<strong>偏差—方差窘境</strong>，给定学习任务，假定我们能控制学习算法的<strong>训练程度</strong>（例如<strong>决策树可控制层数</strong>，<strong>神经网络可控制训练轮数</strong>，<strong>集成学习方法可控制基学习器个数</strong>），则在<strong>训练不足时</strong>，<strong>学习器的拟合能力不够强</strong>，训练数据的扰动不足以便学习器产生显著变化，此时<strong>偏差主导了泛化错误率</strong>;<strong>随着训练程度的加深</strong>，<strong>学习器的拟合能力逐渐增强</strong>，训练数据发生的扰动渐渐能被学习器学到，<strong>方差逐渐主导了泛化错误率</strong>;<strong>在训练程度充足后，学习器的拟合能力已非常强，训练数据发生的轻微扰动都会导致学习器发生显著变化，若训练数据自身的、非全局的特性被学习器学到了，则将发生过拟合</strong>.</p><p><img src="http://img0.ph.126.net/Pf_BHxPZBFJ3I9qDD82fFA==/6597626119542477447.png" alt=""></p><p>为什么<strong>KNN</strong>（k最近邻k-Nearest Neighbor）算法在<strong>增大k时，偏差会变大</strong>；但<strong>RF</strong>（Random Forest随机森林）<strong>增大树的数目时偏差却保持不变</strong>；<strong>GBDT</strong>（Gradient Boosting）在<strong>增大树的数目时偏差却又能变小</strong>。</p><p>对于KNN算法，<strong>k值越大，表示模型的学习能力越弱</strong>，因为<strong>k越大，它越倾向于从“面”上考虑做出判断，而不是具体地考虑一个样本近身的情况来做出判断</strong>，所以，它的<strong>偏差会越来越大</strong>。</p><p>对于<strong>RF</strong>，我们实际上是<strong>部分实现了多次训练取均值的效果</strong>，<strong>每次训练得到的树都是一个很强的学习者</strong>，<strong>每一个的方差都比较大，但综合起来就会比较小</strong>。好比一个很强的学习者学习时，刮着西风，它会据此调整自己的瞄准方法，另一个很强的学习者学习时刮着东风，（西风、东风可以理解为不同训练集中的<strong>噪声</strong>）它也会据此调整自己的瞄准方法，在测试样本时，<strong>一个误差向西，一个误差向东，刚好起到互相抵消的作用，所以方差会比较小。但是由于每棵树的偏差都差不多，所以，我们取平均时，偏差不会怎么变化</strong>。</p><p>为什么说是<strong>部分</strong>实现了多次训练取均值的效果而不是全部呢？因为我们在训练各棵树时，是通过<strong>抽样样本集来实现多次训练</strong>的，<strong>不同的训练集中不可避免地会有重合的情况</strong>，此时，就<strong>不能认为是独立的多次训练了，各个训练得到的树之间的方差会产生一定的相关性</strong>，训练集中重合的样本越多，则两棵树之间的方差的相关性越强，就越难达成方差互相抵消的效果。</p><p>对于<strong>GBDT</strong>，<strong>N棵树之间根本就不是一种多次训练取均值的关系，而是N棵树组成了相关关联，层层递进的超级学习者</strong>，可想而知，它的<strong>方差一定是比较大</strong>的。但由于它的<strong>学习能力比较强</strong>，所以，它的<strong>偏差是很小</strong>的，而且树的<strong>棵树越多，学习能力就越强，偏差就越小</strong>。也就是说，只要学习次数够多，预测的均值会无限接近于目标。简单讲就是<strong>GBDT的N棵树实际上是一个有机关联的模型，不能认为是N个模型</strong>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;代价敏感错误率&lt;/strong&gt;：&lt;strong&gt;为不同错误类型赋予不同的权重&lt;/strong&gt;。&lt;strong&gt;不同类型的错误所造成的后果不同&lt;/strong&gt;.例如在&lt;strong&gt;医疗诊断&lt;/strong&gt;中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，&lt;strong&gt;门禁系统&lt;/strong&gt;错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可&lt;strong&gt;为错误赋予”非均等代价”&lt;/strong&gt; 。&lt;/p&gt;
-&lt;p&gt;在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”&lt;strong&gt;代价曲线&lt;/strong&gt;“ 则可达到该目的.代价曲线图的&lt;strong&gt;横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&quot;偏差（Bias）和方差（Variance）&quot;&gt;&lt;a href=&quot;#偏差（Bias）和方差（Variance）&quot; class=&quot;headerlink&quot; title=&quot;偏差（Bias）和方差（Variance）&quot;&gt;&lt;/a&gt;&lt;strong&gt;偏差（Bias）和方差（Variance）&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;偏差（Bias）&lt;/strong&gt;：描述的是&lt;strong&gt;预测值（估计值）的期望与真实值之间的差距&lt;/strong&gt;。&lt;strong&gt;偏差越大，越偏离真实数据&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;方差（Variance）&lt;/strong&gt;：描述的是&lt;strong&gt;预测值的变化范围，离散程度&lt;/strong&gt;，也就是离其期望值的距离。&lt;strong&gt;方差越大，数据的分布越分散&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img2.ph.126.net/r1haOaQD_onwqs9zl_4gqw==/6632693943398259845.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="性能评估" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>查准率precision和查全率recall、F1</title>
     <link href="http://yoursite.com/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/"/>
     <id>http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/</id>
@@ -388,9 +362,35 @@
     
       <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
+      <category term="性能评估" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/"/>
+    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="性能评估" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/"/>
+  </entry>
+  
+  <entry>
+    <title>DP-单词拆分 I</title>
+    <link href="http://yoursite.com/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/"/>
+    <id>http://yoursite.com/2018/06/09/DP-单词拆分 I/</id>
+    <published>2018-06-09T10:32:02.000Z</published>
+    <updated>2018-06-11T05:04:33.326Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。<br>说明：<br>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入: s = “leetcode”, wordDict = [“leet”, “code”]<br>输出: true<br>解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。</p><a id="more"></a><p>示例 2：<br>输入: s = “applepenapple”, wordDict = [“apple”, “pen”]<br>输出: true<br>解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。<br>注意你可以重复使用字典中的单词。</p><p>示例 3：<br>输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出: false</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>动态规划的思路：<br>将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。<br>用公式表示就是：</p><font color="red" size="5"><strong>dp[j]&amp;&amp;s.substring[j,i+1]∈dict</strong></font><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;;</span><br><span class="line">        <span class="keyword">boolean</span> [] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>]；</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+<span class="number">1</span>)))&#123;</span><br><span class="line">                    dp[i+<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="DFS解法，超时"><a href="#DFS解法，超时" class="headerlink" title="DFS解法，超时"></a><strong>DFS解法，超时</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, <span class="keyword">int</span> index)</span></span>&#123; <span class="comment">// 超时</span></span><br><span class="line">        String left = s.substring(index, s.length());</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(left))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; s.length(); i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                list.add(i+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(Integer each:list) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dfs(s, wordDict, each))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(s, wordDict, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;strong&gt;题目描述&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。&lt;br&gt;说明：&lt;br&gt;拆分时可以重复使用字典中的单词。&lt;br&gt;你可以假设字典中没有重复的单词。&lt;br&gt;示例 1：&lt;br&gt;输入: s = “leetcode”, wordDict = [“leet”, “code”]&lt;br&gt;输出: true&lt;br&gt;解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   

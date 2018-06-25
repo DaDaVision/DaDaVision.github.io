@@ -11,11 +11,11 @@
         <title>Pytorch0.4.0升级概述新手教程</title>
         <pubTime>2018-06-20T12:41:27.000Z</pubTime>
         
-        <tag>深度学习</tag>
-         
         <tag>Pytorch</tag>
          
         <tag>Pytorch0.4.0</tag>
+         
+        <tag>深度学习</tag>
          
          
            
@@ -85,13 +85,13 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>PyTorch</tag>
-         
         <tag>深度学习</tag>
          
         <tag>机器学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>PyTorch</tag>
          
          
            
@@ -152,9 +152,9 @@
         
         <tag>机器学习</tag>
          
-        <tag>笔记</tag>
-         
         <tag>性能评估</tag>
+         
+        <tag>笔记</tag>
          
          
            
@@ -242,9 +242,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -266,9 +266,9 @@
         
         <tag>机器学习</tag>
          
-        <tag>笔记</tag>
-         
         <tag>性能评估</tag>
+         
+        <tag>笔记</tag>
          
          
            
@@ -336,11 +336,11 @@
         <title>Mnist手写数字识别</title>
         <pubTime>2018-06-09T10:32:05.000Z</pubTime>
         
+        <tag>Python</tag>
+         
         <tag>深度学习</tag>
          
         <tag>Keras</tag>
-         
-        <tag>Python</tag>
          
          
            
