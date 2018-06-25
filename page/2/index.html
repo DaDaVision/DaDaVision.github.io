@@ -548,7 +548,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/偏差、方差、噪声/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -567,8 +567,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/09/查准率precision和查全率recall、F1/" itemprop="url">
-                  查准率precision和查全率recall、F1
+                <a class="post-title-link" href="/2018/06/09/偏差、方差、噪声/" itemprop="url">
+                  偏差、方差、噪声
                 </a>
               
             
@@ -611,7 +611,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-11 13:04:59" itemprop="dateModified" datetime="2018-06-11T13:04:59+08:00">2018-06-11</time>
+                <time title="修改时间：2018-06-11 13:05:26" itemprop="dateModified" datetime="2018-06-11T13:05:26+08:00">2018-06-11</time>
               
             
           </span>
@@ -663,37 +663,14 @@
 
       
         
-          <p>真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：</p>
-<table>
-<thead>
-<tr>
-<th>真实情况</th>
-<th>预测结果</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>正例</td>
-<td>反例</td>
-<td></td>
-</tr>
-<tr>
-<td>正例</td>
-<td>TP（真正例）</td>
-<td>FN（假反例）</td>
-</tr>
-<tr>
-<td>反例</td>
-<td>FP（假正例）</td>
-<td>TN（真反例）</td>
-</tr>
-</tbody>
-</table>
-<p><img src="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png" alt=""></p>
+          <p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p>
+<p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p>
+<h4 id="偏差（Bias）和方差（Variance）"><a href="#偏差（Bias）和方差（Variance）" class="headerlink" title="偏差（Bias）和方差（Variance）"></a><strong>偏差（Bias）和方差（Variance）</strong></h4><p><strong>偏差（Bias）</strong>：描述的是<strong>预测值（估计值）的期望与真实值之间的差距</strong>。<strong>偏差越大，越偏离真实数据</strong>。</p>
+<p><strong>方差（Variance）</strong>：描述的是<strong>预测值的变化范围，离散程度</strong>，也就是离其期望值的距离。<strong>方差越大，数据的分布越分散</strong>。</p>
+<p><img src="http://img2.ph.126.net/r1haOaQD_onwqs9zl_4gqw==/6632693943398259845.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/09/查准率precision和查全率recall、F1/#more" rel="contents">
+            <a class="btn" href="/2018/06/09/偏差、方差、噪声/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
