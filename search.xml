@@ -48,8 +48,8 @@
         <category>PyTorch</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
         <tag>PyTorch</tag>
+        <tag>深度学习</tag>
         <tag>机器学习</tag>
         <tag>笔记</tag>
       </tags>
@@ -77,19 +77,6 @@
       <tags>
         <tag>机器学习</tag>
         <tag>模型评估</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[DP-单词拆分 I]]></title>
-    <url>%2F2018%2F06%2F09%2FDP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I%2F</url>
-    <content type="text"><![CDATA[题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。说明：拆分时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入: s = “leetcode”, wordDict = [“leet”, “code”]输出: true解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。 示例 2：输入: s = “applepenapple”, wordDict = [“apple”, “pen”]输出: true解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。注意你可以重复使用字典中的单词。 示例 3：输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]输出: false 算法思路动态规划的思路：将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。用公式表示就是： dp[j]&amp;&amp;s.substring[j,i+1]∈dict DP实现123456789101112131415class Solution &#123; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123;; boolean [] dp = new boolean[s.length()+1]； dp[0] = true; for(int i = 0; i &lt; s.length(); i++)&#123; for(int j = 0; j &lt;= i; j++)&#123; if(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+1)))&#123; dp[i+1] = true; break; &#125; &#125; &#125; return dp[s.length()]; &#125;&#125; DFS解法，超时1234567891011121314151617181920212223242526class Solution &#123; boolean dfs(String s, List&lt;String&gt; wordDict, int index)&#123; // 超时 String left = s.substring(index, s.length()); if(wordDict.contains(left))&#123; return true; &#125; List&lt;Integer&gt; list = new ArrayList(); for(int i = index; i &lt; s.length(); i++)&#123; String temp = s.substring(index, i+1); if(wordDict.contains(temp))&#123; list.add(i+1); &#125; &#125; for(Integer each:list) &#123; if(dfs(s, wordDict, each))&#123; return true; &#125; &#125; return false; &#125; boolean flag = false; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123; return dfs(s, wordDict, 0); &#125;&#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -129,6 +116,19 @@
         <tag>机器学习</tag>
         <tag>笔记</tag>
         <tag>性能评估</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DP-单词拆分 I]]></title>
+    <url>%2F2018%2F06%2F09%2FDP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。说明：拆分时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入: s = “leetcode”, wordDict = [“leet”, “code”]输出: true解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。 示例 2：输入: s = “applepenapple”, wordDict = [“apple”, “pen”]输出: true解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。注意你可以重复使用字典中的单词。 示例 3：输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]输出: false 算法思路动态规划的思路：将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。用公式表示就是： dp[j]&amp;&amp;s.substring[j,i+1]∈dict DP实现123456789101112131415class Solution &#123; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123;; boolean [] dp = new boolean[s.length()+1]； dp[0] = true; for(int i = 0; i &lt; s.length(); i++)&#123; for(int j = 0; j &lt;= i; j++)&#123; if(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+1)))&#123; dp[i+1] = true; break; &#125; &#125; &#125; return dp[s.length()]; &#125;&#125; DFS解法，超时1234567891011121314151617181920212223242526class Solution &#123; boolean dfs(String s, List&lt;String&gt; wordDict, int index)&#123; // 超时 String left = s.substring(index, s.length()); if(wordDict.contains(left))&#123; return true; &#125; List&lt;Integer&gt; list = new ArrayList(); for(int i = index; i &lt; s.length(); i++)&#123; String temp = s.substring(index, i+1); if(wordDict.contains(temp))&#123; list.add(i+1); &#125; &#125; for(Integer each:list) &#123; if(dfs(s, wordDict, each))&#123; return true; &#125; &#125; return false; &#125; boolean flag = false; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123; return dfs(s, wordDict, 0); &#125;&#125;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
