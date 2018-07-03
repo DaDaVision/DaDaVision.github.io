@@ -4,8 +4,36 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/07/03/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-07-03T08:02:59.323Z</lastmod>
+    <data>
+        <display>
+        <title>域名解析</title>
+        <pubTime>2018-07-03T07:42:39.000Z</pubTime>
+        
+        <tag>GitHub</tag>
+         
+        <tag>next</tag>
+         
+        <tag>教程</tag>
+         
+        <tag>域名</tag>
+         
+        <tag>域名解析</tag>
+         
+         
+           
+             
+              <breadCrumb title="域名解析" url="http://yoursite.com/categories/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/06/09/Hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-07-03T07:23:27.142Z</lastmod>
+    <lastmod>2018-07-03T07:36:19.817Z</lastmod>
     <data>
         <display>
         <title>Hexo+GitHub搭建个人博客</title>
@@ -114,9 +142,9 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>深度学习</tag>
-         
         <tag>PyTorch</tag>
+         
+        <tag>深度学习</tag>
          
         <tag>机器学习</tag>
          

@@ -133,25 +133,26 @@
 
 
 
-  <meta name="description" content="真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：    真实情况 预测结果      正例 反例    正例 TP（真正例） FN（假反例）   反例 FP（假正例） TN（真反例）">
-<meta name="keywords" content="机器学习,笔记,性能评估">
+  <meta name="description" content="域名解析域名有钱最好买.com的，不要买.cn的，我自己买的.cn的好多坑，.top的相对就比较便宜（low）。 此次在腾讯云买的dadavision.cn。">
+<meta name="keywords" content="GitHub,next,教程,域名,域名解析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="查准率precision和查全率recall、F1">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/index.html">
+<meta property="og:title" content="域名解析">
+<meta property="og:url" content="http://yoursite.com/2018/07/03/域名解析/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：    真实情况 预测结果      正例 反例    正例 TP（真正例） FN（假反例）   反例 FP（假正例） TN（真反例）">
+<meta property="og:description" content="域名解析域名有钱最好买.com的，不要买.cn的，我自己买的.cn的好多坑，.top的相对就比较便宜（low）。 此次在腾讯云买的dadavision.cn。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png">
-<meta property="og:image" content="http://img0.ph.126.net/y0wS5Mk_91uJ6Byf-_1W5Q==/6608245202842946148.png">
-<meta property="og:image" content="http://img0.ph.126.net/yg8YAE8RHL175oCy3vjc3g==/6632743421421514260.png">
-<meta property="og:image" content="http://img0.ph.126.net/jpR5P7LKuB3AzZtvxzj_EA==/6631628516633222094.png">
-<meta property="og:image" content="http://img2.ph.126.net/QSkXIzD2uBJSYNeqVKXbnA==/2291206310525129759.png">
-<meta property="og:image" content="http://img2.ph.126.net/mlX2uGe9BlIO58oi64A-6w==/6632646664398271337.png">
-<meta property="og:updated_time" content="2018-06-11T05:04:59.951Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-7be4ec62010a4321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-5de7c90ec35f4b9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3a445764853e3128.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-6e54ef27bfdb1bfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-19d33afeda8ecd28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3eb1866b15f4f46d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-2c825d1db371b855.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-03T08:02:59.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="查准率precision和查全率recall、F1">
-<meta name="twitter:description" content="真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：    真实情况 预测结果      正例 反例    正例 TP（真正例） FN（假反例）   反例 FP（假正例） TN（真反例）">
-<meta name="twitter:image" content="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png">
+<meta name="twitter:title" content="域名解析">
+<meta name="twitter:description" content="域名解析域名有钱最好买.com的，不要买.cn的，我自己买的.cn的好多坑，.top的相对就比较便宜（low）。 此次在腾讯云买的dadavision.cn。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-7be4ec62010a4321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -160,7 +161,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/03/域名解析/"/>
 
 
 
@@ -170,7 +171,7 @@
   };
 </script>
 
-  <title>查准率precision和查全率recall、F1 | DaDaVision</title>
+  <title>域名解析 | DaDaVision</title>
   
 
 
@@ -382,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/域名解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -399,7 +400,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">查准率precision和查全率recall、F1
+          <h1 class="post-title" itemprop="name headline">域名解析
               
             
           </h1>
@@ -424,24 +425,12 @@
                 
               
 
-              <time title="创建时间：2018-06-09 18:32:02" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:02+08:00">2018-06-09</time>
+              <time title="创建时间：2018-07-03 15:42:39 / 修改时间：16:02:59" itemprop="dateCreated datePublished" datetime="2018-07-03T15:42:39+08:00">2018-07-03</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-11 13:04:59" itemprop="dateModified" datetime="2018-06-11T13:04:59+08:00">2018-06-11</time>
               
             
           </span>
@@ -458,7 +447,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/域名解析/" itemprop="url" rel="index"><span itemprop="name">域名解析</span></a></span>
 
                 
                 
@@ -500,54 +489,22 @@
       
 
       
-        <p>真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：</p>
-<table>
-<thead>
-<tr>
-<th>真实情况</th>
-<th>预测结果</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>正例</td>
-<td>反例</td>
-<td></td>
-</tr>
-<tr>
-<td>正例</td>
-<td>TP（真正例）</td>
-<td>FN（假反例）</td>
-</tr>
-<tr>
-<td>反例</td>
-<td>FP（假正例）</td>
-<td>TN（真反例）</td>
-</tr>
-</tbody>
-</table>
-<p><img src="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png" alt=""></p>
-<a id="more"></a>
-<p>查准率（precision）：<strong>被认定为正例的里面，判断正确的比例</strong>。</p>
-<p>查全率（recall）：<strong>真实正例里，被判断出为正例的比例</strong>。</p>
-<p>查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;而查全率高时，查准率往往偏低,可以通过P-R曲线来取两者的平衡值</p>
-<p><img src="http://img0.ph.126.net/y0wS5Mk_91uJ6Byf-_1W5Q==/6608245202842946148.png" alt=""></p>
-<p>若一个学习器P-R曲线被另一个学习器的曲线完全”<strong>包住</strong>“,则可断言<strong>后者的性能优于前者</strong>， 例如图中学习器A 的性能优于学习器C; 如果两个学习器的P-R 曲线发生了交叉7,例如图中的A 与B ，则难以一般性地断言两者孰优孰劣，只能在具体的查准率或查全率条件下进行比较然而，在很多情形下，人们往往仍希望把学习器A 与B 比出个高低. 这时一个比较合理的判据是比较<strong>P-R 曲线节面积</strong>的大小。</p>
-<p>“<strong>平衡点</strong>“是”<strong>查准率=查全率</strong>“时的取值。</p>
-<p>但更常用的使用<strong>F1</strong>来衡量查准率与查全率；</p>
-<p>F1基于查准率与查全率的<strong>调和平均：</strong><img src="http://img0.ph.126.net/yg8YAE8RHL175oCy3vjc3g==/6632743421421514260.png" alt=""></p>
-<p><img src="http://img0.ph.126.net/jpR5P7LKuB3AzZtvxzj_EA==/6631628516633222094.png" alt="">，sum为样例总数，</p>
-<p>具体应用中可能对P和R有不同的倚重。比如<strong>商品推荐</strong>中，为了尽可能少打扰用户，更希望推荐内容确是用户感兴趣的，这时候<strong>查准率更重要</strong>。而在<strong>逃犯检索系统</strong>中，更希望尽可能少漏掉逃犯，此时<strong>查全率更重要</strong>。</p>
-<p>F1度量的一般形式<strong>F**</strong>β<strong>（</strong>加权调和平均**）就可以表达这种偏好。 </p>
-<p><img src="http://img2.ph.126.net/QSkXIzD2uBJSYNeqVKXbnA==/2291206310525129759.png" alt="">即  <img src="http://img2.ph.126.net/mlX2uGe9BlIO58oi64A-6w==/6632646664398271337.png" alt=""></p>
-<p><strong>ß = 1时退化为标准的F1,当β&gt;1意味着P占比重更大</strong>，<strong>反之则是R</strong>。</p>
-<h5 id="ROC、AUC"><a href="#ROC、AUC" class="headerlink" title="ROC、AUC"></a><strong>ROC、AUC</strong></h5><p><strong>ROC</strong>:全称“<strong>受试者工作特征</strong>”，<strong>表达了模型的泛化能力</strong>。其纵坐标为“<strong>TPR真正例率</strong>”；横坐标为“<strong>FPR假正例率</strong>”。</p>
-<p><strong>ROC曲线根据模型的排序结果，一个个划分正负</strong>，每次得出两个值TPR,FPR。很多学习器是为测试样本产生一个<strong>实值</strong>或<strong>概率预测</strong>，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。为啥在ROC曲线画一个y=x呢，那表示<strong>随机猜测的ROC</strong>。</p>
-<p><strong>AUC:ROC曲线下的面积</strong>.AUC=1,是完美分类器(并不存在)；0.5。<strong>AUC 越大，意味着辨别能力越强</strong>。</p>
-<p>与P-R图相似，如果一条ROC曲线<strong>包含另一条</strong>ROC曲线，则<strong>前者的学习器性能更优越</strong>。如果<strong>曲线有交叉</strong>，则可以通过<strong>计算AUC</strong>大小得到。</p>
-<h5 id="代价敏感错误率、代价曲线"><a href="#代价敏感错误率、代价曲线" class="headerlink" title="代价敏感错误率、代价曲线"></a><strong>代价敏感错误率、代价曲线</strong></h5><p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p>
-<p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p>
+        <h1 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h1><p>域名有钱最好买.com的，不要买.cn的，我自己买的.cn的好多坑，.top的相对就比较便宜（low）。</p>
+<p>此次在腾讯云买的dadavision.cn。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-7be4ec62010a4321.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><a id="more"></a></p>
+<p>之前.cn的一直要我备案，否则DNS解析不了，而且还证书审核失败。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-5de7c90ec35f4b9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-3a445764853e3128.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在github项目的setting里面设置域名</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-6e54ef27bfdb1bfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>添加域名解析</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-19d33afeda8ecd28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这里注意</p>
+<p>在添加绑定域名后需要注意以下问题（未绑定可以不用）</p>
+<p>需要将github上CNAME里面内容在文件工程中GitBlog\source\CNAME</p>
+<p>这里注意新建的CNAME不要有后缀名。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-3eb1866b15f4f46d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-2c825d1db371b855.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
     </div>
@@ -577,11 +534,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
+            <a href="/tags/GitHub/" <i class="fa fa-tag"></i> GitHub</a>
           
-            <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+            <a href="/tags/next/" <i class="fa fa-tag"></i> next</a>
           
-            <a href="/tags/性能评估/" <i class="fa fa-tag"></i> 性能评估</a>
+            <a href="/tags/教程/" <i class="fa fa-tag"></i> 教程</a>
+          
+            <a href="/tags/域名/" <i class="fa fa-tag"></i> 域名</a>
+          
+            <a href="/tags/域名解析/" <i class="fa fa-tag"></i> 域名解析</a>
           
         </div>
       
@@ -594,8 +555,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/分糖果/" rel="next" title="分糖果">
-                <i class="fa fa-chevron-left"></i> 分糖果
+              <a href="/2018/06/20/Pytorch0-4-0升级概述新手教程/" rel="next" title="Pytorch0.4.0升级概述新手教程">
+                <i class="fa fa-chevron-left"></i> Pytorch0.4.0升级概述新手教程
               </a>
             
           </div>
@@ -603,10 +564,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/09/DP-单词拆分 I/" rel="prev" title="DP-单词拆分 I">
-                DP-单词拆分 I <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -884,7 +841,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#ROC、AUC"><span class="nav-number">1.</span> <span class="nav-text">ROC、AUC</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代价敏感错误率、代价曲线"><span class="nav-number">2.</span> <span class="nav-text">代价敏感错误率、代价曲线</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#域名解析"><span class="nav-number">1.</span> <span class="nav-text">域名解析</span></a></li></ol></div>
             
 
           </div>
