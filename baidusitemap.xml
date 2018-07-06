@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/07/06/%E7%90%86%E8%A7%A3%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/</loc>
-    <lastmod>2018-07-06T03:15:09.357Z</lastmod>
+    <lastmod>2018-07-06T03:20:21.591Z</lastmod>
     <data>
         <display>
         <title>理解朴素贝叶斯</title>
@@ -166,9 +166,9 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>PyTorch</tag>
-         
         <tag>深度学习</tag>
+         
+        <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
          
