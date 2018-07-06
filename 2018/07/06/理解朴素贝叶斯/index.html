@@ -133,13 +133,13 @@
 
 
 
-  <meta name="description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
+  <meta name="description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率。 一个判断西瓜是否成熟的常识，就是看瓜蒂">
 <meta name="keywords" content="机器学习,朴素贝叶斯,西瓜书">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解朴素贝叶斯">
 <meta property="og:url" content="http://yoursite.com/2018/07/06/理解朴素贝叶斯/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
+<meta property="og:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率。 一个判断西瓜是否成熟的常识，就是看瓜蒂">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-8e483547745003f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -149,10 +149,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-44bce97a4ade7d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-57b7db79a57f0c09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-8b395ed221dac1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-06T03:20:21.591Z">
+<meta property="og:updated_time" content="2018-07-06T03:23:41.156Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解朴素贝叶斯">
-<meta name="twitter:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
+<meta name="twitter:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率。 一个判断西瓜是否成熟的常识，就是看瓜蒂">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -426,7 +426,7 @@
                 
               
 
-              <time title="创建时间：2018-07-06 11:08:42 / 修改时间：11:20:21" itemprop="dateCreated datePublished" datetime="2018-07-06T11:08:42+08:00">2018-07-06</time>
+              <time title="创建时间：2018-07-06 11:08:42 / 修改时间：11:23:41" itemprop="dateCreated datePublished" datetime="2018-07-06T11:08:42+08:00">2018-07-06</time>
             
 
             
@@ -491,11 +491,11 @@
 
       
         <h1 id="理解朴素贝叶斯"><a href="#理解朴素贝叶斯" class="headerlink" title="理解朴素贝叶斯"></a>理解朴素贝叶斯</h1><h4 id="（1）先验概率、后验概率、联合概率、全概率"><a href="#（1）先验概率、后验概率、联合概率、全概率" class="headerlink" title="（1）先验概率、后验概率、联合概率、全概率"></a>（1）<strong>先验概率、后验概率、联合概率、全概率</strong></h4><p>如果我对这个西瓜<strong>没有任何了解</strong>，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为<strong>先验概率</strong>。</p>
-<p>即，<strong>先验概率</strong>是<strong>根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。</strong>就像<strong>只**</strong>根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。</p>
+<p>即，<strong>先验概率</strong>是<strong>根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。</strong>就像<strong>只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率</strong>。</p>
 <p>一个判断西瓜是否成熟的常识，就是看瓜蒂是否脱落。一般来说，瓜蒂脱落的情况下，西瓜成熟的概率大一些，大概是 75%。如果<strong>把瓜蒂脱落当作一种结果，然后去推测西瓜成熟的概率</strong>，这个概率 P(瓜熟 | 瓜蒂脱落) 就被称为<strong>后验概率</strong>。后验概率类似于<strong>条件概率</strong>。</p>
 <p>知道了先验概率和后验概率，我们再来看看什么是联合概率。<strong>P(瓜熟，瓜蒂脱落)</strong> 称之为<strong>联合分布</strong>，它表示<strong>瓜熟了且瓜蒂脱落的概率</strong>。关于联合概率，满足下列乘法等式：</p>
 <a id="more"></a>
-<p><strong>P(瓜熟，瓜蒂脱落)</strong> <strong>=</strong> <strong>P(瓜熟**</strong>|<strong><strong>瓜蒂脱落)</strong></strong>·<strong><strong>P(瓜蒂脱落)</strong></strong>=<strong><strong>P(瓜蒂脱落</strong></strong>|<strong><strong>瓜熟)</strong></strong>·<strong>**P(瓜熟)</strong></p>
+<p><strong>P(瓜熟，瓜蒂脱落)</strong> <strong>=</strong> <strong>P(瓜熟**</strong>|<strong>瓜蒂脱落)**</strong>·<strong>P(瓜蒂脱落)</strong>=<strong>P(瓜蒂脱落</strong>|<strong>瓜熟)</strong>·<strong>P(瓜熟)</strong></p>
 <p>其中，P(瓜熟 | 瓜蒂脱落) 就是刚刚介绍的后验概率，表示在“瓜蒂脱落”的条件下，“瓜熟”的概率。P(瓜蒂脱落 | 瓜熟) 表示在“瓜熟”的情况下，“瓜蒂脱落”的概率。</p>
 <p>如何计算瓜蒂脱落的概率呢？实际上可以分成两种情况：一种是<strong>瓜熟状态下瓜蒂脱落的概率</strong>，<strong>另一种是瓜生状态下瓜蒂脱落的概率</strong>。瓜蒂脱落的概率就是这两种情况之和。因此，我们就推导出了<strong>全概率公式</strong>：</p>
 <p><strong>P(瓜蒂脱落)=P(瓜蒂脱落|瓜熟)·P(瓜熟)+P(瓜蒂脱落|瓜生)·P(瓜生)</strong></p>
