@@ -133,18 +133,27 @@
 
 
 
-  <meta name="description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
-<meta name="keywords" content="算法,回溯,Java">
+  <meta name="description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
+<meta name="keywords" content="机器学习,朴素贝叶斯,西瓜书">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最长公共子串-最长公共子序列">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/index.html">
+<meta property="og:title" content="理解朴素贝叶斯">
+<meta property="og:url" content="http://yoursite.com/2018/07/06/理解朴素贝叶斯/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
+<meta property="og:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-11T05:05:32.795Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-8e483547745003f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsC475.tmp.png">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsC476.tmp.png">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsC477.tmp.png">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsC478.tmp.png">
+<meta property="og:image" content="file:///C:/Users/ADMINI~1/AppData/Local/Temp/ksohtml/wpsC479.tmp.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-8b395ed221dac1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-07-06T03:15:09.357Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最长公共子串-最长公共子序列">
-<meta name="twitter:description" content="最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &amp;#123;	int result = 0;	int index = 0;	int len1 = str1.length();	int len2 = str2.length(">
+<meta name="twitter:title" content="理解朴素贝叶斯">
+<meta name="twitter:description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只**根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。 一个判断西瓜是否成熟的常识，就">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -153,7 +162,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/06/理解朴素贝叶斯/"/>
 
 
 
@@ -163,7 +172,7 @@
   };
 </script>
 
-  <title>最长公共子串-最长公共子序列 | DaDaVision</title>
+  <title>理解朴素贝叶斯 | DaDaVision</title>
   
 
 
@@ -375,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/最长公共子串-最长公共子序列/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/理解朴素贝叶斯/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -392,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最长公共子串-最长公共子序列
+          <h1 class="post-title" itemprop="name headline">理解朴素贝叶斯
               
             
           </h1>
@@ -417,24 +426,12 @@
                 
               
 
-              <time title="创建时间：2018-06-09 18:32:02" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:02+08:00">2018-06-09</time>
+              <time title="创建时间：2018-07-06 11:08:42 / 修改时间：11:15:09" itemprop="dateCreated datePublished" datetime="2018-07-06T11:08:42+08:00">2018-07-06</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-11 13:05:32" itemprop="dateModified" datetime="2018-06-11T13:05:32+08:00">2018-06-11</time>
               
             
           </span>
@@ -451,7 +448,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试题/" itemprop="url" rel="index"><span itemprop="name">面试题</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
                 
                 
@@ -493,10 +490,58 @@
       
 
       
-        <h3 id="最长公共子串"><a href="#最长公共子串" class="headerlink" title="最长公共子串"></a><strong>最长公共子串</strong></h3><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubStr</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> len1 = str1.length();</span><br><span class="line">	<span class="keyword">int</span> len2 = str2.length();</span><br><span class="line">	<span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span> [len1][len2];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len2; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">				<span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span>;	<span class="comment">// 状态转移</span></span><br><span class="line">					<span class="keyword">if</span>(dp[i][j] &gt; result) &#123;</span><br><span class="line">						result = dp[i][j];</span><br><span class="line">						index = i;	<span class="comment">// 记录最大子串的最后一个下标</span></span><br><span class="line">					&#125;</span><br><span class="line">				<span class="comment">//	result = result &gt; dp[i][j] ? result : dp[i][j];	</span></span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					dp[i][j] = <span class="number">1</span>;</span><br><span class="line">					result = result &gt; dp[i][j] ? result : dp[i][j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(result);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = index - result + <span class="number">1</span>; i &lt;= index; i++) &#123;</span><br><span class="line">		System.out.print(str1.charAt(i) + <span class="string">" "</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="最长公共子序列"><a href="#最长公共子序列" class="headerlink" title="最长公共子序列"></a><strong>最长公共子序列</strong></h3><p>####动态规划<br>假设Z=&lt;z1,z2,⋯,zk&gt;是X与Y的LCS， 我们观察到<br>如果Xm=Yn，则Zk=Xm=Yn，有Zk−1是Xm−1与Yn−1的LCS；<br>如果Xm≠Yn，则Zk是Xm与Yn−1的LCS，或者是Xm−1与Yn的LCS。<br>因此，求解LCS的问题则变成递归求解的两个子问题。但是，上述的递归求解的办法中，重复的子问题多，效率低下。改进的办法——用空间换时间，用数组保存中间状态，方便后面的计算。这就是动态规划（DP)的核心思想了。<br>DP求解LCS<br>用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程</p>
-<h3 id="DP实现-1"><a href="#DP实现-1" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxSubSequence</span><span class="params">(String str1, String str2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len1 = str1.length();</span><br><span class="line">	<span class="keyword">int</span> len2 = str2.length();</span><br><span class="line">	<span class="keyword">int</span> [][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[len1][len2];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; ++i) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len2; ++j) &#123;</span><br><span class="line">			<span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; j &gt; <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					dp[i][j] = dp[i-<span class="number">1</span>][j] &gt; dp[i][j-<span class="number">1</span>] ? dp[i-<span class="number">1</span>][j] : dp[i][j-<span class="number">1</span>];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(str1.charAt(i) == str2.charAt(j)) &#123;</span><br><span class="line">				dp[i][j] = <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(dp[len1 - <span class="number">1</span>][len2 - <span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">return</span> dp[len1-<span class="number">1</span>][len2-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="理解朴素贝叶斯"><a href="#理解朴素贝叶斯" class="headerlink" title="理解朴素贝叶斯"></a>理解朴素贝叶斯</h1><h4 id="（1）先验概率、后验概率、联合概率、全概率"><a href="#（1）先验概率、后验概率、联合概率、全概率" class="headerlink" title="（1）先验概率、后验概率、联合概率、全概率"></a>（1）<strong>先验概率、后验概率、联合概率、全概率</strong></h4><p>如果我对这个西瓜<strong>没有任何了解</strong>，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为<strong>先验概率</strong>。</p>
+<p>即，<strong>先验概率</strong>是<strong>根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。</strong>就像<strong>只**</strong>根据常识而不根据西瓜状态来判断西瓜是否熟**，这就是先验概率。</p>
+<p>一个判断西瓜是否成熟的常识，就是看瓜蒂是否脱落。一般来说，瓜蒂脱落的情况下，西瓜成熟的概率大一些，大概是 75%。如果<strong>把瓜蒂脱落当作一种结果，然后去推测西瓜成熟的概率</strong>，这个概率 P(瓜熟 | 瓜蒂脱落) 就被称为<strong>后验概率</strong>。后验概率类似于<strong>条件概率</strong>。</p>
+<p>知道了先验概率和后验概率，我们再来看看什么是联合概率。<strong>P(瓜熟，瓜蒂脱落)</strong> 称之为<strong>联合分布</strong>，它表示<strong>瓜熟了且瓜蒂脱落的概率</strong>。关于联合概率，满足下列乘法等式：</p>
+<p><strong>P(瓜熟，瓜蒂脱落)</strong> <strong>=</strong> <strong>P(瓜熟**</strong>|<strong><strong>瓜蒂脱落)</strong></strong>·<strong><strong>P(瓜蒂脱落)</strong></strong>=<strong><strong>P(瓜蒂脱落</strong></strong>|<strong><strong>瓜熟)</strong></strong>·<strong>**P(瓜熟)</strong></p>
+<p>其中，P(瓜熟 | 瓜蒂脱落) 就是刚刚介绍的后验概率，表示在“瓜蒂脱落”的条件下，“瓜熟”的概率。P(瓜蒂脱落 | 瓜熟) 表示在“瓜熟”的情况下，“瓜蒂脱落”的概率。</p>
+<p>如何计算瓜蒂脱落的概率呢？实际上可以分成两种情况：一种是<strong>瓜熟状态下瓜蒂脱落的概率</strong>，<strong>另一种是瓜生状态下瓜蒂脱落的概率</strong>。瓜蒂脱落的概率就是这两种情况之和。因此，我们就推导出了<strong>全概率公式</strong>：</p>
+<p><strong>P(瓜蒂脱落)=P(瓜蒂脱落|瓜熟)·P(瓜熟)+P(瓜蒂脱落|瓜生)·P(瓜生)</strong></p>
+<h4 id="（2）单个特征判断瓜熟"><a href="#（2）单个特征判断瓜熟" class="headerlink" title="（2）单个特征判断瓜熟"></a><strong>（2）单个特征判断瓜熟</strong></h4><p>好了，介绍完先验概率、后验概率、联合概率、全概率后，我们来看这样一个问题：西瓜的状态分成两种：瓜熟与瓜生，概率分别为 0.6 与 0.4，且瓜熟里面瓜蒂脱落的概率是 0.8，瓜生里面瓜蒂脱落的概率是 0.4。那么，如果我现在挑到了一个瓜蒂脱落的瓜，则该瓜是好瓜的概率多大？</p>
+<p>显然，这是一个计算后验概率的问题，根据我们上面推导的联合概率和全概率公式，可以求出：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>一项一项来看：</p>
+<p>条件概率 P(瓜蒂脱落 | 瓜熟) = 0.8</p>
+<p>先验概率 P(瓜熟) = 0.6</p>
+<p>条件概率 P(瓜蒂脱落 | 瓜生) = 0.4</p>
+<p>先验概率 P(瓜生) = 0.4</p>
+<p>将以上数值带入上式，得：<img src="https://upload-images.jianshu.io/upload_images/12654931-8e483547745003f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p>
+<p>注意，以上这种计算后验概率的公式就是利用贝叶斯定理。</p>
+<h4 id="（3）多个特征判断瓜熟"><a href="#（3）多个特征判断瓜熟" class="headerlink" title="（3）多个特征判断瓜熟"></a><strong>（3）多个特征判断瓜熟</strong></h4><p>判断一个瓜是否熟了，除了要看瓜蒂是否脱落，还要看瓜的形状和颜色。形状有圆和尖之分，颜色有深绿、浅绿、青色之分。我们可以使用刚刚引入的贝叶斯定理思想来尝试解决这个问题。</p>
+<p>现在，特征由原来的 1 个，变成现在的 3 个，我们用 X 表示特征，用 Y 表示瓜的类型（瓜熟还是瓜生）。则根据贝叶斯定理，后验概率 P(Y=ck | X=x) 的表达式为：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsC475.tmp.png" alt="img"></p>
+<p>其中，ck 表示类别，k 为类别个数。本例中，k = 1，2，c1 表示瓜熟，c2 表示瓜生。上面的公式看似有点复杂，但其实与上一节单特征（瓜蒂是否脱落）的形式是一致的。</p>
+<p>有一点需要注意，这里的特征 X 不再是单一的，而是包含了 3 个特征。因此，<strong>条件概率 P(X=x | Y=ck) 假设各个条件相互独立</strong>，也就是说<strong>假设不同特征之间是相互独立的</strong>。这样，P(X=x | Y=ck) 就可以写成：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsC476.tmp.png" alt="img"></p>
+<p>其中，n 为特征个数，j 表示当前所属特征。针对这个例子，P(X=x | Y=ck) 可以写成：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsC477.tmp.png" alt="img"></p>
+<p>这种<strong>条件独立性的假设</strong>就是朴素贝叶斯法“<strong>朴素</strong>”二字的由来。<strong>这一假设让朴素贝叶斯法变得简单，但是有时候会牺牲一定的分类准确率</strong>。</p>
+<p>​    利用朴素贝叶斯思想，我们就可以把后验概率写成：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsC478.tmp.png" alt="img">    上面的公式看上去比较复杂，其实只是<strong>样本特征增加</strong>了，形式上与上一节 P(瓜熟 | 瓜蒂脱落) 是一致的。</p>
+<p>现在，一个西瓜，观察了它的瓜蒂、形状、颜色三个特征，就能根据上面的朴素贝叶斯公式，分别计算 c1（瓜熟）和 c2（瓜生）的概率，即 P(Y=c1 | X=x) 和 P(Y=c2 | X=x)。然后再比较 P(Y=c1 | X=x) 和 P(Y=c2 | X=x) 值的大小：</p>
+<p>若 P(Y=c1 | X=x) &gt; P(Y=c2 | X=x)，则判断瓜熟；</p>
+<p>若 P(Y=c1 | X=x) &lt; P(Y=c2 | X=x)，则判断瓜生。</p>
+<p>值得注意的是上式中的分母部分，对于所有的 ck 来说，都是一样的。因此，分母可以省略，不同的 ck，仅比较 P(Y=ck | X=x) 的分子即可：</p>
+<p><img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\ksohtml\wpsC479.tmp.png" alt="img"></p>
+<h4 id="（2）朴素贝叶斯分类"><a href="#（2）朴素贝叶斯分类" class="headerlink" title="（2）朴素贝叶斯分类"></a>（2）<strong>朴素贝叶斯分类</strong></h4><p>买瓜之前，还有一件事情要做，就是搜集样本数据。通过网上资料和查阅，获得了一组包含 10 组样本的数据。这组数据是不同瓜蒂、形状、颜色对应的西瓜是生是熟。我把这组数据当成是历史经验数据，以它为标准。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-8b395ed221dac1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"> </p>
+<p>其中，瓜蒂分为脱落和未脱，形状分为圆形和尖形，颜色分为深绿、浅绿、青色。不同特征组合对应着瓜熟或者瓜生。</p>
+<p>现在，挑了一个西瓜，它的瓜蒂脱落、形状圆形、颜色青色。这时候，就完全可以根据<strong>样本数据</strong>和<strong>朴素贝叶斯法</strong>来计算后验概率。</p>
+<p>首先，对于瓜熟的情况：</p>
+<p>瓜熟的先验概率： P(瓜熟) = 6 / 10 = 0.6。</p>
+<p>条件概率： P(脱落 | 瓜熟) = 4 / 6 = 2 / 3。</p>
+<p>条件概率： P(圆形 | 瓜熟) = 4 / 6 = 2 / 3。</p>
+<p>条件概率： P(青色 | 瓜熟) = 2 / 6 = 1 / 3。</p>
+<p>计算<strong>后验概率分子部分</strong>：P(瓜熟) × P(脱落 | 瓜熟) × P(圆形 | 瓜熟) × P(青色 | 瓜熟) = 0.6 × (2 / 3) × (2 / 3) × (1 / 3) = 4 / 45。</p>
+<p>然后，对于瓜生的情况：</p>
+<p>瓜生的先验概率： P(瓜生) = 4 / 10 = 0.4。</p>
+<p>条件概率： P(脱落 | 瓜生) = 1 / 4 = 0.25。</p>
+<p>条件概率： P(圆形 | 瓜生) = 1 / 4 = 0.25。</p>
+<p>条件概率： P(青色 | 瓜生) = 1 / 4 = 0.25。</p>
+<p>计算<strong>后验概率分子部分</strong>：P(瓜生) × P(脱落 | 瓜生) × P(圆形 | 瓜生) × P(青色 | 瓜生) = 0.4 × 0.25 × 0.25 × 0.25 = 1 / 160。</p>
+<p>因为 4 / 45 &gt; 1 / 160，所以预测为瓜熟。终于计算完了，很肯定这个西瓜瓜蒂脱落、形状圆形、颜色青色，应该是熟瓜。</p>
+
       
     </div>
 
@@ -525,11 +570,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" <i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
           
-            <a href="/tags/回溯/" <i class="fa fa-tag"></i> 回溯</a>
+            <a href="/tags/朴素贝叶斯/" <i class="fa fa-tag"></i> 朴素贝叶斯</a>
           
-            <a href="/tags/Java/" <i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/西瓜书/" <i class="fa fa-tag"></i> 西瓜书</a>
           
         </div>
       
@@ -542,8 +587,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/DP-单词拆分 I/" rel="next" title="DP-单词拆分 I">
-                <i class="fa fa-chevron-left"></i> DP-单词拆分 I
+              <a href="/2018/07/03/域名解析/" rel="next" title="域名解析">
+                <i class="fa fa-chevron-left"></i> 域名解析
               </a>
             
           </div>
@@ -551,10 +596,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/09/查准率precision和查全率recall、F1/" rel="prev" title="查准率precision和查全率recall、F1">
-                查准率precision和查全率recall、F1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -836,7 +877,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最长公共子串"><span class="nav-number">1.</span> <span class="nav-text">最长公共子串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP实现"><span class="nav-number">2.</span> <span class="nav-text">DP实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长公共子序列"><span class="nav-number">3.</span> <span class="nav-text">最长公共子序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP实现-1"><span class="nav-number">4.</span> <span class="nav-text">DP实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理解朴素贝叶斯"><span class="nav-number">1.</span> <span class="nav-text">理解朴素贝叶斯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）先验概率、后验概率、联合概率、全概率"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">（1）先验概率、后验概率、联合概率、全概率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）单个特征判断瓜熟"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">（2）单个特征判断瓜熟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）多个特征判断瓜熟"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">（3）多个特征判断瓜熟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）朴素贝叶斯分类"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">（2）朴素贝叶斯分类</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
