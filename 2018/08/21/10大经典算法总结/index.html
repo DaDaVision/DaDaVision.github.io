@@ -145,7 +145,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fc56705ae801148b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-b05dac2a52600907.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-ee6aeca39cd369d7.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2018-08-21T07:51:11.729Z">
+<meta property="og:updated_time" content="2018-08-21T08:01:58.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10大经典算法总结">
 <meta name="twitter:description" content="0、算法概述0.1 算法分类①：十种常见排序算法可以分为两大类：  非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。 线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。">
@@ -422,7 +422,7 @@
                 
               
 
-              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：15:51:11" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
+              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：16:01:58" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
             
 
             
@@ -512,7 +512,7 @@
 <li>重复步骤1~3，直到排序完成。</li>
 </ul>
 <p><strong>1.2 动图演示</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-b05dac2a52600907.gif?imageMogr2/auto-orient/strip" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/12654931-ee6aeca39cd369d7.gif?imageMogr2/auto-orient/strip" alt=""></p>
-<h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">bubbleSort</span><span class="params">(arr)</span> </span>&#123;</span><br><span class="line">    var len = arr.length;</span><br><span class="line">    <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (var j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">// 相邻元素两两对比</span></span><br><span class="line">                var temp = arr[j+<span class="number">1</span>];        <span class="comment">// 元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分类 -------------- 内部比较排序</span></span><br><span class="line"><span class="comment">// 数据结构 ---------- 数组</span></span><br><span class="line"><span class="comment">// 最差时间复杂度 ---- O(n^2)</span></span><br><span class="line"><span class="comment">// 最优时间复杂度 ---- 如果能在内部循环第一次运行时,使用一个旗标来表示有无需要交换的可能,可以把最优时间复杂度降低到O(n)</span></span><br><span class="line"><span class="comment">// 平均时间复杂度 ---- O(n^2)</span></span><br><span class="line"><span class="comment">// 所需辅助空间 ------ O(1)</span></span><br><span class="line"><span class="comment">// 稳定性 ------------ 稳定</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(RecordType arr[])</span> </span>&#123;</span><br><span class="line">    var len = arr.length;</span><br><span class="line">		change = TRUE;</span><br><span class="line">    <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; len - <span class="number">1</span> &amp;&amp; change; i++) &#123;</span><br><span class="line">			change = FALSE;</span><br><span class="line">        <span class="keyword">for</span> (var j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;<span class="comment">// 依次比较相邻的两个元素,使较大的那个向后移</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j].key &gt; arr[j+<span class="number">1</span>].key) &#123; <span class="comment">// 相邻元素两两对比。  如果条件改成arr[j].key &gt;= arr[j+1].key,则变为不稳定的排序算法</span></span><br><span class="line">                var temp = arr[j+<span class="number">1</span>];        <span class="comment">// 元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">								change = TRUE;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"><a href="#1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）" class="headerlink" title="1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"></a>1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）</h3><p>鸡尾酒排序，也叫<strong>定向冒泡排序</strong>，是冒泡排序的一种改进。此算法与冒泡排序的不同处在于<strong>从低到高然后从高到低</strong>，而冒泡排序则仅从低到高去比较序列里的每个元素。他可以得到比冒泡排序稍微好一点的效能。</p>
 <p>　　鸡尾酒排序的代码如下：</p>
 
@@ -921,7 +921,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.3k字</span>
+  <span class="post-count">博客全站共18.4k字</span>
 </div>
         
 <div class="busuanzi-count">
