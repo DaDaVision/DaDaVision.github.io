@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/21/10%E5%A4%A7%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-08-21T09:22:19.373Z</lastmod>
+    <lastmod>2018-08-21T09:30:30.780Z</lastmod>
     <data>
         <display>
         <title>10大经典算法总结</title>
@@ -140,11 +140,11 @@
         <title>Pytorch0.4.0升级概述新手教程</title>
         <pubTime>2018-06-20T12:41:27.000Z</pubTime>
         
+        <tag>深度学习</tag>
+         
         <tag>Pytorch</tag>
          
         <tag>Pytorch0.4.0</tag>
-         
-        <tag>深度学习</tag>
          
          
            
@@ -214,9 +214,9 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>深度学习</tag>
-         
         <tag>PyTorch</tag>
+         
+        <tag>深度学习</tag>
          
         <tag>机器学习</tag>
          
@@ -371,9 +371,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -417,9 +417,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -441,9 +441,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -465,11 +465,11 @@
         <title>Mnist手写数字识别</title>
         <pubTime>2018-06-09T10:32:05.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>深度学习</tag>
          
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            
