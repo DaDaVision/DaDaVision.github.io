@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/21/10%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-08-21T12:21:16.865Z</lastmod>
+    <lastmod>2018-08-21T12:23:06.293Z</lastmod>
     <data>
         <display>
         <title>10大经典排序算法总结</title>
@@ -214,9 +214,9 @@
         <title>PyTorch0.4.0重大更新</title>
         <pubTime>2018-06-11T10:32:02.000Z</pubTime>
         
-        <tag>PyTorch</tag>
-         
         <tag>深度学习</tag>
+         
+        <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
          
@@ -371,9 +371,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -417,9 +417,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>动态规划</tag>
+         
+        <tag>算法</tag>
          
         <tag>LeetCode</tag>
          
@@ -441,9 +441,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>算法</tag>
-         
         <tag>动态规划</tag>
+         
+        <tag>算法</tag>
          
         <tag>LeetCode</tag>
          
@@ -467,9 +467,9 @@
         
         <tag>深度学习</tag>
          
-        <tag>Python</tag>
-         
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            
