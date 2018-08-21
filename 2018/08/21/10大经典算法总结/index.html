@@ -145,7 +145,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fc56705ae801148b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-b05dac2a52600907.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-ee6aeca39cd369d7.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2018-08-21T08:01:58.593Z">
+<meta property="og:updated_time" content="2018-08-21T08:32:36.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10大经典算法总结">
 <meta name="twitter:description" content="0、算法概述0.1 算法分类①：十种常见排序算法可以分为两大类：  非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。 线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。">
@@ -422,7 +422,7 @@
                 
               
 
-              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：16:01:58" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
+              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：16:32:36" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
             
 
             
@@ -497,10 +497,28 @@
 <p>　　　　另一种是<strong>非比较排序</strong>，时间复杂度可以达到O(n)，主要有：<strong>计数排序</strong>，<strong>基数排序</strong>，<strong>桶排序</strong>等。</p>
 <h4 id="0-2-算法复杂度"><a href="#0-2-算法复杂度" class="headerlink" title="0.2 算法复杂度"></a>0.2 算法复杂度</h4><p><img src="https://upload-images.jianshu.io/upload_images/12654931-fc56705ae801148b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h4 id="0-3-相关概念"><a href="#0-3-相关概念" class="headerlink" title="0.3 相关概念"></a>0.3 相关概念</h4><blockquote>
-<p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。</p>
+<p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。通俗地讲就是保证排序前后两个相等的数的相对顺序不变。</p>
 <p><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。</p>
 <p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。</p>
 <p><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。</p>
+</blockquote>
+<p>​    </p>
+<p>​    对于不稳定的排序算法，只要举出一个实例，即可说明它的不稳定性；而对于稳定的排序算法，必须对算法进行分析从而得到稳定的特性。需要注意的是，排序算法是否为稳定的是由具体算法决定的，不稳定的算法在某种条件下可以变为稳定的算法，而稳定的算法在某种条件下也可以变为不稳定的算法。</p>
+<p>　　例如，对于冒泡排序，原本是稳定的排序算法，如果将记录交换的条件改成A[i] &gt;= A[i + 1]，则两个相等的记录就会交换位置，从而变成不稳定的排序算法。</p>
+<p>　　其次，说一下排序算法稳定性的好处。<strong>排序算法如果是稳定的，那么从一个键上排序，然后再从另一个键上排序，前一个键排序的结果可以为后一个键排序所用。</strong>基数排序就是这样，先按低位排序，逐次按高位排序，低位排序后元素的顺序在高位也相同时是不会改变的。</p>
+<h4 id="0-4-技巧"><a href="#0-4-技巧" class="headerlink" title="0.4 技巧"></a>0.4 技巧</h4><p>记忆<strong>口诀</strong>：</p>
+<p><strong>不稳定</strong>排序算法口诀：快些选队（快希选堆）<br>其余为稳定的。</p>
+<p><strong>算法复杂度和关键字顺序无关的有：</strong></p>
+<p>顺口溜：一堆（堆排序）海龟（归并排序）选（选择排序）基（基数排序）友</p>
+<p>快些以 nlog2 n  的速度归队</p>
+<p>快=快速排序，些=希尔排序，归=归并排序，队=堆排序</p>
+<p>这四种排序算法，时间都是 n log2 n 的，除了这四个之外，其他的排序算法平均时间都为 n^2</p>
+<blockquote>
+<p>一趟排序，保证一个元素为最终位置的有两类排序算法：<strong>交换</strong>类（冒泡和快速）排序和<strong>选择</strong>类排序（简单和堆）</p>
+<p>元素比较次数和<strong>原始序列无关</strong>的算法：<strong>简单选择</strong>排序，<strong>折半插入</strong>排序</p>
+<p>排序趟数和原序列有关的算法：<strong>交换类</strong>，其余类无关</p>
+<p>借助于比较进行排序的算法，在最坏的时候，最好的时间复杂度为 n log2 n</p>
+<p>堆排序和简单选择排序的时间复杂度和初始序列无关</p>
 </blockquote>
 <h4 id="0-4-总结："><a href="#0-4-总结：" class="headerlink" title="0.4 总结："></a>0.4 总结：</h4><p>（1）在比较类排序中，<strong>归并排序</strong>号称最快，其次是<strong>快速排序</strong>和<strong>堆排序</strong>，两者不相伯仲，但是有一点需要注意，数据初始排序状态对堆排序不会产生太大的影响，而快速排序却恰恰相反。</p>
 <p>（2）<strong>线性时间非比较类排序</strong>一般要优于非线性时间比较类排序，但前者对待排序元素的要求较为严格，比如计数排序要求待排序数的最大值不能太大，桶排序要求元素按照hash分桶后桶内元素的数量要均匀。线性时间非比较类排序的典型特点是以空间换时间。</p>
@@ -513,9 +531,9 @@
 </ul>
 <p><strong>1.2 动图演示</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-b05dac2a52600907.gif?imageMogr2/auto-orient/strip" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/12654931-ee6aeca39cd369d7.gif?imageMogr2/auto-orient/strip" alt=""></p>
 <h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分类 -------------- 内部比较排序</span></span><br><span class="line"><span class="comment">// 数据结构 ---------- 数组</span></span><br><span class="line"><span class="comment">// 最差时间复杂度 ---- O(n^2)</span></span><br><span class="line"><span class="comment">// 最优时间复杂度 ---- 如果能在内部循环第一次运行时,使用一个旗标来表示有无需要交换的可能,可以把最优时间复杂度降低到O(n)</span></span><br><span class="line"><span class="comment">// 平均时间复杂度 ---- O(n^2)</span></span><br><span class="line"><span class="comment">// 所需辅助空间 ------ O(1)</span></span><br><span class="line"><span class="comment">// 稳定性 ------------ 稳定</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(RecordType arr[])</span> </span>&#123;</span><br><span class="line">    var len = arr.length;</span><br><span class="line">		change = TRUE;</span><br><span class="line">    <span class="keyword">for</span> (var i = <span class="number">0</span>; i &lt; len - <span class="number">1</span> &amp;&amp; change; i++) &#123;</span><br><span class="line">			change = FALSE;</span><br><span class="line">        <span class="keyword">for</span> (var j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;<span class="comment">// 依次比较相邻的两个元素,使较大的那个向后移</span></span><br><span class="line">            <span class="keyword">if</span> (arr[j].key &gt; arr[j+<span class="number">1</span>].key) &#123; <span class="comment">// 相邻元素两两对比。  如果条件改成arr[j].key &gt;= arr[j+1].key,则变为不稳定的排序算法</span></span><br><span class="line">                var temp = arr[j+<span class="number">1</span>];        <span class="comment">// 元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">								change = TRUE;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"><a href="#1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）" class="headerlink" title="1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"></a>1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）</h3><p>鸡尾酒排序，也叫<strong>定向冒泡排序</strong>，是冒泡排序的一种改进。此算法与冒泡排序的不同处在于<strong>从低到高然后从高到低</strong>，而冒泡排序则仅从低到高去比较序列里的每个元素。他可以得到比冒泡排序稍微好一点的效能。</p>
+<h3 id="1-1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"><a href="#1-1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）" class="headerlink" title="1.1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"></a>1.1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）</h3><p>鸡尾酒排序，也叫<strong>定向冒泡排序</strong>，是冒泡排序的一种改进。此算法与冒泡排序的不同处在于<strong>从低到高然后从高到低</strong>，而冒泡排序则仅从低到高去比较序列里的每个元素。他可以得到比冒泡排序稍微好一点的效能。</p>
 <p>　　鸡尾酒排序的代码如下：</p>
-
+<h3 id="1-2、双向冒泡排序"><a href="#1-2、双向冒泡排序" class="headerlink" title="1.2、双向冒泡排序"></a>1.2、双向冒泡排序</h3>
       
     </div>
 
@@ -863,7 +881,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0、算法概述"><span class="nav-number">1.</span> <span class="nav-text">0、算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0-1-算法分类"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 算法分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-2-算法复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">0.2 算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-3-相关概念"><span class="nav-number">1.3.</span> <span class="nav-text">0.3 相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-4-总结："><span class="nav-number">1.4.</span> <span class="nav-text">0.4 总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、冒泡排序（Bubble-Sort）"><span class="nav-number">2.</span> <span class="nav-text">1、冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-算法描述"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-代码实现"><span class="nav-number">2.2.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"><span class="nav-number">3.</span> <span class="nav-text">1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0、算法概述"><span class="nav-number">1.</span> <span class="nav-text">0、算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0-1-算法分类"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 算法分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-2-算法复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">0.2 算法复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-3-相关概念"><span class="nav-number">1.3.</span> <span class="nav-text">0.3 相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-4-技巧"><span class="nav-number">1.4.</span> <span class="nav-text">0.4 技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-4-总结："><span class="nav-number">1.5.</span> <span class="nav-text">0.4 总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、冒泡排序（Bubble-Sort）"><span class="nav-number">2.</span> <span class="nav-text">1、冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-算法描述"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 算法描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-代码实现"><span class="nav-number">2.2.</span> <span class="nav-text">1.3 代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）"><span class="nav-number">3.</span> <span class="nav-text">1.1、冒泡排序的改进：鸡尾酒排序（定向冒泡排序）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、双向冒泡排序"><span class="nav-number">4.</span> <span class="nav-text">1.2、双向冒泡排序</span></a></li></ol></div>
             
 
           </div>
@@ -921,7 +939,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共18.4k字</span>
+  <span class="post-count">博客全站共19.0k字</span>
 </div>
         
 <div class="busuanzi-count">
