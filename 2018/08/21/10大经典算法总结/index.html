@@ -142,7 +142,9 @@
 <meta property="og:description" content="0、算法概述0.1 算法分类①：十种常见排序算法可以分为两大类：  非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。 线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-d74f1bf29b3a2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-21T07:21:45.380Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fc56705ae801148b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-6e359eb712e26244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-21T07:28:50.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10大经典算法总结">
 <meta name="twitter:description" content="0、算法概述0.1 算法分类①：十种常见排序算法可以分为两大类：  非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。 线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。">
@@ -419,7 +421,7 @@
                 
               
 
-              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：15:21:45" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
+              <time title="创建时间：2018-08-21 15:11:36 / 修改时间：15:28:50" itemprop="dateCreated datePublished" datetime="2018-08-21T15:11:36+08:00">2018-08-21</time>
             
 
             
@@ -488,6 +490,19 @@
 <p><strong>非线性时间比较类排序</strong>：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。</p>
 <p><strong>线性时间非比较类排序</strong>：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。<br><a id="more"></a><br><img src="https://upload-images.jianshu.io/upload_images/12654931-d74f1bf29b3a2413.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 </blockquote>
+<p>②：另外一种排序方法——我们通常所说的排序算法往往指的是<strong>内部排序算法</strong>，即数据记录在内存中进行排序。</p>
+<p>　　排序算法大体可分为两种：</p>
+<p>　　　　一种是<strong>比较排序</strong>，时间复杂度O(nlogn) ~ O(n^2)，主要有：<strong>冒泡排序</strong>，<strong>选择排序</strong>，<strong>插入排序</strong>，<strong>归并排序</strong>，<strong>堆排序</strong>，<strong>快速排序</strong>等。</p>
+<p>　　　　另一种是<strong>非比较排序</strong>，时间复杂度可以达到O(n)，主要有：<strong>计数排序</strong>，<strong>基数排序</strong>，<strong>桶排序</strong>等。</p>
+<h4 id="0-2-算法复杂度"><a href="#0-2-算法复杂度" class="headerlink" title="0.2 算法复杂度"></a>0.2 算法复杂度</h4><p><img src="https://upload-images.jianshu.io/upload_images/12654931-fc56705ae801148b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="1、冒泡排序（Bubble-Sort）"><a href="#1、冒泡排序（Bubble-Sort）" class="headerlink" title="1、冒泡排序（Bubble Sort）"></a>1、冒泡排序（Bubble Sort）</h3><p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 </p>
+<h4 id="1-1-算法描述"><a href="#1-1-算法描述" class="headerlink" title="1.1 算法描述"></a>1.1 算法描述</h4><ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
+<li>重复步骤1~3，直到排序完成。</li>
+</ul>
+<p><strong>1.2 动图演示</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-6e359eb712e26244.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
     </div>
@@ -836,7 +851,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0、算法概述"><span class="nav-number">1.</span> <span class="nav-text">0、算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0-1-算法分类"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 算法分类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0、算法概述"><span class="nav-number">1.</span> <span class="nav-text">0、算法概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#0-1-算法分类"><span class="nav-number">1.1.</span> <span class="nav-text">0.1 算法分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#0-2-算法复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">0.2 算法复杂度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1、冒泡排序（Bubble-Sort）"><span class="nav-number">2.</span> <span class="nav-text">1、冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-算法描述"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 算法描述</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -894,7 +909,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共17.4k字</span>
+  <span class="post-count">博客全站共17.7k字</span>
 </div>
         
 <div class="busuanzi-count">
