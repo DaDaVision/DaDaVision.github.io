@@ -142,9 +142,12 @@
 <meta property="og:description" content="阅读目录  顺序查找 二分查找 插值查找 斐波那契查找 树表查找 分块查找 哈希查找">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-b0cb1d3f2022502c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-b3fda93316d6cb9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-639d103f90fa4d92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-6a8b0164b26616ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f71ff9ef346899db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-4fad334deb8aaa01.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-23T12:22:55.562Z">
+<meta property="og:updated_time" content="2018-08-23T12:47:49.145Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见查找算法总结">
 <meta name="twitter:description" content="阅读目录  顺序查找 二分查找 插值查找 斐波那契查找 树表查找 分块查找 哈希查找">
@@ -438,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-23 20:22:55" itemprop="dateModified" datetime="2018-08-23T20:22:55+08:00">2018-08-23</time>
+                <time title="修改时间：2018-08-23 20:47:49" itemprop="dateModified" datetime="2018-08-23T20:47:49+08:00">2018-08-23</time>
               
             
           </span>
@@ -576,9 +579,34 @@
 <p>​    二分查找的mid运算是加法与除法，插值查找则是复杂的四则运算，而斐波那契查找只是最简单的加减运算。在海量数据的查找中，这种细微的差别可能会影响最终的查找效率。因此，三种有序表的查找方法本质上是分割点的选择不同，各有优劣，应根据实际情况进行选择。 </p>
 </li>
 </ul>
-<h3 id="5-树表查找"><a href="#5-树表查找" class="headerlink" title="5. 树表查找"></a><strong>5. 树表查找</strong></h3><h3 id="6-分块查找"><a href="#6-分块查找" class="headerlink" title="6. 分块查找"></a><strong>6. 分块查找</strong></h3><p>​    分块查找又称索引顺序查找，它是顺序查找的一种改进方法。 　　</p>
+<h3 id="5-树表查找"><a href="#5-树表查找" class="headerlink" title="5. 树表查找"></a><strong>5. 树表查找</strong></h3><h3 id="6-线性索引查找"><a href="#6-线性索引查找" class="headerlink" title="6. 线性索引查找"></a><strong>6. 线性索引查找</strong></h3><p><strong>6.1 简介</strong>    </p>
+<p>​    前面讲的几种比较高效的查找方法是基于有序的基础之上的，而事实上，数据集可能增长非常快，例如，某些微博网站或大型论坛的帖子和回复总数每天都是成百万上千万条，或者一些服务器的日志信息记录也可能是海量数据，要保证记录全部是按照当中的某个关键字有序，其时间代价是非常高昂的，所以这种数据都是按先后顺序存储的。    </p>
+<p>​    对于这样的查找表，我们如何能够快速查找到需要的数据呢？常常使用的方法就是—-<strong>索引</strong>。<strong>索引是为了加快查找速度而设计的一种数据结构。</strong>它是把一个关键字与它对应的记录相关联的过程，一个索引由若干个索引项构成，每个索引项至少应包含关键字和其对应的记录在存储器中的位置等信息。    </p>
+<p>​    索引按照结构可以分为线性索引、树形索引和多级索引。我们这里就只介绍线性索引技术。所谓线性索引就是将索引项集合组织为线性结构，也称为索引表。我们重点介绍三个线性索引：稠密索引、分块索引、和倒排索引。 </p>
+<p><strong>6.2 稠密索引 </strong></p>
+<p>​    稠密索引如下图所示，它是指在线性索引中，将数据集中的每个记录对应一个索引项。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-b3fda93316d6cb9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>​    上图中，左边的图像为索引序列，它是是按照关键码有序排列的。索引项有序也就意味着，我们要查找关键字时，可以用到折半、插值、斐波那契等有序查找算法，大大提高效率。比如查找上表中的18。如果不用索引表，需要6次。而用左侧的索引表，折半两次就可以找到18对应的指针。    </p>
+<p>​    这显然是稠密索引优点，但是如果数据集非常大，比如上亿，那也就意味着索引也得同样的数据集长度规模，对于内存有限的计算机来说，可能就需要反复去访问磁盘，查找性能反而大大下降了。  </p>
+<p><strong>6.3 分块索引 </strong>   </p>
+<p>​    稠密索引因为索引项与数据集的记录个数相同，所以空间代价很大。为了减少索引的个数，我们可以<strong>对数据集进行分块，使其分块有序，然后再对每一块建立一个索引项，从而减少索引项的个数。 </strong></p>
+<p>分块查找又称索引顺序查找，它是顺序查找的一种改进方法。 　　</p>
 <p><strong>算法思想：</strong>将n个数据元素”按块有序”划分为m块（m ≤ n）。每一块中的结点不必有序，但块与块之间必须”按块有序”；即第1块中任一元素的关键字都必须小于第2块中任一元素的关键字；而第2块中任一元素又都必须小于第3块中的任一元素，…… 　　</p>
 <p><strong>算法流程：</strong> 　　<br>step1 先选取各块中的最大关键字构成一个索引表； 　　<br>step2 查找分两个部分：先对索引表进行二分查找或顺序查找，以确定待查记录在哪一块中；然后，在已确定的块中用顺序法进行查找。</p>
+<p>​    分块有序，是把数据集的记录分成若干块，并且这些块需要满足两个条件：    </p>
+<p>​    （1）块内无序，即每一块内的记录不要求有序。当然，你如果能够让块内有序对查找来说更理想，不过这就要付出大量时间和空间代价，因此通常我们不要求块内有序    <br>​    （2）块间有序，例如要求第二块所有记录的关键字均要大于第一块中所有记录的关键字，第三块的所有记录的关键字均要大于第二块的所有记录关键字….因为只有块间有序，才有可能在查找时带来效率。   <br> <br>    对于分块有序的数据集，将每块对应一个索引项，这种索引方法叫做分块索引。我们定义的分块索引项由三个数据项组成，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-639d103f90fa4d92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>​    这三个数据项分别为最大关键码（它存储每一块中的最大关键字，这样的好处就是可以使得在它之后的下一块中最小关键字也能比这一块最大的关键字要大）、存储了块中的记录个数（以便于循环时使用）和指向块首数据元素的指针（便于开始对这一块中的记录进行遍历）。   </p>
+<p>​    由上面的分析我们可以大概明白分块索引的步骤：    </p>
+<p>​    （1）在分块索引表中查找要查关键字所在的块。由于分块索引表是块间有序的，因此很容易利用折半、插值等算法得到结果。    </p>
+<p>​    （2） 根据块首指针找到相应的块，并在块中顺序查找关键码。因为块中可以是无序的，因此只能顺序查获。  </p>
+<p><strong>6.4 倒排索引 </strong></p>
+<p>​    不知道你对搜索引擎好奇过没，无论你查找什么样的信息，它都可以在极短的时间内给你一些结果，是什么算法技术达到这样的高效查找呢？这里介绍一种最基础的搜索技术—-倒排索引。    </p>
+<p>​    我们来看一个例子，假设有以下两篇文章：    </p>
+<p>​    (1) Books and friends should be few but good .    </p>
+<p>​    (2) A good book is a good friend.    </p>
+<p>​    假设我们忽略掉如“books”，“friends”中的复数”s”以及如“A”这样的大小写差异。我们可以整理出这样一张单词表，如下图所示，并将单词做了排序，也就是表格显示了每个不同的单词分别出现在哪篇文章中，比如“good”它在两篇文章中都有出现，而is只有在文章2中才有。  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-6a8b0164b26616ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>​    在这里这张单词表就是索引表，索引项的通用结构是次关键码和记录号表。 其中记录号表存储具有相同次字关键字的所有记录的记录号（可以指向记录的指针或者是该记录的主关键字）。因为这种查找方法是通过属性值来确定记录的位置，而不是通过记录来确定属性值，所以我们称其为倒排索引。 </p>
+<p>​    </p>
 <h3 id="7-哈希查找"><a href="#7-哈希查找" class="headerlink" title="7. 哈希查找"></a>7. 哈希查找</h3><p>　　<strong>什么是哈希表（Hash）？</strong></p>
 <p>​    散列表（Hash table，也叫哈希表），是根据关键码值(Key value)而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问记录，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。<br>    给定表M，存在函数f(key)，对任意给定的关键字值key，代入函数后若能得到包含该关键字的记录在表中的地址，则称表M为哈希(Hash）表，函数f(key)为哈希(Hash) 函数。<br>    中文名  哈希表 </p>
 <p>​    外文名  Hash table </p>
@@ -956,7 +984,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-顺序查找"><span class="nav-number">1.</span> <span class="nav-text">1. 顺序查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-二分查找-折半查找"><span class="nav-number">2.</span> <span class="nav-text">2. 二分查找/折半查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-插值查找"><span class="nav-number">3.</span> <span class="nav-text">3. 插值查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-斐波那契查找"><span class="nav-number">4.</span> <span class="nav-text">4. 斐波那契查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-树表查找"><span class="nav-number">5.</span> <span class="nav-text">5. 树表查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-分块查找"><span class="nav-number">6.</span> <span class="nav-text">6. 分块查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-哈希查找"><span class="nav-number">7.</span> <span class="nav-text">7. 哈希查找</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-顺序查找"><span class="nav-number">1.</span> <span class="nav-text">1. 顺序查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-二分查找-折半查找"><span class="nav-number">2.</span> <span class="nav-text">2. 二分查找/折半查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-插值查找"><span class="nav-number">3.</span> <span class="nav-text">3. 插值查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-斐波那契查找"><span class="nav-number">4.</span> <span class="nav-text">4. 斐波那契查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-树表查找"><span class="nav-number">5.</span> <span class="nav-text">5. 树表查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-线性索引查找"><span class="nav-number">6.</span> <span class="nav-text">6. 线性索引查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-哈希查找"><span class="nav-number">7.</span> <span class="nav-text">7. 哈希查找</span></a></li></ol></div>
             
 
           </div>
@@ -1014,7 +1042,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.0k字</span>
+  <span class="post-count">博客全站共36.5k字</span>
 </div>
         
 <div class="busuanzi-count">
