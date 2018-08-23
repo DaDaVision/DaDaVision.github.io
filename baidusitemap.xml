@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/23/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/</loc>
-    <lastmod>2018-08-23T13:21:19.243Z</lastmod>
+    <lastmod>2018-08-23T13:45:33.685Z</lastmod>
     <data>
         <display>
         <title>树表查找</title>
@@ -471,9 +471,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -495,9 +495,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
