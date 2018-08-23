@@ -5,14 +5,25 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/23/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/</loc>
-    <lastmod>2018-08-23T12:58:25.561Z</lastmod>
+    <lastmod>2018-08-23T13:21:04.220Z</lastmod>
     <data>
         <display>
         <title>树表查找</title>
         <pubTime>2018-08-23T12:58:25.000Z</pubTime>
         
+        <tag>算法</tag>
+         
+        <tag>数据结构</tag>
+         
+        <tag>查找算法</tag>
+         
+        <tag>树表查找，二叉树</tag>
+         
          
            
+             
+              <breadCrumb title="算法" url="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+          
         </display>
     </data>
     </url>

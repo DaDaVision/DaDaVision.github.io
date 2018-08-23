@@ -133,14 +133,22 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="​    线性表的查找的顺序查找和折半查找作为查找表的组织形式，其中折半查找效率较高。但由于折半查找要求表中记录按关键字有序排列，且不能用链表做存储结构，因此当表的插入或删除操作频繁时，为维护表的有序性，需要移动表中很多记录。这种由移动记录引用的额外时间开销，就会抵消折半查找的优点。 ​    所以，线性表的查找更适用于静态查找表，若要对动态查找表进行高效率的查找，可采用几种特殊的二叉树作为查找表">
+<meta name="keywords" content="算法,数据结构,查找算法,树表查找，二叉树">
+<meta property="og:type" content="article">
 <meta property="og:title" content="树表查找">
 <meta property="og:url" content="http://yoursite.com/2018/08/23/树表查找/index.html">
 <meta property="og:site_name" content="DaDaVision">
+<meta property="og:description" content="​    线性表的查找的顺序查找和折半查找作为查找表的组织形式，其中折半查找效率较高。但由于折半查找要求表中记录按关键字有序排列，且不能用链表做存储结构，因此当表的插入或删除操作频繁时，为维护表的有序性，需要移动表中很多记录。这种由移动记录引用的额外时间开销，就会抵消折半查找的优点。 ​    所以，线性表的查找更适用于静态查找表，若要对动态查找表进行高效率的查找，可采用几种特殊的二叉树作为查找表">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-23T12:58:25.561Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3e8f2ba9f32bbc14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e719c23df7ce1943.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-b305e8bfd1851c51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-23T13:21:04.220Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树表查找">
+<meta name="twitter:description" content="​    线性表的查找的顺序查找和折半查找作为查找表的组织形式，其中折半查找效率较高。但由于折半查找要求表中记录按关键字有序排列，且不能用链表做存储结构，因此当表的插入或删除操作频繁时，为维护表的有序性，需要移动表中很多记录。这种由移动记录引用的额外时间开销，就会抵消折半查找的优点。 ​    所以，线性表的查找更适用于静态查找表，若要对动态查找表进行高效率的查找，可采用几种特殊的二叉树作为查找表">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-3e8f2ba9f32bbc14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -413,12 +421,34 @@
                 
               
 
-              <time title="创建时间：2018-08-23 20:58:25" itemprop="dateCreated datePublished" datetime="2018-08-23T20:58:25+08:00">2018-08-23</time>
+              <time title="创建时间：2018-08-23 20:58:25 / 修改时间：21:21:04" itemprop="dateCreated datePublished" datetime="2018-08-23T20:58:25+08:00">2018-08-23</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -455,7 +485,25 @@
       
 
       
-        
+        <p>​    线性表的查找的顺序查找和折半查找作为查找表的组织形式，其中折半查找效率较高。但由于折半查找要求表中记录按关键字有序排列，且不能用链表做存储结构，因此当表的插入或删除操作频繁时，为维护表的有序性，需要移动表中很多记录。这种由移动记录引用的额外时间开销，就会抵消折半查找的优点。</p>
+<p>​    所以，线性表的查找更适用于静态查找表，<strong>若要对动态查找表进行高效率的查找，可采用几种特殊的二叉树作为查找表的组织形式，在此将它们统称为树表。</strong></p>
+<a id="more"></a>
+<p><strong>一、二叉排序树</strong> </p>
+<p>​        <strong>二叉查找树</strong>（BinarySearch Tree，也叫二叉搜索树，或称<strong>二叉排序树Binary Sort Tree</strong>）或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<p>　　1）若任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</p>
+<p>　　2）若任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</p>
+<p>　　3）任意节点的左、右子树也分别为二叉查找树。</p>
+<p>　　<strong>二叉查找树性质</strong>：<strong>对二叉查找树进行中序遍历，即可得到有序的数列。</strong></p>
+<p>在讨论二叉排序树上的运算之前,定义其节点的类型如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">​   <span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span>        //记录类型</span></span><br><span class="line"><span class="class">   &#123;</span></span><br><span class="line">	KeyType key;            <span class="comment">//关键字项</span></span><br><span class="line">    InfoType data;          <span class="comment">//其他数据域</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">lchild</span>,*<span class="title">rchild</span>;</span>	<span class="comment">//左右孩子指针</span></span><br><span class="line"></span><br><span class="line">   &#125; BSTNode;</span><br></pre></td></tr></table></figure></p>
+<p>不同形态的二叉查找树如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-3e8f2ba9f32bbc14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如下图，这个是普通的二叉树：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-e719c23df7ce1943.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在此基础上，加上节点之间的大小关系，就是二叉查找树：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-b305e8bfd1851c51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1. 二叉排序树上的查找</strong></p>
+<p>因为二叉排序树可看做是一个有序表，所以在二叉排序树上进行查找，和二分查找类似，也是一个逐步缩小查找范围的过程。</p>
+<p>递归查找算法SearchBST()如下（在二叉排序树bt上查找关键字为k的记录,成功时返回该节点指针，否则返回NULL）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BSTNode *<span class="title">SearchBST</span><span class="params">(BSTNode *bt,KeyType k)</span></span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">	<span class="keyword">if</span> (bt==<span class="literal">NULL</span> || bt-&gt;key==k) <span class="comment">//递归终结条件</span></span><br><span class="line">​       <span class="keyword">return</span> bt;</span><br><span class="line">​    <span class="keyword">if</span> (k&lt;bt-&gt;key)</span><br><span class="line"> ​    　 <span class="keyword">return</span> SearchBST(bt-&gt;lchild,k); <span class="comment">//在左子树中递归查找</span></span><br><span class="line"> ​    <span class="keyword">else</span></span><br><span class="line">     　 <span class="keyword">return</span> SearchBST(bt-&gt;rchild,k); <span class="comment">//在右子树中递归查找</span></span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>也可以采用如下非递归算法：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BSTNode *<span class="title">SearchBST1</span><span class="params">(BSTNode *bt,KeyType k)</span></span></span><br><span class="line"><span class="function"></span>&#123;  <span class="keyword">while</span> (bt!=<span class="literal">NULL</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="keyword">if</span> (k==bt-&gt;key)</span><br><span class="line">          <span class="keyword">return</span> bt;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (k&lt;bt-&gt;key)</span><br><span class="line">          bt=bt-&gt;lchild;  <span class="comment">//在左子树中查找</span></span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">          bt=bt-&gt;rchild;  <span class="comment">//在左子树中查找</span></span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span>                   <span class="comment">//没有找到返回NULL</span></span><br><span class="line">      <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -481,6 +529,18 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" <i class="fa fa-tag"></i> 算法</a>
+          
+            <a href="/tags/数据结构/" <i class="fa fa-tag"></i> 数据结构</a>
+          
+            <a href="/tags/查找算法/" <i class="fa fa-tag"></i> 查找算法</a>
+          
+            <a href="/tags/树表查找，二叉树/" <i class="fa fa-tag"></i> 树表查找，二叉树</a>
+          
+        </div>
       
 
       
@@ -709,7 +769,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">39</span>
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -832,7 +894,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.5k字</span>
+  <span class="post-count">博客全站共37.2k字</span>
 </div>
         
 <div class="busuanzi-count">
