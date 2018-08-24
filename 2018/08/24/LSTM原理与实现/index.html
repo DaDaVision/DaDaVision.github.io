@@ -134,7 +134,7 @@
 
 
   <meta name="description" content="[RNN] [LSTM网络] [LSTM核心思想] [逐步理解LSTM] [遗忘门] [输入门] [输出门]   [LSTM变体] [多层LSTM] LSTM实现手写数字 [设置LSTM参数] [初始化权值参数]">
-<meta name="keywords" content="LSTM,深度学习,RNN,笔记">
+<meta name="keywords" content="深度学习,LSTM,RNN,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LSTM原理与实现">
 <meta property="og:url" content="http://yoursite.com/2018/08/24/LSTM原理与实现/index.html">
@@ -148,7 +148,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-13bc1a955ebc6668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-421311f51e09bc2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-a7fd4db3a625cbf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T03:23:28.471Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-cac54fa82daf1acd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-faccc7bf241aa8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-06ffb4507903c13d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-24T03:34:54.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LSTM原理与实现">
 <meta name="twitter:description" content="[RNN] [LSTM网络] [LSTM核心思想] [逐步理解LSTM] [遗忘门] [输入门] [输出门]   [LSTM变体] [多层LSTM] LSTM实现手写数字 [设置LSTM参数] [初始化权值参数]">
@@ -425,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 10:54:25 / 修改时间：11:23:28" itemprop="dateCreated datePublished" datetime="2018-08-24T10:54:25+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 10:54:25 / 修改时间：11:34:54" itemprop="dateCreated datePublished" datetime="2018-08-24T10:54:25+08:00">2018-08-24</time>
             
 
             
@@ -527,7 +530,19 @@
 <p>​    不必担心这里的细节。我们会一步一步地剖析 LSTM 解析图。现在，我们先来熟悉一下图中使用的各种元素的图标。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-a7fd4db3a625cbf2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><em>LSTM 中的图标</em></p>
 <p>​    在上面的图例中，每一条黑线传输着一整个向量，从一个节点的输出到其他节点的输入。粉色的圈代表 pointwise 的操作，诸如向量的和，而黄色的矩阵就是学习到的神经网络层。合在一起的线表示向量的连接，分开的线表示内容被复制，然后分发到不同的位置。</p>
-<h2 id="LSTM-的核心思想"><a href="#LSTM-的核心思想" class="headerlink" title="LSTM 的核心思想"></a>LSTM 的核心思想</h2><p>​    LSTM 的关键就是细胞状态，水平线在图上方贯穿运行。<br>    细胞状态类似于传送带。直接在整个链上运行，只有一些少量的线性交互。信息在上面流传保持不变会很容易。</p>
+<h2 id="LSTM-的核心思想"><a href="#LSTM-的核心思想" class="headerlink" title="LSTM 的核心思想"></a>LSTM 的核心思想</h2><p>​    LSTM 的关键就是细胞状态，水平线在图上方贯穿运行。<br>    细胞状态类似于传送带。直接在整个链上运行，只有一些少量的线性交互。信息在上面流传保持不变会很容易。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-cac54fa82daf1acd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>​    LSTM 有通过精心设计的称作为“门”的结构来去除或者增加信息到细胞状态的能力。门是一种让信息选择式通过的方法。他们包含一个 sigmoid 神经网络层和一个 pointwise 乘法操作(向量或者矩阵的pointwise 乘法指按元素相乘,点乘（不改变向量长度、大小）</p>
+<p>a = [a1 a2 a3]</p>
+<p>b = [b1 b2 b3]</p>
+<p>a和b的pointwise product</p>
+<p>a • b = a1<strong><em>b1+a2\</em></strong>b2+a3*b3 )。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-faccc7bf241aa8b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>​    Sigmoid 层输出 0 到 1 之间的数值，描述每个部分有多少量可以通过。0 代表“不许任何量通过”，1 就指“允许任意量通过”！</p>
+<p>​    LSTM 拥有三个门，来保护和控制细胞状态。这三个门分别输入门、遗忘门和输出门。 LSTM通过三个这样的本结构来实现信息的保护和控制。</p>
+<h2 id="逐步理解LSTM"><a href="#逐步理解LSTM" class="headerlink" title="逐步理解LSTM"></a>逐步理解LSTM</h2><p>现在我们就开始通过三个门逐步的了解LSTM的原理</p>
+<h3 id="遗忘门"><a href="#遗忘门" class="headerlink" title="遗忘门"></a>遗忘门</h3><p>​    在我们 LSTM 中的第一步是决定我们会从细胞状态中丢弃什么信息。这个决定通过一个称为<strong>忘记门层</strong>完成。该门会读取<code>h_{t-1}</code>和<code>x_t</code>，输出一个在 0 到 1 之间的数值给每个在细胞状态<code>C_{t-1}</code>中的数字。1 表示“完全保留”，0 表示“完全舍弃”。 </p>
+<p>​    让我们回到语言模型的例子中来基于已经看到的预测下一个词。在这个问题中，细胞状态可能包含当前<strong>主语</strong>的性别，因此正确的<strong>代词</strong>可以被选择出来。当我们看到新的<strong>主语</strong>，我们希望忘记旧的<strong>主语</strong>。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-06ffb4507903c13d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中ht−1表示的是上一个cell的输出，xt表示的是当前细胞的输入。σ表示sigmod函数。</p>
+<h3 id="输入门"><a href="#输入门" class="headerlink" title="输入门"></a>输入门</h3><p>​    下一步是确定什么样的新信息被存放在细胞状态中。这里包含两个部分。第一，sigmoid 层称 “输入门层” 决定什么值我们将要更新。然后，一个 tanh 层创建一个新的候选值向量，<code>\tilde{C}_t</code>，会被加入到状态中。下一步，我们会讲这两个信息来产生对状态的更新。 在我们语言模型的例子中，我们希望增加新的主语的性别到细胞状态中，来替代旧的需要忘记的主语。 </p>
 
       
     </div>
@@ -557,9 +572,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LSTM/" <i class="fa fa-tag"></i> LSTM</a>
-          
             <a href="/tags/深度学习/" <i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/LSTM/" <i class="fa fa-tag"></i> LSTM</a>
           
             <a href="/tags/RNN/" <i class="fa fa-tag"></i> RNN</a>
           
@@ -892,7 +907,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Recurrent-Neural-Networks"><span class="nav-number">1.</span> <span class="nav-text">Recurrent Neural Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长期依赖（Long-Term-Dependencies）问题"><span class="nav-number">2.</span> <span class="nav-text">长期依赖（Long-Term Dependencies）问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-网络"><span class="nav-number">3.</span> <span class="nav-text">LSTM 网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-的核心思想"><span class="nav-number">4.</span> <span class="nav-text">LSTM 的核心思想</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Recurrent-Neural-Networks"><span class="nav-number">1.</span> <span class="nav-text">Recurrent Neural Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长期依赖（Long-Term-Dependencies）问题"><span class="nav-number">2.</span> <span class="nav-text">长期依赖（Long-Term Dependencies）问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-网络"><span class="nav-number">3.</span> <span class="nav-text">LSTM 网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-的核心思想"><span class="nav-number">4.</span> <span class="nav-text">LSTM 的核心思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逐步理解LSTM"><span class="nav-number">5.</span> <span class="nav-text">逐步理解LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#遗忘门"><span class="nav-number">5.1.</span> <span class="nav-text">遗忘门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入门"><span class="nav-number">5.2.</span> <span class="nav-text">输入门</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -950,7 +965,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共40.5k字</span>
+  <span class="post-count">博客全站共41.1k字</span>
 </div>
         
 <div class="busuanzi-count">
