@@ -5,17 +5,17 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/24/DeepIOT%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/</loc>
-    <lastmod>2018-08-24T12:47:13.247Z</lastmod>
+    <lastmod>2018-08-24T13:28:40.489Z</lastmod>
     <data>
         <display>
         <title>DeepIOT神经网络压缩</title>
         <pubTime>2018-08-24T10:48:33.000Z</pubTime>
         
-        <tag>神经网络</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>神经网络</tag>
          
         <tag>神经网络压缩</tag>
          
@@ -374,11 +374,11 @@
         
         <tag>深度学习</tag>
          
-        <tag>笔记</tag>
-         
         <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
+         
+        <tag>笔记</tag>
          
          
            
@@ -437,9 +437,9 @@
         <title>偏差、方差、噪声</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>笔记</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>笔记</tag>
          
         <tag>性能评估</tag>
          
@@ -529,9 +529,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -551,9 +551,9 @@
         <title>查准率precision和查全率recall、F1</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>笔记</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>笔记</tag>
          
         <tag>性能评估</tag>
          
@@ -625,9 +625,9 @@
         
         <tag>深度学习</tag>
          
-        <tag>Python</tag>
-         
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            

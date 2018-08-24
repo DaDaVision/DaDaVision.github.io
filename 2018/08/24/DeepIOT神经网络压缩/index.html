@@ -134,7 +134,7 @@
 
 
   <meta name="description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
-<meta name="keywords" content="神经网络,深度学习,笔记,神经网络压缩">
+<meta name="keywords" content="深度学习,笔记,神经网络,神经网络压缩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepIOT神经网络压缩">
 <meta property="og:url" content="http://yoursite.com/2018/08/24/DeepIOT神经网络压缩/index.html">
@@ -149,7 +149,8 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-30483f2f5494237f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T12:47:13.247Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-24T13:28:40.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepIOT神经网络压缩">
 <meta name="twitter:description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
@@ -426,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：20:47:13" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:28:40" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
             
 
             
@@ -558,7 +559,10 @@
 <p>​    <strong><em>参数冗余的全局视图</em></strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>​    但我们如何设计这个最优压缩函数与参数冗余的全局视图。我们知道深神经网络本身就是完美函数逼近器。只要有足够的容量，它就可以逼近所有已有的连续函数。因此，我们将<strong>压缩函数设计成一种递归神经网络。</strong>它<strong>从原始神经网络中逐层提取权重矩阵，了解全局冗余信息，生成压缩丢失概率</strong>。这里我们称压缩函数、压缩器和要压缩的原始神经网络为“critic”，因为critic向压缩器提供反馈，让它知道根据“监督”得出的dropout概率是好是坏 。</p>
 <p><strong>Compressor-Critic Framework</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>​    DeepIoT的目标函数是根据compressor学习到的损失概率来学习压缩模型的期望损失。我们反复训练，这意味着当训练compressor时，我们把所有的东西都固定在critic，反之亦然 。</p>
+<p>​    对原神经网络和压缩神经网络进行迭代优化，使压缩神经网络以<strong>软删除</strong>的方式逐渐压缩原神经网络。 </p>
+<p>​    我们把最初的神经网络称为$F_{W}(x|z)​$，我们称之为Critic。它将x作为输入，并基于二进制dropout 记为Z和模型参数w生成预测，这些参数w指的是一组权重$W=w^{(l)}​$。 。我们假设$F_{W}(x|z)​$是一个预先训练好的模型。$z~\mu_{\phi}(W)​$表示压缩神经网络。它将Critic的权重作为输入，并根据其自身参数生成mask向量Z的概率分布。为了优化压缩器，使其在Critic中去掉隐藏元素，DeepIoT遵循了上图的目标函数。</p>
 
       
     </div>
@@ -588,11 +592,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/神经网络/" <i class="fa fa-tag"></i> 神经网络</a>
-          
             <a href="/tags/深度学习/" <i class="fa fa-tag"></i> 深度学习</a>
           
             <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/神经网络/" <i class="fa fa-tag"></i> 神经网络</a>
           
             <a href="/tags/神经网络压缩/" <i class="fa fa-tag"></i> 神经网络压缩</a>
           
@@ -964,7 +968,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.2k字</span>
+  <span class="post-count">博客全站共54.4k字</span>
 </div>
         
 <div class="busuanzi-count">
