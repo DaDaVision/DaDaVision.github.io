@@ -168,7 +168,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f037cc39c3734b55.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-171a7bb3b3837e09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f7f34eccc3a8c2b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T07:31:10.639Z">
+<meta property="og:updated_time" content="2018-08-24T07:42:32.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习中Attention注意力机制">
 <meta name="twitter:description" content="​    最近两年，注意力模型（Attention Model）被广泛使用在自然语言处理、图像识别及语音识别等各种不同类型的深度学习任务中，是深度学习技术中最值得关注与深入了解的核心技术之一。 ​    本文以机器翻译为例，深入浅出地介绍了深度学习中注意力机制的原理及关键计算机制，同时也抽象出其本质思想，并介绍了注意力模型在图像及语音等领域的典型应用场景。 ​    注意力模型最近几年在深度学习各">
@@ -445,7 +445,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 12:55:45 / 修改时间：15:31:10" itemprop="dateCreated datePublished" datetime="2018-08-24T12:55:45+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 12:55:45 / 修改时间：15:42:32" itemprop="dateCreated datePublished" datetime="2018-08-24T12:55:45+08:00">2018-08-24</time>
             
 
             
@@ -559,10 +559,10 @@
 <p>​    对于采用RNN的Decoder来说，在时刻i，如果要生成yi单词，我们是可以知道Target在生成yi之前的时刻i-1时，隐层节点i-1时刻的输出值Hi-1的，而我们的目的是要计算生成yj时输入句子中的单词“Tom”、“Chase”、“Jerry”对yi来说的注意力分配概率分布，那么可以用Target输出句子i-1时刻的隐层节点状态Hi-1去一一和输入句子Source中每个单词对应的RNN隐层节点状态hj进行对比，即通过函数F(hj,Hi-1)来获得目标单词yi和每个输入单词对应的对齐可能性，这个F函数在不同论文里可能会采取不同的方法，然后函数F的输出经过Softmax进行归一化就得到了符合概率分布取值区间的注意力分配概率分布数值。</p>
 <p>​    绝大多数Attention模型都是采取上述的计算框架来计算注意力分配概率分布信息，区别只是在F的定义上可能有所不同。图7可视化地展示了在英语-德语翻译系统中加入Attention机制后，Source和Target两个句子每个单词对应的注意力分配概率分布。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-9f0d5e50c90d7165.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>图7 英语-德语翻译的注意力概率分布</p>
-<pre><code>上述内容就是经典的Soft Attention模型的基本思想，那么怎么理解Attention模型的物理含义呢？一般在自然语言处理应用里会把Attention模型看作是输出Target句子中某个单词和输入Source句子每个单词的对齐模型，这是非常有道理的。
-
-目标句子生成的每个单词对应输入句子单词的概率分布可以理解为输入句子单词和这个目标生成单词的对齐概率，这在机器翻译语境下是非常直观的：传统的统计机器翻译一般在做的过程中会专门有一个短语对齐的步骤，而注意力模型其实起的是相同的作用。
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/12654931-181c0ac7d346c4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上述内容就是经典的Soft Attention模型的基本思想，那么怎么理解Attention模型的物理含义呢？一般在自然语言处理应用里会把Attention模型看作是输出Target句子中某个单词和输入Source句子每个单词的对齐模型，这是非常有道理的。</p>
+<p>​    目标句子生成的每个单词对应输入句子单词的概率分布可以理解为输入句子单词和这个目标生成单词的对齐概率，这在机器翻译语境下是非常直观的：传统的统计机器翻译一般在做的过程中会专门有一个短语对齐的</p>
+<p>步骤，而注意力模型其实起的是相同的作用。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/12654931-181c0ac7d346c4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>图8 Google 神经网络机器翻译系统结构图</p>
 <p>​    图8所示即为Google于2016年部署到线上的基于神经网络的机器翻译系统，相对传统模型翻译效果有大幅提升，翻译错误率降低了60%，其架构就是上文所述的加上Attention机制的Encoder-Decoder框架，主要区别无非是其Encoder和Decoder使用了8层叠加的LSTM模型。</p>
 <p><strong>Attention机制的本质思想</strong></p>
