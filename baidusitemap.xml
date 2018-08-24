@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/24/HAN/</loc>
+    <lastmod>2018-08-24T08:19:45.682Z</lastmod>
+    <data>
+        <display>
+        <title>HAN</title>
+        <pubTime>2018-08-24T08:03:04.000Z</pubTime>
+        
+        <tag>Attention</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>笔记</tag>
+         
+        <tag>Hierarchical Attention Networks</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%ADAttention%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</loc>
     <lastmod>2018-08-24T07:42:32.197Z</lastmod>
     <data>
@@ -11,11 +37,11 @@
         <title>深度学习中Attention注意力机制</title>
         <pubTime>2018-08-24T04:55:45.000Z</pubTime>
         
+        <tag>Attention</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>Attention</tag>
          
         <tag>注意力机制</tag>
          
@@ -37,13 +63,13 @@
         <title>LSTM原理与实现</title>
         <pubTime>2018-08-24T02:54:25.000Z</pubTime>
         
-        <tag>LSTM</tag>
-         
         <tag>深度学习</tag>
          
-        <tag>RNN</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>RNN</tag>
          
          
            
@@ -477,9 +503,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -573,9 +599,9 @@
         
         <tag>深度学习</tag>
          
-        <tag>Python</tag>
-         
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            
