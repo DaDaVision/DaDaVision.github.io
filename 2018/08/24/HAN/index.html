@@ -147,7 +147,8 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3143ca7113f070ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-9dafed659bc86604.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-7cd6b559d74b77d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T08:39:00.263Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-bd1e1666ba711201.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-24T08:49:49.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HAN">
 <meta name="twitter:description" content="论文：Hierarchical Attention Networks for Document Classification 发表会议：*NAACL2016* 前言：本文针对文本分类任务提出了一个层次化attention机制模型(HAN)，有两个显著的特点：(1)采用“词-句子-文章”的层次化结构来表示一篇文本。(2)该模型有两个层次的attention机制，分别存在于词层次(word level">
@@ -424,7 +425,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 16:03:04 / 修改时间：16:39:00" itemprop="dateCreated datePublished" datetime="2018-08-24T16:03:04+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 16:03:04 / 修改时间：16:49:49" itemprop="dateCreated datePublished" datetime="2018-08-24T16:03:04+08:00">2018-08-24</time>
             
 
             
@@ -509,7 +510,13 @@
 <p>重置门rt决定有多少过去的信息作用于候选状态，如果rt是0，即忘记之前的所有状态：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-7cd6b559d74b77d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p><strong>2 层次化attention</strong></p>
 <p><strong>2.1 词编码器（Word Encoder）</strong></p>
-<p>由词序列组成$w_{it}$,$t\in [0,T]$组成的句子,首先把词转化成词向量，$x_{it}=W_{e}w_{it}$,然后用双向的GRU网络,可以将正向和反向的上下文信息结合起来，获得隐藏层输出。</p>
+<p>由词序列组成$w_{it}$,$t\in [0,T]$组成的句子,首先把词转化成词向量，$x_{it}=W_{e}w_{it}$,然后用双向的GRU网络,可以将正向和反向的上下文信息结合起来，获得隐藏层输出。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-bd1e1666ba711201.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对于一个给定的词语$w_{it}$,经过GRU网络后，我们获得了一种新的表示：$h_{it}=[\overrightarrow{h_{it}},\overleftarrow{h_{it}}]$</p>
+<p>$h_{it}$包含了$w_{it}$周围两个方向的信息。</p>
+<p><strong>2.2 词级别的attention机制</strong></p>
+<p>attention机制的目的是要把一个句子中，对句子的含义最重要，贡献最大的词语找出来。我们通过将$h_{it}$输入到一个单层的感知机(MLP)中得到的结果$u_{it}$作为$h_{it}$的隐含表示。</p>
+<p>为了衡量单词的重要性,我们用$u_{it}$和一个随机初始化的上下文向量$u_{w}$的相似度来表示，然后经过softmax操作获得了一个归一化的attention权重矩阵$\alpha _{it}$，代表句子i中第t个词的权重。<br>$\alpha <em>{it}=\frac{exp\left( u</em>{it}^{\top } u_{w}\right) }{\sum_{t}^{}{exp\left( u_{it}^\top u_{w} \right) } }$</p>
+<p>有了attention权重矩阵以后，我们可以将句子向量$s_{i}$看作组成这些句子的词向量的加权求和。这里的上下文向量$u_{w}$是在训练网络的过程中学习获得的。我们可以把$u_{w}$当作一种询问的高级表示，比如“哪些词含有比较重要的信息？”</p>
 
       
     </div>
@@ -911,7 +918,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共50.5k字</span>
+  <span class="post-count">博客全站共50.9k字</span>
 </div>
         
 <div class="busuanzi-count">
