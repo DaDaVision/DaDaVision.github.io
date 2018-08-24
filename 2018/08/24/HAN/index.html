@@ -143,7 +143,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-4eff2296d8389ddf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-0feab3f9a475bb34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T09:29:06.607Z">
+<meta property="og:updated_time" content="2018-08-24T09:33:30.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HAN">
 <meta name="twitter:description" content="论文：Hierarchical Attention Networks for Document Classification 发表会议：*NAACL2016* 前言：本文针对文本分类任务提出了一个层次化attention机制模型(HAN)，有两个显著的特点：(1)采用“词-句子-文章”的层次化结构来表示一篇文本。(2)该模型有两个层次的attention机制，分别存在于词层次(word level">
@@ -420,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 16:03:04 / 修改时间：17:29:06" itemprop="dateCreated datePublished" datetime="2018-08-24T16:03:04+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 16:03:04 / 修改时间：17:33:30" itemprop="dateCreated datePublished" datetime="2018-08-24T16:03:04+08:00">2018-08-24</time>
             
 
             
@@ -519,7 +519,7 @@
 <p>attention机制的目的是要把一个句子中，对句子的含义最重要，贡献最大的词语找出来。我们通过将$h_{it}$输入到一个单层的感知机(MLP)中得到的结果$u_{it}$作为$h_{it}$的隐含表示。</p>
 <p> $u_{it}=tanh(W_{w}h_{it}+b_{w})$</p>
 <p>为了衡量单词的重要性,我们用$u_{it}$和一个随机初始化的上下文向量$u_{w}$的相似度来表示，然后经过softmax操作获得了一个归一化的attention权重矩阵$\alpha _{it}$，代表句子i中第t个词的权重。</p>
-<p>$\alpha <em>{it}=\frac{exp\left( u</em>{it}^{\top } u_{w}\right) }{\sum_{t}^{}{exp\left( u_{it}^\top u_{w} \right) } } $</p>
+<p> $\alpha_{i}=\frac{exp\left( u_{i}^\top u_{s} \right) }{\sum_{t}^{}{exp\left( u_{t}^\top u_{s} \right) } } $</p>
 <p>有了attention权重矩阵以后，我们可以将句子向量$s_{i}$看作组成这些句子的词向量的加权求和。这里的上下文向量$u_{w}$是在训练网络的过程中学习获得的。我们可以把$u_{w}$当作一种询问的高级表示，比如“哪些词含有比较重要的信息？”</p>
 <p>$s_{i}=\sum_{t}{\alpha_{it}h_{it}} $</p>
 <p><strong>2.3 语句编码器(Sentence Encoder)</strong></p>
