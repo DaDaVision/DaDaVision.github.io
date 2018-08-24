@@ -141,10 +141,13 @@
 <meta property="og:site_name" content="DaDaVision">
 <meta property="og:description" content="​    最近两年，注意力模型（Attention Model）被广泛使用在自然语言处理、图像识别及语音识别等各种不同类型的深度学习任务中，是深度学习技术中最值得关注与深入了解的核心技术之一。 ​    本文以机器翻译为例，深入浅出地介绍了深度学习中注意力机制的原理及关键计算机制，同时也抽象出其本质思想，并介绍了注意力模型在图像及语音等领域的典型应用场景。 ​    注意力模型最近几年在深度学习各">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-24T05:07:40.594Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fb4da1bea0bf6c0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-673d1e3c89384f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-24T05:11:55.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习中Attention注意力机制">
 <meta name="twitter:description" content="​    最近两年，注意力模型（Attention Model）被广泛使用在自然语言处理、图像识别及语音识别等各种不同类型的深度学习任务中，是深度学习技术中最值得关注与深入了解的核心技术之一。 ​    本文以机器翻译为例，深入浅出地介绍了深度学习中注意力机制的原理及关键计算机制，同时也抽象出其本质思想，并介绍了注意力模型在图像及语音等领域的典型应用场景。 ​    注意力模型最近几年在深度学习各">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-fb4da1bea0bf6c0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -417,7 +420,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 12:55:45 / 修改时间：13:07:40" itemprop="dateCreated datePublished" datetime="2018-08-24T12:55:45+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 12:55:45 / 修改时间：13:11:55" itemprop="dateCreated datePublished" datetime="2018-08-24T12:55:45+08:00">2018-08-24</time>
             
 
             
@@ -485,6 +488,16 @@
 <p>​    本文以机器翻译为例，深入浅出地介绍了深度学习中注意力机制的原理及关键计算机制，同时也抽象出其本质思想，并介绍了注意力模型在图像及语音等领域的典型应用场景。</p>
 <p>​    注意力模型最近几年在深度学习各个领域被广泛使用，无论是图像处理、语音识别还是自然语言处理的各种不同类型的任务中，都很容易遇到注意力模型的身影。所以，了解注意力机制的工作原理对于关注深度学习技术发展的技术人员来说有很大的必要。</p>
 <a id="more"></a>
+<p><strong>人类的视觉注意力</strong></p>
+<p>​    从注意力模型的命名方式看，很明显其借鉴了人类的注意力机制，因此，我们首先简单介绍人类视觉的选择性注意力机制。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-fb4da1bea0bf6c0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>图1 人类的视觉注意力 </p>
+<p>​    视觉注意力机制是人类视觉所特有的大脑信号处理机制。人类视觉通过快速扫描全局图像，获得需要重点关注的目标区域，也就是一般所说的注意力焦点，而后对这一区域投入更多注意力资源，以获取更多所需要关注目标的细节信息，而抑制其他无用信息。</p>
+<p>​    这是人类利用有限的注意力资源从大量信息中快速筛选出高价值信息的手段，是人类在长期进化中形成的一种生存机制，人类视觉注意力机制极大地提高了视觉信息处理的效率与准确性。</p>
+<p>​    图1形象化展示了人类在看到一副图像时是如何高效分配有限的注意力资源的，其中红色区域表明视觉系统更关注的目标，很明显对于图1所示的场景，人们会把注意力更多投入到人的脸部，文本的标题以及文章首句等位置。</p>
+<p>​    深度学习中的注意力机制从本质上讲和人类的选择性视觉注意力机制类似，核心目标也是从众多信息中选择出对当前任务目标更关键的信息。</p>
+<p><strong>Encoder-Decoder框架</strong></p>
+<p>​    要了解深度学习中的注意力模型，就不得不先谈Encoder-Decoder框架，因为目前大多数注意力模型附着在Encoder-Decoder框架下，当然，其实注意力模型可以看作一种通用的思想，本身并不依赖于特定框架，这点需要注意。</p>
+<p>​    Encoder-Decoder框架可以看作是一种深度学习领域的研究模式，应用场景异常广泛。图2是文本处理领域里常用的Encoder-Decoder框架最抽象的一种表示。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-673d1e3c89384f28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>目前主流attention主流方法</p>
 <ol>
 <li><p>首先是Object Recognition。</p>
@@ -903,7 +916,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共43.7k字</span>
+  <span class="post-count">博客全站共44.3k字</span>
 </div>
         
 <div class="busuanzi-count">
