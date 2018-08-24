@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T13:36:16.846Z">
+<meta property="og:updated_time" content="2018-08-24T13:59:30.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepIOT神经网络压缩">
 <meta name="twitter:description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:36:16" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:59:30" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
             
 
             
@@ -526,7 +526,7 @@
 <p>6、Hinton等人提出了一个<strong>teacher-student框架</strong>，将整个模型中的知识提炼成一个模型。然而，框架更侧重于将模型集合压缩为单一模型而不是结构压缩。</p>
 <p><strong>二、系统介绍</strong></p>
 <p>​    DeepIoT通过<strong>决定每层中最小元素的数量来压缩常用的深度神经网络结构以用于传感应用</strong>。 先前关于神经网络压缩的照明研究使疏密密集将参数矩阵转换为大型稀疏矩阵。 相比之下，<strong>DeepIoT最大限度地减少了每层中的元素数量，从而将参数转化为一组小密集矩阵</strong>。<strong>小密集矩阵不需要为元素索引额外存储</strong>，并且对处理进行了有效优化。</p>
-<p>​    DeepIoT借用了广泛使用的被称为<strong>Dropout</strong>的<strong>深度学习正则化方法隐藏元素</strong>的想法。 <strong>Dropout操作给每个隐藏元素一个Dropout概率</strong>。 在<strong>丢失过程</strong>中，<strong>隐藏元素可根据其丢失概率进行修剪</strong>。 可以生成“<strong>细化</strong>”的网络结构。 但是，这些丢失概率通常设置为预定义值，例如0.5。 这种预定义的值不是最优的概率，从而导致对解空间的有效探索较少。如果我们能够<strong>获得每个隐藏元素的最优丢失概率</strong>，那么我们就有可能<strong>生成 最优的薄网络结构，在保留了传感应用的精度，同时最大限度地降低了传感系统的资源消耗</strong>。DeepIoT的一个重要目的是<strong>为神经网络中的每个隐藏元素找到最优的丢失概率</strong>。</p>
+<p>​    DeepIoT借用了广泛使用的被称为<strong>Dropout</strong>的<strong>深度学习正则化方法隐藏元素</strong>的想法。 <strong>Dropout操作给每个隐藏元素一个Dropout概率</strong>。 在<strong>dropout过程</strong>中，<strong>隐藏元素可根据其dropout概率进行修剪</strong>。 可以生成“<strong>细化</strong>”的网络结构。 但是，这些dropout概率通常设置为预定义值，例如0.5。 这种预定义的值不是最优的概率，从而导致对解空间的有效探索较少。如果我们能够<strong>获得每个隐藏元素的最优dropout概率</strong>，那么我们就有可能<strong>生成 最优的薄网络结构，在保留了传感应用的精度，同时最大限度地降低了传感系统的资源消耗</strong>。DeepIoT的一个重要目的是<strong>为神经网络中的每个隐藏元素找到最优的dropout概率</strong>。</p>
 <p>​    注意，Dropout可以很容易地应用于所有常用的神经网络结构。</p>
 <p>​    1、在<strong>全连接的神经网络</strong>中，神经元在每一<strong>层</strong>都被丢弃;</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/12654931-b911647b450f5464.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -537,7 +537,7 @@
 <p>​    3、并且在<strong>递归神经网络</strong>中，减小每层的<strong>维度</strong>。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-0bed97057f74ccdd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>对于RNN层，DeepIoT直接降低了RNN的维度，用于模型压缩。 </p>
 <p>​    意味着<strong>DeepIoT可以应用于所有常用的神经网络结构及其组合</strong>。</p>
-<p>​    DeepIoT的贡献在于<strong>利用新颖的压缩器神经网络将每个层的模型参数作为输入，学习参数冗余，并相应地生成Dropout概率</strong>。<strong>由于不同层之间存在参数互联，因此我们设计压缩神经网络作为递归神经网络，能够全局共享冗余信息并逐层生成丢失概率</strong>。</p>
+<p>​    DeepIoT的贡献在于<strong>利用新颖的压缩器神经网络将每个层的模型参数作为输入，学习参数冗余，并相应地生成Dropout概率</strong>。<strong>由于不同层之间存在参数互联，因此我们设计压缩神经网络作为递归神经网络，能够全局共享冗余信息并逐层生成dropout概率</strong>。</p>
 <p><strong>压缩机神经网络</strong>与原神经网络<strong>协同优化</strong>，通过<strong>compressor-critic框架</strong>进行压缩，<strong>尽量减小原始传感应用程序的损失功能</strong>。actor-critic框架模拟了著名的基于增强学习的actor-critic算法的思想，以<strong>迭代的方式</strong>优化了两个网络。</p>
 <p>评估实验。</p>
 <p>1、首先由三个任务组成，这三个任务使嵌入式系统能够以基本模式（包括<strong>手写文本</strong>，<strong>视觉</strong>和<strong>语音</strong>）与人类进行交互，与其他类似尺寸的神经网络相比，我们生成的神经网络具有更高的准确性。</p>
@@ -557,7 +557,7 @@
 <p>​    <strong><em>学习参数冗余 </em></strong>（橙色）<br><img src="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>​    基于参数冗余的DeepIOT。在理想的情况下，DeepIoT可以学习一个带参数的最优压缩机$\mu$，函数从神经网络中获取权重矩阵W。学习参数冗余，并生成可用于压缩的隐藏神经元的最优Dropout概率 。</p>
 <p>​    <strong><em>参数冗余的全局视图</em></strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>​    但我们如何设计这个最优压缩函数与参数冗余的全局视图。我们知道深神经网络本身就是完美函数逼近器。只要有足够的容量，它就可以逼近所有已有的连续函数。因此，我们将<strong>压缩函数设计成一种递归神经网络。</strong>它<strong>从原始神经网络中逐层提取权重矩阵，了解全局冗余信息，生成压缩丢失概率</strong>。这里我们称压缩函数、压缩器和要压缩的原始神经网络为“critic”，因为critic向压缩器提供反馈，让它知道根据“监督”得出的dropout概率是好是坏 。</p>
+<p>​    但我们如何设计这个最优压缩函数与参数冗余的全局视图。我们知道深神经网络本身就是完美函数逼近器。只要有足够的容量，它就可以逼近所有已有的连续函数。因此，我们将<strong>压缩函数设计成一种递归神经网络。</strong>它<strong>从原始神经网络中逐层提取权重矩阵，了解全局冗余信息，生成压缩dropout概率</strong>。这里我们称压缩函数、压缩器和要压缩的原始神经网络为“critic”，因为critic向压缩器提供反馈，让它知道根据“监督”得出的dropout概率是好是坏 。</p>
 <p><strong>Compressor-Critic Framework</strong></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>​    DeepIoT的目标函数是根据compressor学习到的损失概率来学习压缩模型的期望损失。我们反复训练，这意味着当训练compressor时，我们把所有的东西都固定在critic，反之亦然 。</p>
