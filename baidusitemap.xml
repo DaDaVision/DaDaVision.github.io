@@ -5,17 +5,17 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/24/DeepIOT%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/</loc>
-    <lastmod>2018-08-24T11:19:11.605Z</lastmod>
+    <lastmod>2018-08-24T12:47:13.247Z</lastmod>
     <data>
         <display>
         <title>DeepIOT神经网络压缩</title>
         <pubTime>2018-08-24T10:48:33.000Z</pubTime>
         
+        <tag>神经网络</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>神经网络</tag>
          
         <tag>神经网络压缩</tag>
          
@@ -37,11 +37,11 @@
         <title>HAN</title>
         <pubTime>2018-08-24T08:03:04.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>Hierarchical Attention Networks</tag>
          
@@ -63,11 +63,11 @@
         <title>深度学习中Attention注意力机制</title>
         <pubTime>2018-08-24T04:55:45.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>注意力机制</tag>
          
@@ -529,9 +529,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>爬虫</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -625,9 +625,9 @@
         
         <tag>深度学习</tag>
          
-        <tag>Keras</tag>
-         
         <tag>Python</tag>
+         
+        <tag>Keras</tag>
          
          
            
