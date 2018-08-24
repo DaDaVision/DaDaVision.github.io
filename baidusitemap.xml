@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/24/LSTM%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2018-08-24T03:06:03.689Z</lastmod>
+    <data>
+        <display>
+        <title>LSTM原理与实现</title>
+        <pubTime>2018-08-24T02:54:25.000Z</pubTime>
+        
+        <tag>LSTM</tag>
+         
+        <tag>深度学习</tag>
+         
+        <tag>RNN</tag>
+         
+        <tag>笔记</tag>
+         
+         
+           
+             
+              <breadCrumb title="LSTM" url="http://yoursite.com/categories/LSTM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/23/%E6%A0%91%E8%A1%A8%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2018-08-23T14:25:09.428Z</lastmod>
     <data>
@@ -13,9 +39,9 @@
         
         <tag>算法</tag>
          
-        <tag>查找算法</tag>
-         
         <tag>数据结构</tag>
+         
+        <tag>查找算法</tag>
          
         <tag>树表查找，二叉树</tag>
          
@@ -39,11 +65,11 @@
         
         <tag>算法</tag>
          
+        <tag>数据结构</tag>
+         
         <tag>查找算法</tag>
          
         <tag>查找</tag>
-         
-        <tag>数据结构</tag>
          
          
            
@@ -65,11 +91,11 @@
         
         <tag>算法</tag>
          
-        <tag>数据结构</tag>
-         
         <tag>排序算法</tag>
          
         <tag>排序</tag>
+         
+        <tag>数据结构</tag>
          
          
            
@@ -270,11 +296,11 @@
         
         <tag>深度学习</tag>
          
+        <tag>笔记</tag>
+         
         <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
-         
-        <tag>笔记</tag>
          
          
            
@@ -333,9 +359,9 @@
         <title>偏差、方差、噪声</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>机器学习</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>机器学习</tag>
          
         <tag>性能评估</tag>
          
@@ -401,9 +427,9 @@
         <title>分糖果</title>
         <pubTime>2018-06-09T10:32:01.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>算法</tag>
+         
+        <tag>Python</tag>
          
         <tag>回溯</tag>
          
@@ -447,9 +473,9 @@
         <title>查准率precision和查全率recall、F1</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>机器学习</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>机器学习</tag>
          
         <tag>性能评估</tag>
          
