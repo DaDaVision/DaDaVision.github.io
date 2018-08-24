@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T13:28:40.489Z">
+<meta property="og:updated_time" content="2018-08-24T13:36:16.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepIOT神经网络压缩">
 <meta name="twitter:description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:28:40" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:36:16" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
             
 
             
@@ -562,7 +562,9 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>​    DeepIoT的目标函数是根据compressor学习到的损失概率来学习压缩模型的期望损失。我们反复训练，这意味着当训练compressor时，我们把所有的东西都固定在critic，反之亦然 。</p>
 <p>​    对原神经网络和压缩神经网络进行迭代优化，使压缩神经网络以<strong>软删除</strong>的方式逐渐压缩原神经网络。 </p>
-<p>​    我们把最初的神经网络称为$F_{W}(x|z)​$，我们称之为Critic。它将x作为输入，并基于二进制dropout 记为Z和模型参数w生成预测，这些参数w指的是一组权重$W=w^{(l)}​$。 。我们假设$F_{W}(x|z)​$是一个预先训练好的模型。$z~\mu_{\phi}(W)​$表示压缩神经网络。它将Critic的权重作为输入，并根据其自身参数生成mask向量Z的概率分布。为了优化压缩器，使其在Critic中去掉隐藏元素，DeepIoT遵循了上图的目标函数。</p>
+<p>​    我们把最初的神经网络称为$F_{W}(x|z)$，我们称之为Critic。它将x作为输入，并基于二进制dropout 记为Z和模型参数w生成预测，这些参数w指的是一组权重$W=w^{(l)}$。 。我们假设$F_{W}(x|z)$是一个预先训练好的模型。$z~\mu_{\phi}(W)$表示压缩神经网络。它将Critic的权重作为输入，并根据其自身参数生成mask向量Z的概率分布。为了优化压缩器，使其在Critic中去掉隐藏元素，DeepIoT遵循了上图的目标函数。</p>
+<p>​    其中$l$是Critic的目标函数。目标函数可以解释为原始神经网络的期望损失乘以压缩机产生的dropout概率。</p>
+<p>​    DeeploT以迭代的方式优化Compressor和Critic。通过对Compressor采用梯度下降法，迭代求解，降低了目标函数中定义的期望损失。如何去做？由于存在<strong>离散采样操作</strong>，在计算图中，反向传播不直接适用。因此，我们使用<strong>无偏似然比估计量</strong>来计算。</p>
 
       
     </div>
@@ -968,7 +970,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.4k字</span>
+  <span class="post-count">博客全站共54.5k字</span>
 </div>
         
 <div class="busuanzi-count">

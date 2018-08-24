@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/24/DeepIOT%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/</loc>
-    <lastmod>2018-08-24T13:28:40.489Z</lastmod>
+    <lastmod>2018-08-24T13:36:16.846Z</lastmod>
     <data>
         <display>
         <title>DeepIOT神经网络压缩</title>
@@ -37,11 +37,11 @@
         <title>HAN</title>
         <pubTime>2018-08-24T08:03:04.000Z</pubTime>
         
+        <tag>Attention</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>Attention</tag>
          
         <tag>Hierarchical Attention Networks</tag>
          
@@ -63,11 +63,11 @@
         <title>深度学习中Attention注意力机制</title>
         <pubTime>2018-08-24T04:55:45.000Z</pubTime>
         
+        <tag>Attention</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>Attention</tag>
          
         <tag>注意力机制</tag>
          
@@ -374,11 +374,11 @@
         
         <tag>深度学习</tag>
          
+        <tag>笔记</tag>
+         
         <tag>PyTorch</tag>
          
         <tag>机器学习</tag>
-         
-        <tag>笔记</tag>
          
          
            
@@ -437,9 +437,9 @@
         <title>偏差、方差、噪声</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>机器学习</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>机器学习</tag>
          
         <tag>性能评估</tag>
          
@@ -551,9 +551,9 @@
         <title>查准率precision和查全率recall、F1</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>机器学习</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>机器学习</tag>
          
         <tag>性能评估</tag>
          
