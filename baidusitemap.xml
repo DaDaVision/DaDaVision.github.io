@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/24/HAN/</loc>
-    <lastmod>2018-08-24T08:49:49.360Z</lastmod>
+    <lastmod>2018-08-24T08:55:07.743Z</lastmod>
     <data>
         <display>
         <title>HAN</title>
@@ -350,9 +350,9 @@
          
         <tag>笔记</tag>
          
-        <tag>PyTorch</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>PyTorch</tag>
          
          
            
@@ -549,9 +549,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -573,9 +573,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
