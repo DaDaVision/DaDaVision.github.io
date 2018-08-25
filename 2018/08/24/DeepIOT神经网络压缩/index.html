@@ -134,7 +134,7 @@
 
 
   <meta name="description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
-<meta name="keywords" content="深度学习,笔记,神经网络,神经网络压缩">
+<meta name="keywords" content="神经网络,深度学习,笔记,神经网络压缩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DeepIOT神经网络压缩">
 <meta property="og:url" content="http://yoursite.com/2018/08/24/DeepIOT神经网络压缩/index.html">
@@ -150,7 +150,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-24T13:59:30.731Z">
+<meta property="og:updated_time" content="2018-08-24T14:36:07.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DeepIOT神经网络压缩">
 <meta name="twitter:description" content="DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework Shuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana Ch">
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：21:59:30" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
+              <time title="创建时间：2018-08-24 18:48:33 / 修改时间：22:36:07" itemprop="dateCreated datePublished" datetime="2018-08-24T18:48:33+08:00">2018-08-24</time>
             
 
             
@@ -551,7 +551,7 @@
 <p><img src="https://upload-images.jianshu.io/upload_images/12654931-30483f2f5494237f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>上图我们使用一个压缩3层全连接神经网络结构的例子来说明DeepIoT的整个流程。 （绿色方框表示原始神经网络的参数。橙色代表dropout操作）所示。使用DeepIoT压缩传感应用的神经网络结构的基本步骤可概括如下：</p>
 <p>（1）   <strong>插入操作</strong>。将概率$p^{(l)}$随机置零的隐藏元素(图1中的红色方框)插入到原始神经网络的内部层中。  </p>
-<p>（2）   <strong>构建压缩神经网络</strong>。它将图层中的<strong>原始神经网络权重矩阵$W^{l}$ </strong>（图1中的绿框）<strong>作为输入进行压缩</strong>，<strong>在不同层之间学习和共享参数冗余，并生成最优dropout概率$p^{(l)}$</strong>，<strong>然后送回到原始神经网络中的dropout操作</strong>。</p>
+<p>（2）   <strong>构建压缩神经网络</strong>。它将图层中的<strong>原始神经网络权重矩阵$W^{l}​$ </strong>（图1中的绿框）<strong>作为输入进行压缩</strong>，<strong>在不同层之间学习和共享参数冗余，并生成最优dropout概率$p^{(l)}​$</strong>，<strong>然后送回到原始神经网络中的dropout操作</strong>。</p>
 <p>（3）  用<strong>compressor-critic框架对压缩神经网络和原始神经网络进行</strong>迭代优化<strong>。 </strong>对压缩神经网络进行迭代优化，使其产生更好的退出概率，从而为原神经网络生成更有效的网络结构。 </p>
 <p>​    </p>
 <p>​    <strong><em>学习参数冗余 </em></strong>（橙色）<br><img src="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
@@ -594,11 +594,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/神经网络/" <i class="fa fa-tag"></i> 神经网络</a>
+          
             <a href="/tags/深度学习/" <i class="fa fa-tag"></i> 深度学习</a>
           
             <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
-          
-            <a href="/tags/神经网络/" <i class="fa fa-tag"></i> 神经网络</a>
           
             <a href="/tags/神经网络压缩/" <i class="fa fa-tag"></i> 神经网络压缩</a>
           
@@ -622,6 +622,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/25/协方差与相关系数/" rel="prev" title="协方差与相关系数">
+                协方差与相关系数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -703,7 +707,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -847,7 +851,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">47</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -970,7 +978,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共54.5k字</span>
+  <span class="post-count">博客全站共54.7k字</span>
 </div>
         
 <div class="busuanzi-count">
