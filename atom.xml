@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-25T12:42:44.468Z</updated>
+  <updated>2018-08-25T12:50:33.717Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A2%AF%E5%BA%A6%E7%9A%84%E8%B4%9F%E6%96%B9%E5%90%91%E6%98%AF%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%9C%80%E5%BF%AB%E7%9A%84%E6%96%B9%E5%90%91/"/>
     <id>http://yoursite.com/2018/08/25/为什么梯度的负方向是梯度下降最快的方向/</id>
     <published>2018-08-25T11:52:01.000Z</published>
-    <updated>2018-08-25T12:42:44.468Z</updated>
+    <updated>2018-08-25T12:50:33.717Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="什么是梯度？"><a href="#什么是梯度？" class="headerlink" title="什么是梯度？"></a>什么是梯度？</h2><p>​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释：</p><p>​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，然后继续沿下一个位置最陡方向前进一小步。这样一步一步走下去，一直走到觉得我们已经到了山脚。这里的<strong>下山最陡的方向就是梯度的负方向</strong>。    </p><p>​    首先理解什么是<strong>梯度</strong>？通俗来说，<strong>梯度就是表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在当前位置的导数</strong>。</p><p>$∇=\frac{df(θ)}{dθ}$</p><a id="more"></a><p>上式中，$θ$是自变量，$f(θ)$是关于$θ$的函数，$θ$表示梯度。</p><h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><p>​    如果函数$f(θ)​$是凸函数，那么就可以使用梯度下降算法进行优化。梯度下降算法的公式我们已经很熟悉了：</p><p>$\theta=\theta_{0}-\eta\cdot\bigtriangledown f(\theta_{0})$</p><p>$θ=θ<em>{0}−η⋅∇f(0</em>{0})$</p><p>​    其中，$\theta_{0}$是自变量参数，即下山位置坐标，$η$是学习因子，即下山每次前进的一小步（步进长度），$θ$是更新后的$θ_{0}$，即下山移动一小步之后的位置。</p><p>​    梯度下降算法的公式非常简单！但是”沿着梯度的反方向（坡度最陡）“是我们日常经验得到的，其本质的原因到底是什么呢？为什么局部下降最快的方向就是梯度的负方向呢？也许很多朋友还不太清楚。没关系，接下来我将以通俗的语言来详细解释梯度下降算法公式的数学推导过程。</p><h2 id="一阶泰勒展开式"><a href="#一阶泰勒展开式" class="headerlink" title="一阶泰勒展开式"></a>一阶泰勒展开式</h2><p>​    这里需要一点数学基础，对泰勒展开式有些了解。简单地来说，泰勒展开式利用的就是函数的局部线性近似这个概念。我们以一阶泰勒展开式为例：</p><p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p><p>不懂上面的公式？没有关系。用下面这张图来解释。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>凸函数$f(θ)$的某一小段$[θ<em>{0},θ]$由上图黑色曲线表示，可以利用线性近似的思想求出$f(θ)$的值，如上图红色直线。该直线的斜率等于$f(θ)$在$θ</em>{0}$处的导数。则根据直线方程，很容易得到$f(θ)$的近似表达式为：</p><p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p><p>这就是一阶泰勒展开式的推导过程，主要利用的数学思想就是曲线函数的线性拟合近似。</p><h2 id="梯度下降数学原理"><a href="#梯度下降数学原理" class="headerlink" title="梯度下降数学原理"></a>梯度下降数学原理</h2><p>知道了一阶泰勒展开式之后，接下来就是重点了！我们来看一下梯度下降算法是如何推导的。</p><p>先写出一阶泰勒展开式的表达式：</p><p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p><p>其中，$θ−θ<em>{0}$是微小矢量，它的大小就是我们之前讲的步进长度η，类比于下山过程中每次前进的一小步，η为标量，而$θ−θ</em>{0}$的单位向量用$v$表示。则$θ−θ_{0}$可表示为：</p><p>$θ−θ_{0}=ηv$</p><p>特别需要注意的是，$θ−θ_{0}$不能太大，因为太大的话，线性近似就不够准确，一阶泰勒近似也不成立了。替换之后，$f(θ)$的表达式为：</p><p>$f(θ)≈f(θ<em>{0})+ηv⋅∇f(θ</em>{0})$</p><p>重点来了，局部下降的目的是希望每次$θ$更新，都能让函数值$f(θ)$变小。也就是说，上式中，我们希望$f(θ)&lt;f(θ_{0})$。则有：</p><p>$f(θ)−f(θ<em>{0})≈ηv⋅∇f(θ</em>{0})&lt;0$</p><p>因为$η$为标量，且一般设定为正值，所以可以忽略，不等式变成了：</p><p>$v⋅∇f(θ_{0})&lt;0$</p><p>上面这个不等式非常重要！$v$和$∇f(θ<em>{0})$都是向量，$∇f(θ</em>{0})$是当前位置的梯度方向，$v$表示下一步前进的单位向量，是需要我们求解的，有了它，就能根据$θ−θ_{0}=ηv$确定$θ$值了。</p><p>想要两个向量的乘积小于零，我们先来看一下两个向量乘积包含哪几种情况：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f7f779a9600abcb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>A和B均为向量，$α$为两个向量之间的夹角。A和B的乘积为：</p><p>$A⋅B=||A||⋅||B||⋅cos(α)$</p><p>$||A||$和$||B||$均为标量，在$||A||$和$||B||$确定的情况下，只要$cos(α)=−1$，即A和B完全反向，就能让A和B的向量乘积最小（负最大值）。</p><p>顾名思义，当$v$与$∇f(θ<em>{0})$互为反向，即$v$为当前梯度方向的负方向的时候，能让$v⋅∇f(θ</em>{0})$最大程度地小，也就保证了$v$的方向是局部下降最快的方向。</p><p>知道$v$是$∇f(θ_{0})$的反方向后，可直接得到：</p><p>$v=−\frac{∇f(θ<em>{0})}{||∇f(θ</em>{0})||}$</p><p>之所以要除以$∇f(θ<em>{0})$的模$||∇f(θ</em>{0})||$，是因为$v$是单位向量。</p><p>求出最优解$v$之后，带入到$θ−θ_{0}=ηv$中，得：</p><p>$v=θ<em>{0}−η\frac{∇f(θ</em>{0})}{||∇f(θ_{0})||}$</p><p>一般地，因为$||∇f(θ_{0})||$是标量，可以并入到步进因子$η$中，即简化为：</p><p>$θ=θ<em>{0}−η∇f(θ</em>{0})$</p><p>这样，我们就推导得到了梯度下降算法中$θ$的更新表达式。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们通过一阶泰勒展开式，利用线性近似和向量相乘最小化的思想搞懂了梯度下降算法的数学原理。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="什么是梯度？"><a href="#什么是梯度？" class="headerlink" title="什么是梯度？"></a>什么是梯度？</h2><p>​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释：</p><p>​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，然后继续沿下一个位置最陡方向前进一小步。这样一步一步走下去，一直走到觉得我们已经到了山脚。这里的<strong>下山最陡的方向就是梯度的负方向</strong>。    </p><p>​    首先理解什么是<strong>梯度</strong>？通俗来说，<strong>梯度就是表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在当前位置的导数</strong>。</p><p>$∇=\frac{df(θ)}{dθ}$</p><a id="more"></a><p>上式中，$θ$是自变量，$f(θ)$是关于$θ$的函数，$θ$表示梯度。</p><h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><p>​    如果函数$f(θ)​$是凸函数，那么就可以使用梯度下降算法进行优化。梯度下降算法的公式我们已经很熟悉了：</p><p>$\theta=\theta_{0}-\eta\cdot\bigtriangledown f(\theta_{0})$</p><p>$θ=θ<em>{0}−η⋅∇f(0</em>{0})$</p><p>​    其中，$\theta_{0}$是自变量参数，即下山位置坐标，$η$是学习因子，即下山每次前进的一小步（步进长度），$θ$是更新后的$θ_{0}$，即下山移动一小步之后的位置。</p><p>​    梯度下降算法的公式非常简单！但是”沿着梯度的反方向（坡度最陡）“是我们日常经验得到的，其本质的原因到底是什么呢？为什么局部下降最快的方向就是梯度的负方向呢？也许很多朋友还不太清楚。没关系，接下来我将以通俗的语言来详细解释梯度下降算法公式的数学推导过程。</p><h2 id="一阶泰勒展开式"><a href="#一阶泰勒展开式" class="headerlink" title="一阶泰勒展开式"></a>一阶泰勒展开式</h2><p>​    这里需要一点数学基础，对泰勒展开式有些了解。简单地来说，泰勒展开式利用的就是函数的局部线性近似这个概念。我们以一阶泰勒展开式为例：</p><p>$f(\theta)\approx=f(\theta_{0}+(\theta-\theta_{0})\cdot\bigtriangledown f(\theta_{0}))$</p><p>不懂上面的公式？没有关系。用下面这张图来解释。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>凸函数$f(θ)$的某一小段$[\theta_{0},θ]$由上图黑色曲线表示，可以利用线性近似的思想求出$f(θ)$的值，如上图红色直线。该直线的斜率等于$f(θ)$在$θ_{0}$处的导数。则根据直线方程，很容易得到$f(θ)$的近似表达式为：</p><p>$f(\theta)\approx=f(\theta_{0}+(\theta-\theta_{0})\cdot\bigtriangledown f(\theta_{0}))$</p><p>这就是一阶泰勒展开式的推导过程，主要利用的数学思想就是曲线函数的线性拟合近似。</p><h2 id="梯度下降数学原理"><a href="#梯度下降数学原理" class="headerlink" title="梯度下降数学原理"></a>梯度下降数学原理</h2><p>知道了一阶泰勒展开式之后，接下来就是重点了！我们来看一下梯度下降算法是如何推导的。</p><p>先写出一阶泰勒展开式的表达式：</p><p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p><p>其中，$θ−θ<em>{0}$是微小矢量，它的大小就是我们之前讲的步进长度η，类比于下山过程中每次前进的一小步，η为标量，而$θ−θ</em>{0}$的单位向量用$v$表示。则$θ−θ_{0}$可表示为：</p><p>$θ−θ_{0}=ηv$</p><p>特别需要注意的是，$θ−θ_{0}$不能太大，因为太大的话，线性近似就不够准确，一阶泰勒近似也不成立了。替换之后，$f(θ)$的表达式为：</p><p>$f(θ)≈f(θ<em>{0})+ηv⋅∇f(θ</em>{0})$</p><p>重点来了，局部下降的目的是希望每次$θ$更新，都能让函数值$f(θ)$变小。也就是说，上式中，我们希望$f(θ)&lt;f(θ_{0})$。则有：</p><p>$f(θ)−f(θ<em>{0})≈ηv⋅∇f(θ</em>{0})&lt;0$</p><p>因为$η$为标量，且一般设定为正值，所以可以忽略，不等式变成了：</p><p>$v⋅∇f(θ_{0})&lt;0$</p><p>上面这个不等式非常重要！$v$和$∇f(θ<em>{0})$都是向量，$∇f(θ</em>{0})$是当前位置的梯度方向，$v$表示下一步前进的单位向量，是需要我们求解的，有了它，就能根据$θ−θ_{0}=ηv$确定$θ$值了。</p><p>想要两个向量的乘积小于零，我们先来看一下两个向量乘积包含哪几种情况：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f7f779a9600abcb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>A和B均为向量，$α$为两个向量之间的夹角。A和B的乘积为：</p><p>$A⋅B=||A||⋅||B||⋅cos(α)$</p><p>$||A||$和$||B||$均为标量，在$||A||$和$||B||$确定的情况下，只要$cos(α)=−1$，即A和B完全反向，就能让A和B的向量乘积最小（负最大值）。</p><p>顾名思义，当$v$与$∇f(θ<em>{0})$互为反向，即$v$为当前梯度方向的负方向的时候，能让$v⋅∇f(θ</em>{0})$最大程度地小，也就保证了$v$的方向是局部下降最快的方向。</p><p>知道$v$是$∇f(θ_{0})$的反方向后，可直接得到：</p><p>$v=−\frac{∇f(θ<em>{0})}{||∇f(θ</em>{0})||}$</p><p>之所以要除以$∇f(θ<em>{0})$的模$||∇f(θ</em>{0})||$，是因为$v$是单位向量。</p><p>求出最优解$v$之后，带入到$θ−θ_{0}=ηv$中，得：</p><p>$v=θ<em>{0}−η\frac{∇f(θ</em>{0})}{||∇f(θ_{0})||}$</p><p>一般地，因为$||∇f(θ_{0})||$是标量，可以并入到步进因子$η$中，即简化为：</p><p>$θ=θ<em>{0}−η∇f(θ</em>{0})$</p><p>这样，我们就推导得到了梯度下降算法中$θ$的更新表达式。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们通过一阶泰勒展开式，利用线性近似和向量相乘最小化的思想搞懂了梯度下降算法的数学原理。</p>]]></content>
     
     <summary type="html">
     
@@ -97,11 +97,11 @@
       <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="神经网络" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="神经网络" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
     
       <category term="神经网络压缩" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/"/>
     
@@ -127,11 +127,11 @@
       <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+    
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
     
       <category term="Hierarchical Attention Networks" scheme="http://yoursite.com/tags/Hierarchical-Attention-Networks/"/>
     
@@ -157,11 +157,11 @@
       <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
+      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+    
       <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
     
       <category term="注意力机制" scheme="http://yoursite.com/tags/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     
@@ -620,55 +620,28 @@
   </entry>
   
   <entry>
-    <title>查准率precision和查全率recall、F1</title>
-    <link href="http://yoursite.com/2018/06/09/%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1/"/>
-    <id>http://yoursite.com/2018/06/09/查准率precision和查全率recall、F1/</id>
+    <title>DP+回溯-单词拆分 II</title>
+    <link href="http://yoursite.com/2018/06/09/DP+%E5%9B%9E%E6%BA%AF-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20II/"/>
+    <id>http://yoursite.com/2018/06/09/DP+回溯-单词拆分 II/</id>
     <published>2018-06-09T10:32:02.000Z</published>
-    <updated>2018-06-11T05:04:59.951Z</updated>
+    <updated>2018-06-11T05:04:25.619Z</updated>
     
-    <content type="html"><![CDATA[<p>真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：</p><table><thead><tr><th>真实情况</th><th>预测结果</th><th></th></tr></thead><tbody><tr><td>正例</td><td>反例</td><td></td></tr><tr><td>正例</td><td>TP（真正例）</td><td>FN（假反例）</td></tr><tr><td>反例</td><td>FP（假正例）</td><td>TN（真反例）</td></tr></tbody></table><p><img src="http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png" alt=""></p><a id="more"></a><p>查准率（precision）：<strong>被认定为正例的里面，判断正确的比例</strong>。</p><p>查全率（recall）：<strong>真实正例里，被判断出为正例的比例</strong>。</p><p>查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;而查全率高时，查准率往往偏低,可以通过P-R曲线来取两者的平衡值</p><p><img src="http://img0.ph.126.net/y0wS5Mk_91uJ6Byf-_1W5Q==/6608245202842946148.png" alt=""></p><p>若一个学习器P-R曲线被另一个学习器的曲线完全”<strong>包住</strong>“,则可断言<strong>后者的性能优于前者</strong>， 例如图中学习器A 的性能优于学习器C; 如果两个学习器的P-R 曲线发生了交叉7,例如图中的A 与B ，则难以一般性地断言两者孰优孰劣，只能在具体的查准率或查全率条件下进行比较然而，在很多情形下，人们往往仍希望把学习器A 与B 比出个高低. 这时一个比较合理的判据是比较<strong>P-R 曲线节面积</strong>的大小。</p><p>“<strong>平衡点</strong>“是”<strong>查准率=查全率</strong>“时的取值。</p><p>但更常用的使用<strong>F1</strong>来衡量查准率与查全率；</p><p>F1基于查准率与查全率的<strong>调和平均：</strong><img src="http://img0.ph.126.net/yg8YAE8RHL175oCy3vjc3g==/6632743421421514260.png" alt=""></p><p><img src="http://img0.ph.126.net/jpR5P7LKuB3AzZtvxzj_EA==/6631628516633222094.png" alt="">，sum为样例总数，</p><p>具体应用中可能对P和R有不同的倚重。比如<strong>商品推荐</strong>中，为了尽可能少打扰用户，更希望推荐内容确是用户感兴趣的，这时候<strong>查准率更重要</strong>。而在<strong>逃犯检索系统</strong>中，更希望尽可能少漏掉逃犯，此时<strong>查全率更重要</strong>。</p><p>F1度量的一般形式<strong>F**</strong>β<strong>（</strong>加权调和平均**）就可以表达这种偏好。 </p><p><img src="http://img2.ph.126.net/QSkXIzD2uBJSYNeqVKXbnA==/2291206310525129759.png" alt="">即  <img src="http://img2.ph.126.net/mlX2uGe9BlIO58oi64A-6w==/6632646664398271337.png" alt=""></p><p><strong>ß = 1时退化为标准的F1,当β&gt;1意味着P占比重更大</strong>，<strong>反之则是R</strong>。</p><h5 id="ROC、AUC"><a href="#ROC、AUC" class="headerlink" title="ROC、AUC"></a><strong>ROC、AUC</strong></h5><p><strong>ROC</strong>:全称“<strong>受试者工作特征</strong>”，<strong>表达了模型的泛化能力</strong>。其纵坐标为“<strong>TPR真正例率</strong>”；横坐标为“<strong>FPR假正例率</strong>”。</p><p><strong>ROC曲线根据模型的排序结果，一个个划分正负</strong>，每次得出两个值TPR,FPR。很多学习器是为测试样本产生一个<strong>实值</strong>或<strong>概率预测</strong>，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。为啥在ROC曲线画一个y=x呢，那表示<strong>随机猜测的ROC</strong>。</p><p><strong>AUC:ROC曲线下的面积</strong>.AUC=1,是完美分类器(并不存在)；0.5。<strong>AUC 越大，意味着辨别能力越强</strong>。</p><p>与P-R图相似，如果一条ROC曲线<strong>包含另一条</strong>ROC曲线，则<strong>前者的学习器性能更优越</strong>。如果<strong>曲线有交叉</strong>，则可以通过<strong>计算AUC</strong>大小得到。</p><h5 id="代价敏感错误率、代价曲线"><a href="#代价敏感错误率、代价曲线" class="headerlink" title="代价敏感错误率、代价曲线"></a><strong>代价敏感错误率、代价曲线</strong></h5><p><strong>代价敏感错误率</strong>：<strong>为不同错误类型赋予不同的权重</strong>。<strong>不同类型的错误所造成的后果不同</strong>.例如在<strong>医疗诊断</strong>中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，<strong>门禁系统</strong>错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可<strong>为错误赋予”非均等代价”</strong> 。</p><p>在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”<strong>代价曲线</strong>“ 则可达到该目的.代价曲线图的<strong>横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。</strong></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。<br>说明：<br>分隔时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入:<br>s = “catsanddog”<br>wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]<br>输出:<br>[<br>“cats and dog”,<br>“cat sand dog”<br>]</p><a id="more"></a><p>示例 2：<br>输入:<br>s = “pineapplepenapple”<br>wordDict = [“apple”, “pen”, “applepen”, “pine”, “pineapple”]<br>输出:<br>[<br>“pine apple pen apple”,<br>“pineapple pen apple”,<br>“pine applepen apple”<br>]<br>解释: 注意你可以重复使用字典中的单词。</p><p>示例 3：<br>输入:<br>s = “catsandog”<br>wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出:<br>[]</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>这道题类似 Word Break I 判断是否能把字符串拆分为字典里的单词 @LeetCode 只不过要求计算的并不仅仅是是否能拆分，而是要求出所有的拆分方案。因此用递归。<br>但是直接递归做会超时，原因是LeetCode里有几个很长但是无法拆分的情况，所以就先跑一遍Word Break I，先判断能否拆分，然后再进行拆分。</p><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">boolean</span>[] canBreak = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>];  </span><br><span class="line">        canBreak[<span class="number">0</span>] = <span class="keyword">true</span>;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=s.length(); i++) &#123;  </span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;  </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;i; j++) &#123;  </span><br><span class="line">                <span class="keyword">if</span>(canBreak[j] &amp;&amp; wordDict.contains(s.substring(j,i))) &#123;  </span><br><span class="line">                    flag = <span class="keyword">true</span>;  </span><br><span class="line">                    <span class="keyword">break</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            canBreak[i] = flag;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> canBreak[s.length()];  </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, String str, <span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        String result = str;            <span class="comment">//记录字符串状态</span></span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        String tmp = s.substring(index, len);</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(tmp))&#123;     <span class="comment">//最后一段存在于字典中，则保存结果</span></span><br><span class="line">            str += tmp;</span><br><span class="line">            res.add(str);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; listIndex = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        List&lt;String&gt; listStr = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; len; i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                listIndex.add(i+<span class="number">1</span>);</span><br><span class="line">                listStr.add(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String temp = result;   <span class="comment">//保存递归前的字符串状态，以便回溯</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; listIndex.size(); i++)&#123;</span><br><span class="line">            result += listStr.get(i) + <span class="string">" "</span>;</span><br><span class="line">            dfs(s, wordDict, result, listIndex.get(i));</span><br><span class="line">            result = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    List&lt;String&gt; res = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isBreak(s, wordDict)) <span class="keyword">return</span> res;</span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line">        dfs(s, wordDict, str, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;真实情况&lt;/th&gt;
-&lt;th&gt;预测结果&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;正例&lt;/td&gt;
-&lt;td&gt;反例&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;正例&lt;/td&gt;
-&lt;td&gt;TP（真正例）&lt;/td&gt;
-&lt;td&gt;FN（假反例）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;反例&lt;/td&gt;
-&lt;td&gt;FP（假正例）&lt;/td&gt;
-&lt;td&gt;TN（真反例）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;img src=&quot;http://img0.ph.126.net/KEZuAtQ5O-L1OQ3Z-Q07Fw==/6631529560586716227.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;&lt;strong&gt;题目描述&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。&lt;br&gt;说明：&lt;br&gt;分隔时可以重复使用字典中的单词。&lt;br&gt;你可以假设字典中没有重复的单词。&lt;br&gt;示例 1：&lt;br&gt;输入:&lt;br&gt;s = “catsanddog”&lt;br&gt;wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]&lt;br&gt;输出:&lt;br&gt;[&lt;br&gt;“cats and dog”,&lt;br&gt;“cat sand dog”&lt;br&gt;]&lt;/p&gt;
     
     </summary>
     
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="动态规划" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="性能评估" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0/"/>
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
