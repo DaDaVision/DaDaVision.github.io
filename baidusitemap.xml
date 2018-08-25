@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A2%AF%E5%BA%A6%E7%9A%84%E8%B4%9F%E6%96%B9%E5%90%91%E6%98%AF%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%9C%80%E5%BF%AB%E7%9A%84%E6%96%B9%E5%90%91/</loc>
-    <lastmod>2018-08-25T12:32:40.685Z</lastmod>
+    <lastmod>2018-08-25T12:35:45.456Z</lastmod>
     <data>
         <display>
         <title>为什么梯度的负方向是梯度下降最快的方向</title>
@@ -61,11 +61,11 @@
         <title>DeepIOT神经网络压缩</title>
         <pubTime>2018-08-24T10:48:33.000Z</pubTime>
         
+        <tag>神经网络</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>神经网络</tag>
          
         <tag>神经网络压缩</tag>
          
@@ -87,11 +87,11 @@
         <title>HAN</title>
         <pubTime>2018-08-24T08:03:04.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>Hierarchical Attention Networks</tag>
          
@@ -113,11 +113,11 @@
         <title>深度学习中Attention注意力机制</title>
         <pubTime>2018-08-24T04:55:45.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>注意力机制</tag>
          
@@ -625,9 +625,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -649,9 +649,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
