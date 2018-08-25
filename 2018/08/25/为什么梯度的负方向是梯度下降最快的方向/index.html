@@ -153,7 +153,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f7f779a9600abcb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-25T12:38:22.762Z">
+<meta property="og:updated_time" content="2018-08-25T12:42:44.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么梯度的负方向是梯度下降最快的方向">
 <meta name="twitter:description" content="什么是梯度？​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释： ​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山">
@@ -430,7 +430,7 @@
                 
               
 
-              <time title="创建时间：2018-08-25 19:52:01 / 修改时间：20:38:22" itemprop="dateCreated datePublished" datetime="2018-08-25T19:52:01+08:00">2018-08-25</time>
+              <time title="创建时间：2018-08-25 19:52:01 / 修改时间：20:42:44" itemprop="dateCreated datePublished" datetime="2018-08-25T19:52:01+08:00">2018-08-25</time>
             
 
             
@@ -503,7 +503,7 @@
 <h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><p>​    如果函数$f(θ)​$是凸函数，那么就可以使用梯度下降算法进行优化。梯度下降算法的公式我们已经很熟悉了：</p>
 <p>$\theta=\theta_{0}-\eta\cdot\bigtriangledown f(\theta_{0})$</p>
 <p>$θ=θ<em>{0}−η⋅∇f(0</em>{0})$</p>
-<p>​    其中，$θ<em>{0}$是自变量参数，即下山位置坐标，$η$是学习因子，即下山每次前进的一小步（步进长度），$θ$是更新后的$θ</em>{0}$，即下山移动一小步之后的位置。</p>
+<p>​    其中，$\theta_{0}$是自变量参数，即下山位置坐标，$η$是学习因子，即下山每次前进的一小步（步进长度），$θ$是更新后的$θ_{0}$，即下山移动一小步之后的位置。</p>
 <p>​    梯度下降算法的公式非常简单！但是”沿着梯度的反方向（坡度最陡）“是我们日常经验得到的，其本质的原因到底是什么呢？为什么局部下降最快的方向就是梯度的负方向呢？也许很多朋友还不太清楚。没关系，接下来我将以通俗的语言来详细解释梯度下降算法公式的数学推导过程。</p>
 <h2 id="一阶泰勒展开式"><a href="#一阶泰勒展开式" class="headerlink" title="一阶泰勒展开式"></a>一阶泰勒展开式</h2><p>​    这里需要一点数学基础，对泰勒展开式有些了解。简单地来说，泰勒展开式利用的就是函数的局部线性近似这个概念。我们以一阶泰勒展开式为例：</p>
 <p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p>
