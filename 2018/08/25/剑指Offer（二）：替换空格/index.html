@@ -152,7 +152,7 @@
 <meta property="og:description" content="剑指Offer(二)：替换空格摘要 请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：[牛客网] 二、题目请实现一个函数，将一个[字符串]中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-8645629703febdaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-25T13:54:48.100Z">
+<meta property="og:updated_time" content="2018-08-25T13:56:24.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer（二）：替换空格">
 <meta name="twitter:description" content="剑指Offer(二)：替换空格摘要 请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：[牛客网] 二、题目请实现一个函数，将一个[字符串]中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We">
@@ -429,7 +429,7 @@
                 
               
 
-              <time title="创建时间：2018-08-25 21:42:37 / 修改时间：21:54:48" itemprop="dateCreated datePublished" datetime="2018-08-25T21:42:37+08:00">2018-08-25</time>
+              <time title="创建时间：2018-08-25 21:42:37 / 修改时间：21:56:24" itemprop="dateCreated datePublished" datetime="2018-08-25T21:42:37+08:00">2018-08-25</time>
             
 
             
@@ -497,7 +497,7 @@
 <p>请实现一个函数，将一个字符串中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
 <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本系列文章为《剑指Offer》刷题笔记。</p>
 <p>刷题平台：[牛客网]</p>
-<h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>请实现一个函数，将一个[字符串]中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。</p>
+<h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>请实现一个函数，将一个[字符串]中的空格替换成“%20”。例如，当字符串为We Are Happy.则经过替换之后的字符串为We%20Are%20Happy。<br><a id="more"></a></p>
 <h3 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h3><p>最简单的方法就是从头到尾遍历，但是时间复杂度为O(n^2)。</p>
 <p>本文采用一种时间复杂度为O(n)的方法。</p>
 <p>我们可以先遍历一次字符串，这样就可以统计出字符串空格的总数，并可以由此计算出替换之后的字符串的总长度。<strong>每替换一个空格，长度增加2</strong>，因此替换以后字符串的长度等于原来的长度加上2乘以空格数目。以”We are happy”为例，”We are happy”这个字符串的长度为14（包括结尾符号”\n”），里面有两个空格，因此替换之后字符串的长度是18。</p>
