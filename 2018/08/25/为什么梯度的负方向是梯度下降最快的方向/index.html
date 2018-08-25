@@ -143,13 +143,21 @@
   </script>
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="DaDaVision">
-<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
+  <meta name="description" content="什么是梯度？​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释： ​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山">
+<meta name="keywords" content="笔记,机器学习,梯度下降">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么梯度的负方向是梯度下降最快的方向">
+<meta property="og:url" content="http://yoursite.com/2018/08/25/为什么梯度的负方向是梯度下降最快的方向/index.html">
 <meta property="og:site_name" content="DaDaVision">
+<meta property="og:description" content="什么是梯度？​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释： ​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f7f779a9600abcb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-08-25T12:18:49.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DaDaVision">
+<meta name="twitter:title" content="为什么梯度的负方向是梯度下降最快的方向">
+<meta name="twitter:description" content="什么是梯度？​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释： ​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -158,7 +166,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/25/为什么梯度的负方向是梯度下降最快的方向/"/>
 
 
 
@@ -168,7 +176,7 @@
   };
 </script>
 
-  <title>归档 | DaDaVision</title>
+  <title>为什么梯度的负方向是梯度下降最快的方向 | DaDaVision</title>
   
 
 
@@ -215,7 +223,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 		
 		
@@ -288,7 +296,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -360,372 +368,268 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/为什么梯度的负方向是梯度下降最快的方向/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tengda Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img1.ph.126.net/Xs_jpOoevKFqwxuIfkKGVA==/2984760653140182352.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaDaVision">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">为什么梯度的负方向是梯度下降最快的方向
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-25 19:52:01 / 修改时间：20:18:49" itemprop="dateCreated datePublished" datetime="2018-08-25T19:52:01+08:00">2018-08-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 28 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/偏差、方差、噪声/" itemprop="url">
-              
-                <span itemprop="name">偏差、方差、噪声</span>
-              
-            </a>
-        
-      </h2>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/查准率precision和查全率recall、F1/" itemprop="url">
-              
-                <span itemprop="name">查准率precision和查全率recall、F1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/最长公共子串-最长公共子序列/" itemprop="url">
-              
-                <span itemprop="name">最长公共子串-最长公共子序列</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h2 id="什么是梯度？"><a href="#什么是梯度？" class="headerlink" title="什么是梯度？"></a>什么是梯度？</h2><p>​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释：</p>
+<p>​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山。于是决定走一步算一步，也就是每次沿着当前位置最陡峭最易下山的方向前进一小步，然后继续沿下一个位置最陡方向前进一小步。这样一步一步走下去，一直走到觉得我们已经到了山脚。这里的<strong>下山最陡的方向就是梯度的负方向</strong>。    </p>
+<p>​    首先理解什么是<strong>梯度</strong>？通俗来说，<strong>梯度就是表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在当前位置的导数</strong>。</p>
+<p>$∇=\frac{df(θ)}{dθ}$</p>
+<a id="more"></a>
+<p>上式中，θ是自变量，f(θ)是关于θ的函数，θ表示梯度。</p>
+<h2 id="梯度下降算法"><a href="#梯度下降算法" class="headerlink" title="梯度下降算法"></a>梯度下降算法</h2><p>​    如果函数$f(θ)$是凸函数，那么就可以使用梯度下降算法进行优化。梯度下降算法的公式我们已经很熟悉了：</p>
+<p>$θ=θ<em>{0}−η⋅∇f(θ</em>{0})$</p>
+<p>​    其中，θ0是自变量参数，即下山位置坐标，η是学习因子，即下山每次前进的一小步（步进长度），θθ是更新后的θ0，即下山移动一小步之后的位置。</p>
+<p>​    梯度下降算法的公式非常简单！但是”沿着梯度的反方向（坡度最陡）“是我们日常经验得到的，其本质的原因到底是什么呢？为什么局部下降最快的方向就是梯度的负方向呢？也许很多朋友还不太清楚。没关系，接下来我将以通俗的语言来详细解释梯度下降算法公式的数学推导过程。</p>
+<h2 id="一阶泰勒展开式"><a href="#一阶泰勒展开式" class="headerlink" title="一阶泰勒展开式"></a>一阶泰勒展开式</h2><p>​    这里需要一点数学基础，对泰勒展开式有些了解。简单地来说，泰勒展开式利用的就是函数的局部线性近似这个概念。我们以一阶泰勒展开式为例：</p>
+<p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p>
+<p>不懂上面的公式？没有关系。用下面这张图来解释。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-d3059cfb700bba95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>凸函数$f(θ)$的某一小段$[θ<em>{0},θ]$由上图黑色曲线表示，可以利用线性近似的思想求出$f(θ)$的值，如上图红色直线。该直线的斜率等于$f(θ)$在$θ</em>{0}$处的导数。则根据直线方程，很容易得到$f(θ)$的近似表达式为：</p>
+<p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p>
+<p>这就是一阶泰勒展开式的推导过程，主要利用的数学思想就是曲线函数的线性拟合近似。</p>
+<h2 id="梯度下降数学原理"><a href="#梯度下降数学原理" class="headerlink" title="梯度下降数学原理"></a>梯度下降数学原理</h2><p>知道了一阶泰勒展开式之后，接下来就是重点了！我们来看一下梯度下降算法是如何推导的。</p>
+<p>先写出一阶泰勒展开式的表达式：</p>
+<p>$f(θ)≈f(θ<em>{0})+(θ−θ</em>{0})⋅∇f(θ_{0})$</p>
+<p>其中，$θ−θ<em>{0}$是微小矢量，它的大小就是我们之前讲的步进长度η，类比于下山过程中每次前进的一小步，η为标量，而$θ−θ</em>{0}$的单位向量用$v$表示。则$θ−θ_{0}$可表示为：</p>
+<p>$θ−θ_{0}=ηv$</p>
+<p>特别需要注意的是，$θ−θ_{0}$不能太大，因为太大的话，线性近似就不够准确，一阶泰勒近似也不成立了。替换之后，$f(θ)$的表达式为：</p>
+<p>$f(θ)≈f(θ<em>{0})+ηv⋅∇f(θ</em>{0})$</p>
+<p>重点来了，局部下降的目的是希望每次$θ$更新，都能让函数值$f(θ)$变小。也就是说，上式中，我们希望$f(θ)&lt;f(θ_{0})$。则有：</p>
+<p>$f(θ)−f(θ<em>{0})≈ηv⋅∇f(θ</em>{0})&lt;0$</p>
+<p>因为$η$为标量，且一般设定为正值，所以可以忽略，不等式变成了：</p>
+<p>$v⋅∇f(θ_{0})&lt;0$</p>
+<p>上面这个不等式非常重要！$v$和$∇f(θ<em>{0})$都是向量，$∇f(θ</em>{0})$是当前位置的梯度方向，$v$表示下一步前进的单位向量，是需要我们求解的，有了它，就能根据$θ−θ_{0}=ηv$确定$θ$值了。</p>
+<p>想要两个向量的乘积小于零，我们先来看一下两个向量乘积包含哪几种情况：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f7f779a9600abcb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A和B均为向量，$α$为两个向量之间的夹角。A和B的乘积为：</p>
+<p>$A⋅B=||A||⋅||B||⋅cos(α)$</p>
+<p>$||A||$和$||B||$均为标量，在$||A||$和$||B||$确定的情况下，只要$cos(α)=−1$，即A和B完全反向，就能让A和B的向量乘积最小（负最大值）。</p>
+<p>顾名思义，当$v$与$∇f(θ<em>{0})$互为反向，即$v$为当前梯度方向的负方向的时候，能让$v⋅∇f(θ</em>{0})$最大程度地小，也就保证了$v$的方向是局部下降最快的方向。</p>
+<p>知道$v$是$∇f(θ_{0})$的反方向后，可直接得到：</p>
+<p>$v=−\frac{∇f(θ<em>{0})}{||∇f(θ</em>{0})||}$</p>
+<p>之所以要除以$∇f(θ<em>{0})$的模$||∇f(θ</em>{0})||$，是因为$v$是单位向量。</p>
+<p>求出最优解$v$之后，带入到$θ−θ_{0}=ηv$中，得：</p>
+<p>$v=θ<em>{0}−η\frac{∇f(θ</em>{0})}{||∇f(θ_{0})||}$</p>
+<p>一般地，因为$||∇f(θ_{0})||$是标量，可以并入到步进因子$η$中，即简化为：</p>
+<p>$θ=θ<em>{0}−η∇f(θ</em>{0})$</p>
+<p>这样，我们就推导得到了梯度下降算法中$θ$的更新表达式。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我们通过一阶泰勒展开式，利用线性近似和向量相乘最小化的思想搞懂了梯度下降算法的数学原理。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/DP+回溯-单词拆分 II/" itemprop="url">
-              
-                <span itemprop="name">DP+回溯-单词拆分 II</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:02+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/分糖果/" itemprop="url">
-              
-                <span itemprop="name">分糖果</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:01+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/Hexo+GitHub搭建个人博客/" itemprop="url">
-              
-                <span itemprop="name">Hexo+GitHub搭建个人博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:01+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/09/回溯法思想/" itemprop="url">
-              
-                <span itemprop="name">回溯法思想</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-09T18:32:00+08:00"
-              content="2018-06-09" >
-          06-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/08/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-08T22:20:01+08:00"
-              content="2018-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+		<div>
+		
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+		
+			</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/梯度下降/" <i class="fa fa-tag"></i> 梯度下降</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/25/协方差与相关系数/" rel="next" title="协方差与相关系数">
+                <i class="fa fa-chevron-left"></i> 协方差与相关系数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b3069fc2bf55067" async = "async" ></script>
+</div>
+
+			
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU5Mi8xNDEyNA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -748,8 +652,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -990,6 +903,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是梯度？"><span class="nav-number">1.</span> <span class="nav-text">什么是梯度？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降算法"><span class="nav-number">2.</span> <span class="nav-text">梯度下降算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一阶泰勒展开式"><span class="nav-number">3.</span> <span class="nav-text">一阶泰勒展开式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降数学原理"><span class="nav-number">4.</span> <span class="nav-text">梯度下降数学原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1156,6 +1085,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -1180,6 +1113,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
@@ -1544,6 +1488,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
