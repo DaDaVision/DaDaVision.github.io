@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/25/%E5%8D%8F%E6%96%B9%E5%B7%AE%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/</loc>
-    <lastmod>2018-08-25T02:55:56.229Z</lastmod>
+    <lastmod>2018-08-25T03:27:46.561Z</lastmod>
     <data>
         <display>
         <title>协方差与相关系数</title>
@@ -601,9 +601,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -625,9 +625,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
