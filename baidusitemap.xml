@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/08/25/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A2%AF%E5%BA%A6%E7%9A%84%E8%B4%9F%E6%96%B9%E5%90%91%E6%98%AF%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%9C%80%E5%BF%AB%E7%9A%84%E6%96%B9%E5%90%91/</loc>
-    <lastmod>2018-08-25T12:50:33.717Z</lastmod>
+    <lastmod>2018-08-25T12:53:13.655Z</lastmod>
     <data>
         <display>
         <title>为什么梯度的负方向是梯度下降最快的方向</title>
@@ -426,9 +426,9 @@
          
         <tag>笔记</tag>
          
-        <tag>PyTorch</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>PyTorch</tag>
          
          
            
