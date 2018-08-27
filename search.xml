@@ -6,7 +6,7 @@
       <title>判别式模型和生成式模型</title>
       <link href="/2018/08/26/%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/"/>
       <url>/2018/08/26/%E5%88%A4%E5%88%AB%E5%BC%8F%E6%A8%A1%E5%9E%8B%E5%92%8C%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B/</url>
-      <content type="html"><![CDATA[<h1 id="判别式模型-与-生成式模型"><a href="#判别式模型-与-生成式模型" class="headerlink" title="判别式模型 与 生成式模型"></a>判别式模型 与 生成式模型</h1><p>生成式模型(Generative Model)与判别式模型(Discrimitive Model)是分类器常遇到的概念，它们的区别在于：</p><p>对于输入x，类别标签y：</p><ul><li><strong>判别式模型</strong>估计<strong>条件概率分布$P(y|x)$</strong>（y在x下的概率 ），直接对条件概率$p(y|x;θ)$建模 。</li></ul><p><strong>举例：要确定一个羊是山羊还是绵羊，用判别模型的方法是从历史数据中学习到模型，然后通过提取这只羊的特征来预测出这只羊是山羊的概率，是绵羊的概率。</strong></p><ul><li><strong>生成式模型</strong>估计它们的<strong>联合概率分布$P(x,y)$</strong>。会对x和y的联合分布$p(x,y)$建模，然后通过贝叶斯公式来求得$p(y_{i}|x)$，然后选取使得$p(y_{i}|x)$最大的$y_{i}$，即： </li></ul><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/12654931-fe1eb0dcb7a6c930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p><strong>举例：利用生成模型是根据山羊的特征首先学习出一个山羊的模型，然后根据绵羊的特征学习出一个绵羊的模型，然后从这只羊中提取特征，放到山羊模型中看概率是多少，在放到绵羊模型中看概率是多少，哪个大就是哪个。</strong> </p><p><strong>生成式模型可以根据贝叶斯公式得到判别式模型，但反过来不行</strong>。</p><h2 id="判别式模型常见的主要有："><a href="#判别式模型常见的主要有：" class="headerlink" title="判别式模型常见的主要有："></a><strong>判别式模型常见的主要有：</strong></h2><ul><li>线性回归(Linear Regression)</li><li>逻辑回归(Logistic Regression)</li><li>决策树</li><li>神经网络(NN)</li><li>支持向量机(SVM)</li><li>高斯过程(Gaussian Process)</li><li>条件随机场(CRF)</li><li>CART(Classification and Regression Tree)</li><li>Boosting</li></ul><h2 id="生成式模型常见的主要有："><a href="#生成式模型常见的主要有：" class="headerlink" title="生成式模型常见的主要有："></a><strong>生成式模型常见的主要有：</strong></h2><ul><li>朴素贝叶斯</li><li>K近邻(KNN)</li><li>混合高斯模型</li><li>隐马尔科夫模型(HMM)</li><li>贝叶斯网络</li><li>Sigmoid Belief Networks</li><li>马尔科夫随机场(Markov Random Fields)</li><li>深度信念网络(DBN)</li></ul><p>​    假设你现在有一个分类问题，x是特征，y是类标记。用生成模型学习一个联合概率分布$P（x，y）$，而用判别模型学习一个条件概率分布$P（y|x）$。<br>    用一个简单的例子来说明这个这个问题。假设x就是两个（1或2），y有两类（0或1），有如下如下样本（1，0）、（1，0）、（2，0）、（2，1）<br>则学习到的<strong>联合概率分布$P（x，y）$</strong>（生成模型）如下：</p><table><thead><tr><th></th><th>y=0</th><th>y=1</th></tr></thead><tbody><tr><td>x=1</td><td>1/2</td><td>0</td></tr><tr><td>x=2</td><td>1/4</td><td>1/4</td></tr></tbody></table><pre><code>而学习到的**条件概率分布$P（y|x）$**（判别模型）如下： </code></pre><table><thead><tr><th></th><th>y=0</th><th>y=1</th></tr></thead><tbody><tr><td>x=1</td><td>1</td><td>0</td></tr><tr><td>x=2</td><td>1/2</td><td>1/2</td></tr></tbody></table><p>​    在实际分类问题中，<strong>判别模型可以直接用来判断特征的类别情况</strong>，而<strong>生成模型，需要加上贝叶斯法则</strong>，然后应用到分类中。但是，生成模型的概率分布可以还有其他应用，就是说生成模型更一般更普适。不过判别模型更直接，更简单。 </p><h1 id="两个模型的对比"><a href="#两个模型的对比" class="headerlink" title="两个模型的对比"></a>两个模型的对比</h1><p><img src="https://upload-images.jianshu.io/upload_images/12654931-8a5d642f888471b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>]]></content>
+      <content type="html"><![CDATA[<h1 id="判别式模型-与-生成式模型"><a href="#判别式模型-与-生成式模型" class="headerlink" title="判别式模型 与 生成式模型"></a>判别式模型 与 生成式模型</h1><p>生成式模型(Generative Model)与判别式模型(Discrimitive Model)是分类器常遇到的概念，它们的区别在于：</p><p>对于输入x，类别标签y：</p><ul><li><strong>判别式模型</strong>估计<strong>条件概率分布$P(y|x)$</strong>（y在x下的概率 ），直接对条件概率$p(y|x;θ)$建模 。</li></ul><p><strong>举例：要确定一个羊是山羊还是绵羊，用判别模型的方法是从历史数据中学习到模型，然后通过提取这只羊的特征来预测出这只羊是山羊的概率，是绵羊的概率。</strong></p><ul><li><strong>生成式模型</strong>估计它们的<strong>联合概率分布$P(x,y)$</strong>。会对x和y的联合分布$p(x,y)$建模，然后通过贝叶斯公式来求得$p(y_{i}|x)$，然后选取使得$p(y_{i}|x)$最大的$y_{i}$，即： </li></ul><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/12654931-fe1eb0dcb7a6c930.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p><strong>举例：利用生成模型是根据山羊的特征首先学习出一个山羊的模型，然后根据绵羊的特征学习出一个绵羊的模型，然后从这只羊中提取特征，放到山羊模型中看概率是多少，在放到绵羊模型中看概率是多少，哪个大就是哪个。</strong> </p><p><strong>生成式模型可以根据贝叶斯公式得到判别式模型，但反过来不行</strong>。</p><h2 id="判别式模型常见的主要有："><a href="#判别式模型常见的主要有：" class="headerlink" title="判别式模型常见的主要有："></a><strong>判别式模型常见的主要有：</strong></h2><ul><li>线性回归(Linear Regression)</li><li>逻辑回归(Logistic Regression)</li><li>决策树</li><li>神经网络(NN)</li><li>支持向量机(SVM)</li><li>高斯过程(Gaussian Process)</li><li>条件随机场(CRF)</li><li>CART(Classification and Regression Tree)</li><li>Boosting</li></ul><h2 id="生成式模型常见的主要有："><a href="#生成式模型常见的主要有：" class="headerlink" title="生成式模型常见的主要有："></a><strong>生成式模型常见的主要有：</strong></h2><ul><li>朴素贝叶斯</li><li>K近邻(KNN)</li><li>混合高斯模型</li><li>隐马尔科夫模型(HMM)</li><li>贝叶斯网络</li><li>Sigmoid Belief Networks</li><li>马尔科夫随机场(Markov Random Fields)</li><li>深度信念网络(DBN)</li></ul><p>​    假设你现在有一个分类问题，x是特征，y是类标记。用生成模型学习一个联合概率分布$P（x，y）$，而用判别模型学习一个条件概率分布$P（y|x）$。<br>    用一个简单的例子来说明这个这个问题。假设x就是两个（1或2），y有两类（0或1），有如下如下样本（1，0）、（1，0）、（2，0）、（2，1）<br>则学习到的<strong>联合概率分布$P（x，y）$</strong>（生成模型）如下：</p><table><thead><tr><th></th><th>y=0</th><th>y=1</th></tr></thead><tbody><tr><td>x=1</td><td>1/2</td><td>0</td></tr><tr><td>x=2</td><td>1/4</td><td>1/4</td></tr></tbody></table><pre><code>而学习到的**条件概率分布**$P（y|x）$（判别模型）如下： </code></pre><table><thead><tr><th></th><th>y=0</th><th>y=1</th></tr></thead><tbody><tr><td>x=1</td><td>1</td><td>0</td></tr><tr><td>x=2</td><td>1/2</td><td>1/2</td></tr></tbody></table><p>​    在实际分类问题中，<strong>判别模型可以直接用来判断特征的类别情况</strong>，而<strong>生成模型，需要加上贝叶斯法则</strong>，然后应用到分类中。但是，生成模型的概率分布可以还有其他应用，就是说生成模型更一般更普适。不过判别模型更直接，更简单。 </p><h1 id="两个模型的对比"><a href="#两个模型的对比" class="headerlink" title="两个模型的对比"></a>两个模型的对比</h1><p><img src="https://upload-images.jianshu.io/upload_images/12654931-8a5d642f888471b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>]]></content>
       
       <categories>
           
@@ -46,9 +46,9 @@
             
             <tag> 剑指Offer </tag>
             
-            <tag> 笔试 </tag>
-            
             <tag> 字符串 </tag>
+            
+            <tag> 笔试 </tag>
             
         </tags>
       
@@ -312,9 +312,9 @@
             
             <tag> 剑指Offer </tag>
             
-            <tag> 数组 </tag>
-            
             <tag> 笔试 </tag>
+            
+            <tag> 数组 </tag>
             
         </tags>
       
@@ -550,31 +550,6 @@
     </entry>
     
     <entry>
-      <title>DP-单词拆分 I</title>
-      <link href="/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/"/>
-      <url>/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/</url>
-      <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。<br>说明：<br>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入: s = “leetcode”, wordDict = [“leet”, “code”]<br>输出: true<br>解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。</p><a id="more"></a><p>示例 2：<br>输入: s = “applepenapple”, wordDict = [“apple”, “pen”]<br>输出: true<br>解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。<br>注意你可以重复使用字典中的单词。</p><p>示例 3：<br>输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出: false</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>动态规划的思路：<br>将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。<br>用公式表示就是：</p><font color="red" size="5"><strong>dp[j]&amp;&amp;s.substring[j,i+1]∈dict</strong></font><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;;</span><br><span class="line">        <span class="keyword">boolean</span> [] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>]；</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+<span class="number">1</span>)))&#123;</span><br><span class="line">                    dp[i+<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="DFS解法，超时"><a href="#DFS解法，超时" class="headerlink" title="DFS解法，超时"></a><strong>DFS解法，超时</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, <span class="keyword">int</span> index)</span></span>&#123; <span class="comment">// 超时</span></span><br><span class="line">        String left = s.substring(index, s.length());</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(left))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; s.length(); i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                list.add(i+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(Integer each:list) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dfs(s, wordDict, each))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(s, wordDict, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 动态规划 </tag>
-            
-            <tag> 算法 </tag>
-            
-            <tag> LeetCode </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>偏差、方差、噪声</title>
       <link href="/2018/06/09/%E5%81%8F%E5%B7%AE%E3%80%81%E6%96%B9%E5%B7%AE%E3%80%81%E5%99%AA%E5%A3%B0/"/>
       <url>/2018/06/09/%E5%81%8F%E5%B7%AE%E3%80%81%E6%96%B9%E5%B7%AE%E3%80%81%E5%99%AA%E5%A3%B0/</url>
@@ -625,6 +600,31 @@
     </entry>
     
     <entry>
+      <title>DP-单词拆分 I</title>
+      <link href="/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/"/>
+      <url>/2018/06/09/DP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I/</url>
+      <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。<br>说明：<br>拆分时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入: s = “leetcode”, wordDict = [“leet”, “code”]<br>输出: true<br>解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。</p><a id="more"></a><p>示例 2：<br>输入: s = “applepenapple”, wordDict = [“apple”, “pen”]<br>输出: true<br>解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。<br>注意你可以重复使用字典中的单词。</p><p>示例 3：<br>输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出: false</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>动态规划的思路：<br>将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。<br>用公式表示就是：</p><font color="red" size="5"><strong>dp[j]&amp;&amp;s.substring[j,i+1]∈dict</strong></font><h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;;</span><br><span class="line">        <span class="keyword">boolean</span> [] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>]；</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+<span class="number">1</span>)))&#123;</span><br><span class="line">                    dp[i+<span class="number">1</span>] = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="DFS解法，超时"><a href="#DFS解法，超时" class="headerlink" title="DFS解法，超时"></a><strong>DFS解法，超时</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, <span class="keyword">int</span> index)</span></span>&#123; <span class="comment">// 超时</span></span><br><span class="line">        String left = s.substring(index, s.length());</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(left))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; s.length(); i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                list.add(i+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(Integer each:list) &#123;</span><br><span class="line">            <span class="keyword">if</span>(dfs(s, wordDict, each))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dfs(s, wordDict, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 动态规划 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>最长公共子串-最长公共子序列</title>
       <link href="/2018/06/09/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/"/>
       <url>/2018/06/09/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97/</url>
@@ -664,11 +664,36 @@
       
         <tags>
             
+            <tag> 算法 </tag>
+            
             <tag> 动态规划 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>分糖果</title>
+      <link href="/2018/06/09/%E5%88%86%E7%B3%96%E6%9E%9C/"/>
+      <url>/2018/06/09/%E5%88%86%E7%B3%96%E6%9E%9C/</url>
+      <content type="html"><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h3><p>o 分糖果：科大讯飞第二道编程题</p><p>o 小明和小红是好朋友，但最近遇到一个棘手的问题，有一盒糖果要分成两份但是每颗糖果质量都不尽相同，</p><p>o 但为了分配的公平每份糖的糖果数量相差不得超过1，在此条件下两份糖果的质量差距尽可能小。</p><p>o 输入一行数，包含一个数n，代表糖果数量，后面一次是n个整数一次表示每个糖果的质量，每个糖果的质量都是1到450</p><p>o 之间的一个整数，每盒最多有20个糖果。</p><p>o 输出：每个样例输出两个数字分别为两堆糖果的质量，如不相同，先小后大。</p><p>o 样例：输入：5 9 6 5 8 7</p><p>o 输出：17 18</p><a id="more"></a><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a><strong>算法思想</strong></h3><p>o 回溯，在数量差值为1的结果中找出最小的质量差</p><h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a><strong>Python实现</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(candies, num, select, sum, total, index)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> min</span><br><span class="line">    <span class="keyword">global</span> res</span><br><span class="line">    <span class="keyword">if</span>(abs(total-sum*<span class="number">2</span>) &lt; min):</span><br><span class="line">        res = sum</span><br><span class="line">        min = abs(total-sum*<span class="number">2</span>)</span><br><span class="line">        result.append(select)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(candies)):</span><br><span class="line">        <span class="keyword">if</span>(index == num<span class="number">-1</span>): return3</span><br><span class="line">        select.append(candies[index])</span><br><span class="line">        sum += candies[index]</span><br><span class="line">        temp = select.copy()</span><br><span class="line">        <span class="keyword">if</span>(len(select) &lt;= int(num/<span class="number">2</span>)+<span class="number">1</span>):</span><br><span class="line">            index += <span class="number">1</span></span><br><span class="line">            divide(candies, num, temp, sum, total, index)</span><br><span class="line">        sum -= select[len(select) - <span class="number">1</span>]</span><br><span class="line">        select.remove(select[len(select)<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 面试题 </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> 算法 </tag>
             
-            <tag> LeetCode </tag>
+            <tag> Python </tag>
+            
+            <tag> 回溯 </tag>
             
         </tags>
       
@@ -698,31 +723,6 @@
             <tag> next </tag>
             
             <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>分糖果</title>
-      <link href="/2018/06/09/%E5%88%86%E7%B3%96%E6%9E%9C/"/>
-      <url>/2018/06/09/%E5%88%86%E7%B3%96%E6%9E%9C/</url>
-      <content type="html"><![CDATA[<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h3><p>o 分糖果：科大讯飞第二道编程题</p><p>o 小明和小红是好朋友，但最近遇到一个棘手的问题，有一盒糖果要分成两份但是每颗糖果质量都不尽相同，</p><p>o 但为了分配的公平每份糖的糖果数量相差不得超过1，在此条件下两份糖果的质量差距尽可能小。</p><p>o 输入一行数，包含一个数n，代表糖果数量，后面一次是n个整数一次表示每个糖果的质量，每个糖果的质量都是1到450</p><p>o 之间的一个整数，每盒最多有20个糖果。</p><p>o 输出：每个样例输出两个数字分别为两堆糖果的质量，如不相同，先小后大。</p><p>o 样例：输入：5 9 6 5 8 7</p><p>o 输出：17 18</p><a id="more"></a><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a><strong>算法思想</strong></h3><p>o 回溯，在数量差值为1的结果中找出最小的质量差</p><h3 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a><strong>Python实现</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(candies, num, select, sum, total, index)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> min</span><br><span class="line">    <span class="keyword">global</span> res</span><br><span class="line">    <span class="keyword">if</span>(abs(total-sum*<span class="number">2</span>) &lt; min):</span><br><span class="line">        res = sum</span><br><span class="line">        min = abs(total-sum*<span class="number">2</span>)</span><br><span class="line">        result.append(select)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(candies)):</span><br><span class="line">        <span class="keyword">if</span>(index == num<span class="number">-1</span>): return3</span><br><span class="line">        select.append(candies[index])</span><br><span class="line">        sum += candies[index]</span><br><span class="line">        temp = select.copy()</span><br><span class="line">        <span class="keyword">if</span>(len(select) &lt;= int(num/<span class="number">2</span>)+<span class="number">1</span>):</span><br><span class="line">            index += <span class="number">1</span></span><br><span class="line">            divide(candies, num, temp, sum, total, index)</span><br><span class="line">        sum -= select[len(select) - <span class="number">1</span>]</span><br><span class="line">        select.remove(select[len(select)<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>]]></content>
-      
-      <categories>
-          
-          <category> 面试题 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
-            
-            <tag> Python </tag>
-            
-            <tag> 回溯 </tag>
             
         </tags>
       
