@@ -153,7 +153,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e1ac5d9f3a6d3567.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-43cb8ecc339b728c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-12T14:24:59.435Z">
+<meta property="og:updated_time" content="2018-08-27T01:47:10.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer（一）：二维数组中的查找">
 <meta name="twitter:description" content="剑指Offer（一）：二维数组中的查找摘要 在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 一、前言本系列文章为《剑指offer》刷题笔记。 刷题平台：牛客网 二、题目在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这">
@@ -430,12 +430,24 @@
                 
               
 
-              <time title="创建时间：2018-07-12 21:10:43 / 修改时间：22:24:59" itemprop="dateCreated datePublished" datetime="2018-07-12T21:10:43+08:00">2018-07-12</time>
+              <time title="创建时间：2018-07-12 21:10:43" itemprop="dateCreated datePublished" datetime="2018-07-12T21:10:43+08:00">2018-07-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-27 09:47:10" itemprop="dateModified" datetime="2018-08-27T09:47:10+08:00">2018-08-27</time>
               
             
           </span>
@@ -505,7 +517,7 @@
 <p>查找过程如下： </p>
 <p><img src="https://upload-images.jianshu.io/upload_images/12654931-43cb8ecc339b728c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <h3 id="3、编程实现"><a href="#3、编程实现" class="headerlink" title="3、编程实现"></a>3、编程实现</h3><p><strong>C++：</strong></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> target, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; <span class="built_in">array</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rows = <span class="built_in">array</span>.size();</span><br><span class="line">        <span class="keyword">int</span> cols = <span class="built_in">array</span>[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">array</span>.empty() &amp;&amp; rows &gt; <span class="number">0</span> &amp;&amp; cols &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> row = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> col = cols - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(row &lt; rows &amp;&amp; col &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">array</span>[row][col] == target)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">array</span>[row][col] &gt; target)&#123;</span><br><span class="line">                    --col;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    ++row;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/* 04 二维数组中的查找*/</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Solution&#123;</span><br><span class="line">public:</span><br><span class="line">    bool fun(vector&lt;vector&lt;int&gt;&gt; arr,int target)</span><br><span class="line">    &#123;</span><br><span class="line">        // 特殊输入</span><br><span class="line">        if(!arr.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            // 行列个数</span><br><span class="line">            int row = arr.size();</span><br><span class="line">            int col = arr[0].size();</span><br><span class="line"> </span><br><span class="line">            // 右上角坐标</span><br><span class="line">            int a = 0;</span><br><span class="line">            int b = col-1;</span><br><span class="line"> </span><br><span class="line">            while(a&lt;row &amp;&amp; b&gt;=0)</span><br><span class="line">            &#123;</span><br><span class="line">                // 找到</span><br><span class="line">                if(arr[a][b] == target)</span><br><span class="line">                    return true;</span><br><span class="line"> </span><br><span class="line">                // 未找到</span><br><span class="line">                if(arr[a][b] &lt; target)</span><br><span class="line">                    ++a;</span><br><span class="line">                else</span><br><span class="line">                    --b;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Solution solution;</span><br><span class="line"> </span><br><span class="line">    // 特殊输入</span><br><span class="line">    vector&lt;vector&lt;int&gt; &gt; arr1;</span><br><span class="line">    int target1 = 11;</span><br><span class="line">    cout&lt;&lt;solution.fun(arr1,target1)&lt;&lt;endl;</span><br><span class="line"> </span><br><span class="line">    // 正常输入</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; arr2 = &#123;&#123;1,2,3,4&#125;,&#123;5,6,7,8&#125;,&#123;9,10,11,12&#125;,&#123;13,14,15,16&#125;&#125;;</span><br><span class="line">    int target2 = 11;</span><br><span class="line">    cout&lt;&lt;solution.fun(arr2,target2)&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>Python2.7：</strong> </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># array 二维列表</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Find</span><span class="params">(self, target, array)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        rows = len(array)</span><br><span class="line">        cols = len(array[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> rows &gt; <span class="number">0</span> <span class="keyword">and</span> cols &gt; <span class="number">0</span>:</span><br><span class="line">            row = <span class="number">0</span></span><br><span class="line">            col = cols - <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> row &lt; rows <span class="keyword">and</span> col &gt;= <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> target == array[row][col]:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">                <span class="keyword">elif</span> target &lt; array[row][col]:</span><br><span class="line">                    col -= <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    row += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
 
@@ -657,7 +669,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -809,7 +821,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">51</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -948,7 +964,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共59.2k字</span>
+  <span class="post-count">博客全站共59.5k字</span>
 </div>
         
 <div class="busuanzi-count">
