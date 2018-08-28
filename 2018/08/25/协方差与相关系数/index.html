@@ -157,8 +157,9 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-5af683128993d898.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-85f9087cf9fbcd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-783fd5ff0bdbf5d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e5737a0988684364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-20451d31c197597e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-08-25T03:27:46.561Z">
+<meta property="og:updated_time" content="2018-08-28T08:14:48.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="协方差与相关系数">
 <meta name="twitter:description" content="什么是协方差（Covariance）？  协方差表示的是两个变量的总体的误差，这与只表示一个变量误差的方差不同。 如果两个变量的变化趋势一致，也就是说如果其中一个大于自身的期望值，另外一个也大于自身的期望值，那么两个变量之间的协方差就是正值。 如果两个变量的变化趋势相反，即其中一个大于自身的期望值，另外一个却小于自身的期望值，那么两个变量之间的协方差就是负值。  以上是某百科的解释。 1、协方差是">
@@ -435,12 +436,24 @@
                 
               
 
-              <time title="创建时间：2018-08-25 10:52:46 / 修改时间：11:27:46" itemprop="dateCreated datePublished" datetime="2018-08-25T10:52:46+08:00">2018-08-25</time>
+              <time title="创建时间：2018-08-25 10:52:46" itemprop="dateCreated datePublished" datetime="2018-08-25T10:52:46+08:00">2018-08-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-28 16:14:48" itemprop="dateModified" datetime="2018-08-28T16:14:48+08:00">2018-08-28</time>
               
             
           </span>
@@ -558,9 +571,8 @@
 <li><strong>当 Cov(X,Y) &lt; 0 时，X 与 Y 负相关；</strong></li>
 <li><strong>当 Cov(X,Y) = 0 时，X 与 Y 不相关。</strong></li>
 </ul>
-<p>值得一提的是，<strong>E</strong> 代表求期望值。也可以用平均值来计算协方差：</p>
-<p>$Cov(X,Y)=\frac{1}{N-1}\sum^{N}<em>{i=1}(X</em>{i}-\overline{X_{i}})(Y_{i}-\overline{Y_{i}})$</p>
-<p>这里，之所以除以 N-1 而不是 N 的原因是对总体样本期望的无偏估计。顺便提一下，如果令 Y = X，则协方差表示的正是 X 的方差。</p>
+<p>值得一提的是，<strong>E</strong> 代表求期望值。也可以用平均值来计算协方差：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-e5737a0988684364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>这里，<strong>之所以除以 N-1 而不是 N 的原因是对总体样本期望的无偏估计</strong>(抽取的部分样本不能代表整体的情况，抽样越多越接近真实情况  ，在多次重复下，它们的平均数接近所估计的参数真值。 )。顺便提一下，如果令 Y = X，则协方差表示的正是 X 的方差。</p>
 <p>下面，我们根据协方差的公式，分别计算上面三种情况下 X 与 Y 的协方差。</p>
 <p>X 与 Y 正相关时，Cov(X,Y) = 37.3684；</p>
 <p>X 与 Y 负相关时，Cov(X,Y) = -34.0789；</p>

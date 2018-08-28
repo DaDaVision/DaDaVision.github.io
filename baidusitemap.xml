@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/08/25/%E5%8D%8F%E6%96%B9%E5%B7%AE%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/</loc>
+    <lastmod>2018-08-28T08:14:48.396Z</lastmod>
+    <data>
+        <display>
+        <title>协方差与相关系数</title>
+        <pubTime>2018-08-25T02:52:46.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>机器学习</tag>
+         
+        <tag>协方差</tag>
+         
+        <tag>相关系数</tag>
+         
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/08/24/DeepIOT%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/</loc>
     <lastmod>2018-08-27T12:01:06.884Z</lastmod>
     <data>
@@ -116,32 +142,6 @@
         <tag>机器学习</tag>
          
         <tag>梯度下降</tag>
-         
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/08/25/%E5%8D%8F%E6%96%B9%E5%B7%AE%E4%B8%8E%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/</loc>
-    <lastmod>2018-08-25T03:27:46.561Z</lastmod>
-    <data>
-        <display>
-        <title>协方差与相关系数</title>
-        <pubTime>2018-08-25T02:52:46.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>机器学习</tag>
-         
-        <tag>协方差</tag>
-         
-        <tag>相关系数</tag>
          
          
            
