@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-01T15:35:25.845Z</updated>
+  <updated>2018-09-01T15:57:02.253Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指Offer（九）：变态跳台阶</title>
+    <link href="http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/"/>
+    <id>http://yoursite.com/2018/09/01/剑指Offer（九）：变态跳台阶/</id>
+    <published>2018-09-01T15:42:23.000Z</published>
+    <updated>2018-09-01T15:57:02.253Z</updated>
+    
+    <content type="html"><![CDATA[<p>摘要</p><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本系列文章为《剑指Offer》刷题笔记。</p><p>刷题平台：牛客网</p><h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p><a id="more"></a><h3 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h3><p>我想说，这青蛙真变态，真能跳。</p><ul><li>当n=1时，结果为1；</li><li>当n=2时，结果为2；</li><li>当n=3时，结果为4；</li></ul><p>以此类推，我们使用数学归纳法不难发现，跳法f(n)=2^(n-1)。</p><h3 id="2、代码"><a href="#2、代码" class="headerlink" title="2、代码"></a>2、代码</h3><p><strong>C++:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int jumpFloorII(int number) &#123;</span><br><span class="line">if(number == 0)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        int total = 1;</span><br><span class="line">        for(int i = 1; i &lt; number; i++)&#123;</span><br><span class="line">            total *= 2;</span><br><span class="line">        &#125;</span><br><span class="line">        return total;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p><p><strong>Python2.7：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">class Solution:</span><br><span class="line">    def jumpFloorII(self, number):</span><br><span class="line">        # write code here</span><br><span class="line">        if number &lt;= 2:</span><br><span class="line">            return number</span><br><span class="line">        total = 1</span><br><span class="line">        for _ in range(1, number):</span><br><span class="line">            total *= 2</span><br><span class="line">        return total</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;摘要&lt;/p&gt;
+&lt;p&gt;一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。&lt;/p&gt;
+&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;本系列文章为《剑指Offer》刷题笔记。&lt;/p&gt;
+&lt;p&gt;刷题平台：牛客网&lt;/p&gt;
+&lt;h2 id=&quot;二、题目&quot;&gt;&lt;a href=&quot;#二、题目&quot; class=&quot;headerlink&quot; title=&quot;二、题目&quot;&gt;&lt;/a&gt;二、题目&lt;/h2&gt;&lt;p&gt;一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>剑指Offer（八）：跳台阶</title>
@@ -623,35 +645,6 @@ University of Illinois Urbana Champaign
       <category term="剑指Offer" scheme="http://yoursite.com/tags/%E5%89%91%E6%8C%87Offer/"/>
     
       <category term="数组" scheme="http://yoursite.com/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理解朴素贝叶斯</title>
-    <link href="http://yoursite.com/2018/07/06/%E7%90%86%E8%A7%A3%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    <id>http://yoursite.com/2018/07/06/理解朴素贝叶斯/</id>
-    <published>2018-07-06T03:08:42.000Z</published>
-    <updated>2018-07-06T03:26:01.243Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="理解朴素贝叶斯"><a href="#理解朴素贝叶斯" class="headerlink" title="理解朴素贝叶斯"></a>理解朴素贝叶斯</h1><h4 id="（1）先验概率、后验概率、联合概率、全概率"><a href="#（1）先验概率、后验概率、联合概率、全概率" class="headerlink" title="（1）先验概率、后验概率、联合概率、全概率"></a>（1）<strong>先验概率、后验概率、联合概率、全概率</strong></h4><p>如果我对这个西瓜<strong>没有任何了解</strong>，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为<strong>先验概率</strong>。</p><p>即，<strong>先验概率</strong>是<strong>根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。</strong>就像<strong>只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率</strong>。</p><p>一个判断西瓜是否成熟的常识，就是看瓜蒂是否脱落。一般来说，瓜蒂脱落的情况下，西瓜成熟的概率大一些，大概是 75%。如果<strong>把瓜蒂脱落当作一种结果，然后去推测西瓜成熟的概率</strong>，这个概率 P(瓜熟 | 瓜蒂脱落) 就被称为<strong>后验概率</strong>。后验概率类似于<strong>条件概率</strong>。</p><p>知道了先验概率和后验概率，我们再来看看什么是联合概率。<strong>P(瓜熟，瓜蒂脱落)</strong> 称之为<strong>联合分布</strong>，它表示<strong>瓜熟了且瓜蒂脱落的概率</strong>。关于联合概率，满足下列乘法等式：</p><a id="more"></a><p><strong>P(瓜熟，瓜蒂脱落)</strong> <strong>=</strong> <strong>P(瓜熟**</strong>|<strong>瓜蒂脱落)**</strong>·<strong>P(瓜蒂脱落)</strong>=<strong>P(瓜蒂脱落</strong>|<strong>瓜熟)</strong>·<strong>P(瓜熟)</strong></p><p>其中，P(瓜熟 | 瓜蒂脱落) 就是刚刚介绍的后验概率，表示在“瓜蒂脱落”的条件下，“瓜熟”的概率。P(瓜蒂脱落 | 瓜熟) 表示在“瓜熟”的情况下，“瓜蒂脱落”的概率。</p><p>如何计算瓜蒂脱落的概率呢？实际上可以分成两种情况：一种是<strong>瓜熟状态下瓜蒂脱落的概率</strong>，<strong>另一种是瓜生状态下瓜蒂脱落的概率</strong>。瓜蒂脱落的概率就是这两种情况之和。因此，我们就推导出了<strong>全概率公式</strong>：</p><p><strong>P(瓜蒂脱落)=P(瓜蒂脱落|瓜熟)·P(瓜熟)+P(瓜蒂脱落|瓜生)·P(瓜生)</strong></p><h4 id="（2）单个特征判断瓜熟"><a href="#（2）单个特征判断瓜熟" class="headerlink" title="（2）单个特征判断瓜熟"></a><strong>（2）单个特征判断瓜熟</strong></h4><p>好了，介绍完先验概率、后验概率、联合概率、全概率后，我们来看这样一个问题：西瓜的状态分成两种：瓜熟与瓜生，概率分别为 0.6 与 0.4，且瓜熟里面瓜蒂脱落的概率是 0.8，瓜生里面瓜蒂脱落的概率是 0.4。那么，如果我现在挑到了一个瓜蒂脱落的瓜，则该瓜是好瓜的概率多大？</p><p>显然，这是一个计算后验概率的问题，根据我们上面推导的联合概率和全概率公式，可以求出：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-582ca247f1f19977.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>一项一项来看：</p><p>条件概率 P(瓜蒂脱落 | 瓜熟) = 0.8</p><p>先验概率 P(瓜熟) = 0.6</p><p>条件概率 P(瓜蒂脱落 | 瓜生) = 0.4</p><p>先验概率 P(瓜生) = 0.4</p><p>将以上数值带入上式，得：<img src="https://upload-images.jianshu.io/upload_images/12654931-8e483547745003f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p><p>注意，以上这种计算后验概率的公式就是利用贝叶斯定理。</p><h4 id="（3）多个特征判断瓜熟"><a href="#（3）多个特征判断瓜熟" class="headerlink" title="（3）多个特征判断瓜熟"></a><strong>（3）多个特征判断瓜熟</strong></h4><p>判断一个瓜是否熟了，除了要看瓜蒂是否脱落，还要看瓜的形状和颜色。形状有圆和尖之分，颜色有深绿、浅绿、青色之分。我们可以使用刚刚引入的贝叶斯定理思想来尝试解决这个问题。</p><p>现在，特征由原来的 1 个，变成现在的 3 个，我们用 X 表示特征，用 Y 表示瓜的类型（瓜熟还是瓜生）。则根据贝叶斯定理，后验概率 P(Y=ck | X=x) 的表达式为：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-5cb90b8151c454a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p><p>其中，ck 表示类别，k 为类别个数。本例中，k = 1，2，c1 表示瓜熟，c2 表示瓜生。上面的公式看似有点复杂，但其实与上一节单特征（瓜蒂是否脱落）的形式是一致的。</p><p>有一点需要注意，这里的特征 X 不再是单一的，而是包含了 3 个特征。因此，<strong>条件概率 P(X=x | Y=ck) 假设各个条件相互独立</strong>，也就是说<strong>假设不同特征之间是相互独立的</strong>。这样，P(X=x | Y=ck) 就可以写成：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-040af2fa8ac84376.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p><p>其中，n 为特征个数，j 表示当前所属特征。针对这个例子，P(X=x | Y=ck) 可以写成：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-4801526d4c60a531.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p><p>这种<strong>条件独立性的假设</strong>就是朴素贝叶斯法“<strong>朴素</strong>”二字的由来。<strong>这一假设让朴素贝叶斯法变得简单，但是有时候会牺牲一定的分类准确率</strong>。</p><p>​    利用朴素贝叶斯思想，我们就可以把后验概率写成：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-44bce97a4ade7d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img">    上面的公式看上去比较复杂，其实只是<strong>样本特征增加</strong>了，形式上与上一节 P(瓜熟 | 瓜蒂脱落) 是一致的。</p><p>现在，一个西瓜，观察了它的瓜蒂、形状、颜色三个特征，就能根据上面的朴素贝叶斯公式，分别计算 c1（瓜熟）和 c2（瓜生）的概率，即 P(Y=c1 | X=x) 和 P(Y=c2 | X=x)。然后再比较 P(Y=c1 | X=x) 和 P(Y=c2 | X=x) 值的大小：</p><p>若 P(Y=c1 | X=x) &gt; P(Y=c2 | X=x)，则判断瓜熟；</p><p>若 P(Y=c1 | X=x) &lt; P(Y=c2 | X=x)，则判断瓜生。</p><p>值得注意的是上式中的分母部分，对于所有的 ck 来说，都是一样的。因此，分母可以省略，不同的 ck，仅比较 P(Y=ck | X=x) 的分子即可：</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-57b7db79a57f0c09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"></p><h4 id="（2）朴素贝叶斯分类"><a href="#（2）朴素贝叶斯分类" class="headerlink" title="（2）朴素贝叶斯分类"></a>（2）<strong>朴素贝叶斯分类</strong></h4><p>买瓜之前，还有一件事情要做，就是搜集样本数据。通过网上资料和查阅，获得了一组包含 10 组样本的数据。这组数据是不同瓜蒂、形状、颜色对应的西瓜是生是熟。我把这组数据当成是历史经验数据，以它为标准。</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-8b395ed221dac1f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="img"> </p><p>其中，瓜蒂分为脱落和未脱，形状分为圆形和尖形，颜色分为深绿、浅绿、青色。不同特征组合对应着瓜熟或者瓜生。</p><p>现在，挑了一个西瓜，它的瓜蒂脱落、形状圆形、颜色青色。这时候，就完全可以根据<strong>样本数据</strong>和<strong>朴素贝叶斯法</strong>来计算后验概率。</p><p>首先，对于瓜熟的情况：</p><p>瓜熟的先验概率： P(瓜熟) = 6 / 10 = 0.6。</p><p>条件概率： P(脱落 | 瓜熟) = 4 / 6 = 2 / 3。</p><p>条件概率： P(圆形 | 瓜熟) = 4 / 6 = 2 / 3。</p><p>条件概率： P(青色 | 瓜熟) = 2 / 6 = 1 / 3。</p><p>计算<strong>后验概率分子部分</strong>：P(瓜熟) × P(脱落 | 瓜熟) × P(圆形 | 瓜熟) × P(青色 | 瓜熟) = 0.6 × (2 / 3) × (2 / 3) × (1 / 3) = 4 / 45。</p><p>然后，对于瓜生的情况：</p><p>瓜生的先验概率： P(瓜生) = 4 / 10 = 0.4。</p><p>条件概率： P(脱落 | 瓜生) = 1 / 4 = 0.25。</p><p>条件概率： P(圆形 | 瓜生) = 1 / 4 = 0.25。</p><p>条件概率： P(青色 | 瓜生) = 1 / 4 = 0.25。</p><p>计算<strong>后验概率分子部分</strong>：P(瓜生) × P(脱落 | 瓜生) × P(圆形 | 瓜生) × P(青色 | 瓜生) = 0.4 × 0.25 × 0.25 × 0.25 = 1 / 160。</p><p>因为 4 / 45 &gt; 1 / 160，所以预测为瓜熟。终于计算完了，很肯定这个西瓜瓜蒂脱落、形状圆形、颜色青色，应该是熟瓜。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;理解朴素贝叶斯&quot;&gt;&lt;a href=&quot;#理解朴素贝叶斯&quot; class=&quot;headerlink&quot; title=&quot;理解朴素贝叶斯&quot;&gt;&lt;/a&gt;理解朴素贝叶斯&lt;/h1&gt;&lt;h4 id=&quot;（1）先验概率、后验概率、联合概率、全概率&quot;&gt;&lt;a href=&quot;#（1）先验概率、后验概率、联合概率、全概率&quot; class=&quot;headerlink&quot; title=&quot;（1）先验概率、后验概率、联合概率、全概率&quot;&gt;&lt;/a&gt;（1）&lt;strong&gt;先验概率、后验概率、联合概率、全概率&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;如果我对这个西瓜&lt;strong&gt;没有任何了解&lt;/strong&gt;，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为&lt;strong&gt;先验概率&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;即，&lt;strong&gt;先验概率&lt;/strong&gt;是&lt;strong&gt;根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。&lt;/strong&gt;就像&lt;strong&gt;只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;一个判断西瓜是否成熟的常识，就是看瓜蒂是否脱落。一般来说，瓜蒂脱落的情况下，西瓜成熟的概率大一些，大概是 75%。如果&lt;strong&gt;把瓜蒂脱落当作一种结果，然后去推测西瓜成熟的概率&lt;/strong&gt;，这个概率 P(瓜熟 | 瓜蒂脱落) 就被称为&lt;strong&gt;后验概率&lt;/strong&gt;。后验概率类似于&lt;strong&gt;条件概率&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;知道了先验概率和后验概率，我们再来看看什么是联合概率。&lt;strong&gt;P(瓜熟，瓜蒂脱落)&lt;/strong&gt; 称之为&lt;strong&gt;联合分布&lt;/strong&gt;，它表示&lt;strong&gt;瓜熟了且瓜蒂脱落的概率&lt;/strong&gt;。关于联合概率，满足下列乘法等式：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="朴素贝叶斯" scheme="http://yoursite.com/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-      <category term="西瓜书" scheme="http://yoursite.com/tags/%E8%A5%BF%E7%93%9C%E4%B9%A6/"/>
     
   </entry>
   
