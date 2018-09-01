@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/09/01/topK%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2018-09-01T04:02:55.467Z</lastmod>
+    <lastmod>2018-09-01T04:06:41.377Z</lastmod>
     <data>
         <display>
         <title>topK问题</title>
@@ -89,11 +89,11 @@
         <title>DeepIOT神经网络压缩</title>
         <pubTime>2018-08-24T10:48:33.000Z</pubTime>
         
+        <tag>神经网络</tag>
+         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
-         
-        <tag>神经网络</tag>
          
         <tag>神经网络压缩</tag>
          
@@ -213,11 +213,11 @@
         <title>HAN</title>
         <pubTime>2018-08-24T08:03:04.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>Hierarchical Attention Networks</tag>
          
@@ -239,11 +239,11 @@
         <title>深度学习中Attention注意力机制</title>
         <pubTime>2018-08-24T04:55:45.000Z</pubTime>
         
-        <tag>Attention</tag>
-         
         <tag>深度学习</tag>
          
         <tag>笔记</tag>
+         
+        <tag>Attention</tag>
          
         <tag>注意力机制</tag>
          
