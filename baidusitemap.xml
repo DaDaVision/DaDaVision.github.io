@@ -4,8 +4,32 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E8%B7%B3%E5%8F%B0%E9%98%B6/</loc>
+    <lastmod>2018-09-01T15:35:25.845Z</lastmod>
+    <data>
+        <display>
+        <title>剑指Offer（八）：跳台阶</title>
+        <pubTime>2018-09-01T15:30:29.000Z</pubTime>
+        
+        <tag>笔试</tag>
+         
+        <tag>剑指Offer</tag>
+         
+        <tag>递归</tag>
+         
+         
+           
+             
+              <breadCrumb title="剑指Offer" url="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%B8%83%EF%BC%89%EF%BC%9A%E8%A3%B4%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</loc>
-    <lastmod>2018-09-01T15:08:34.210Z</lastmod>
+    <lastmod>2018-09-01T15:21:50.072Z</lastmod>
     <data>
         <display>
         <title>剑指Offer（七）：裴波那契数列</title>
@@ -233,9 +257,9 @@
         <title>DeepIOT神经网络压缩</title>
         <pubTime>2018-08-24T10:48:33.000Z</pubTime>
         
-        <tag>深度学习</tag>
-         
         <tag>神经网络</tag>
+         
+        <tag>深度学习</tag>
          
         <tag>笔记</tag>
          
