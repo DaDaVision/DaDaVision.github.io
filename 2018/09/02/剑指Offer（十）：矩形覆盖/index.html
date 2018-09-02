@@ -143,20 +143,20 @@
   </script>
 
 
-  <meta name="description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
-<meta name="keywords" content="机器学习,模型评估">
+  <meta name="description" content="摘要 我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？ 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？">
+<meta name="keywords" content="笔试,剑指Offer,递归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="交叉验证集、测试集">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/交叉验证集、测试集/index.html">
+<meta property="og:title" content="剑指Offer（十）：矩形覆盖">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/剑指Offer（十）：矩形覆盖/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
+<meta property="og:description" content="摘要 我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？ 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://img0.ph.126.net/qb2MusthyyOYQcTgrg_hog==/1621295865953709417.png">
-<meta property="og:updated_time" content="2018-06-11T05:05:23.246Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-186ab26d39d6ccaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-02T08:38:11.323Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="交叉验证集、测试集">
-<meta name="twitter:description" content="什么有交叉验证：主要是因为训练集较小。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。 最佳的数据分类情况是把数据集分为三部分，分别为：训练集(train set)，验证集(validation set)和测试集(test set) 验证集和测试集两者的主要区别是：验证集用于进一步确定模型中的超参数(例如正则项系数、ANN{Artificial Neural Network}">
-<meta name="twitter:image" content="http://img0.ph.126.net/qb2MusthyyOYQcTgrg_hog==/1621295865953709417.png">
+<meta name="twitter:title" content="剑指Offer（十）：矩形覆盖">
+<meta name="twitter:description" content="摘要 我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？ 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-186ab26d39d6ccaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -165,7 +165,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/09/交叉验证集、测试集/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/剑指Offer（十）：矩形覆盖/"/>
 
 
 
@@ -175,7 +175,7 @@
   };
 </script>
 
-  <title>交叉验证集、测试集 | DaDaVision</title>
+  <title>剑指Offer（十）：矩形覆盖 | DaDaVision</title>
   
 
 
@@ -387,7 +387,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/交叉验证集、测试集/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/剑指Offer（十）：矩形覆盖/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -404,7 +404,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">交叉验证集、测试集
+          <h1 class="post-title" itemprop="name headline">剑指Offer（十）：矩形覆盖
               
             
           </h1>
@@ -429,24 +429,12 @@
                 
               
 
-              <time title="创建时间：2018-06-09 18:32:04" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:04+08:00">2018-06-09</time>
+              <time title="创建时间：2018-09-02 16:01:03 / 修改时间：16:38:11" itemprop="dateCreated datePublished" datetime="2018-09-02T16:01:03+08:00">2018-09-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-11 13:05:23" itemprop="dateModified" datetime="2018-06-11T13:05:23+08:00">2018-06-11</time>
               
             
           </span>
@@ -463,7 +451,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/剑指Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a></span>
 
                 
                 
@@ -505,18 +493,16 @@
       
 
       
-        <p>什么有交叉验证：主要是<strong>因为训练集较小</strong>。无法直接像前面那样只分出训练集，验证集，测试就可以了（简单交叉验证）。</p>
-<p>最佳的数据分类情况是把数据集分为三部分，分别为：<strong>训练集</strong>(train set)，<strong>验证集</strong>(validation set)和<strong>测试集</strong>(test set)</p>
-<p>验证集和测试集两者的主要区别是：<strong>验证集</strong>用于<strong>进一步确定模型中的超参数</strong>(例如正则项系数、ANN{Artificial Neural Network}中隐含层的节点个数、网络层数、迭代次数、学习率)而<strong>测试集</strong>只是<strong>用于评估模型的精确度(即泛化能力)</strong>！</p>
-<p>举个例子：假设建立一个BP神经网络，对于隐含层的节点数目，我们并没有很好的方法去确定。一般将节点数设定为某一具体的值，通过训练集训练出相应的参数后，再<strong>由交叉验证集去检测该模型的误差</strong>；<strong>然后再改变节点数，重复上述过程，直到交叉验证误差最小</strong>。此时的节点数可以认为是最优节点数，即该节点数(<strong>这个参数)是通过交叉验证集得到的</strong>。</p>
-<p>而<strong>测试集</strong>是在<strong>确定了所有参数之后，根据测试误差来评判这个学习模型的；也可以说是用来评估模型的泛化能力</strong>。所以，<strong>验证集</strong>主要主要是<strong>用于模型的调参</strong>。</p>
+        <p>摘要</p>
+<p>我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本系列文章为《剑指Offer》刷题笔记。</p>
+<p>刷题平台：牛客网</p>
+<h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>我们可以用2*1的小矩形横着或者竖着去覆盖更大的矩形。请问用n个2*1的小矩形无重叠地覆盖一个2*n的大矩形，总共有多少种方法？</p>
 <a id="more"></a>
-<p>“<strong>交叉验证法</strong>“ (cross validation)先将数据集<strong>D</strong> <strong>划分为k 个大小相似的互斥子集</strong>， 即<strong>D = D**</strong>1<strong> </strong>∪<strong> </strong>D<strong>**2</strong> <strong>∪**</strong>…<strong> </strong>∪<strong> </strong>D<strong><strong>k</strong></strong>, Di<strong> </strong>∩<strong> </strong>Dj = ø (<strong><strong>i≠</strong></strong>j)<strong> . </strong>每个子集Di 都尽可能保持数据分布的一致性<strong>，即从D 中通过</strong>分层采样<strong>得到. 然后，每次用k-1 个子集的并集作为训练集，余下的那个子集作为测试集;这样就可获得k组训练/测试集，从而可进行k 次训练和测试，最终返回的是这</strong>k 个测试结果的均值<strong>**。</strong>显然，<strong>交叉验证法评估结果的稳定性和保真性在很大程度上取决于k的取值</strong>，为强调这一点，通常把交叉验证法称为” <strong>k 折**</strong>/倍<strong>**交叉验证</strong>“ (k-fold cross validation). k 最常用的取值是<strong>10</strong> ，此时称为10折交叉验证; 其他常用的k 值有5、20 等.</p>
-<p><img src="http://img0.ph.126.net/qb2MusthyyOYQcTgrg_hog==/1621295865953709417.png" alt=""></p>
-<p>为了<strong>避免其他属性携带的信息被训练集中未出现的属性值”抹去</strong>”，在估计概率值时通常要进行”平滑” (smoothing) ，常用”<strong>拉普拉斯修正</strong>“，所以，P(c)和P(xi|c)修正为：</p>
-<p>其中N 表示训练集D 中可能的类别数，Ni表示第</p>
-<p>与留出法相似，将数据集D 划分为k 个子集同样存在多种划分方式.为<strong>减小因样本划分不同而引入的差别</strong>，<strong>k折交叉验证通常要随机使用不同的划分重复p 次</strong>。最终的评估结果是这<strong>p 次k 折交叉验证结果的均值</strong>，例如常见的有”10 次10 折交叉验证。</p>
-<p>假定数据集D中包含m个样本，若令<strong>k=m</strong> ，则得到了<strong>交叉验证法的一个特例</strong>:<strong>留一法</strong>(Leave- One-Out比，简称LOO) . 显然，<strong>留一法不受随机样本划分方式的影响</strong>，因为m个样本只有唯一的方式划分为<strong>m个子集**</strong>—<strong>**每个子集包含一个样本</strong>;留一法使用的训练集与初始数据集相比只少了一个样本，这就使得在绝大多数情况下，<strong>留一法中被实际评估的模型与期望评估的用D 训练出的模型很相似</strong>.因此，<strong>留一法的评估结果往往被认为比较准确</strong>.然而，留一法也有其<strong>缺陷:在数据集比较大时</strong>，训练m个模型的计算开销可能是难以忍受的(例如数据集包含1 百万个样本，则需训练1 百万个模型)，而这还是在未考虑算法调参的情况下.另外，留一法的估计结果也未必永远比其他评估方法准确;”没有免费的午餐”定理对实验评估方法同样适用.</p>
+<h3 id="1、思路"><a href="#1、思路" class="headerlink" title="1、思路"></a>1、思路</h3><p>以2x8的矩形为例。示意图如下：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-186ab26d39d6ccaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>我们先把2x8的覆盖方法记为f(8)。用第一个1x2小矩阵覆盖大矩形的最左边时有两个选择，竖着放或者横着放。当竖着放的时候，右边还剩下2x7的区域，这种情况下的覆盖方法记为f(7)。接下来考虑横着放的情况。当1x2的小矩形横着放在左上角的时候，左下角和横着放一个1x2的小矩形，而在右边还剩下2x6的区域，这种情况下的覆盖方法记为f(6)。因此f(8)=f(7)+f(6)。此时我们可以看出，这仍然是<strong>斐波那契数列</strong>。</p>
+<h3 id="2、代码"><a href="#2、代码" class="headerlink" title="2、代码"></a>2、代码</h3><p><strong>C++:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int rectCover(int number) &#123;</span><br><span class="line">		if(number &lt;= 2)&#123;</span><br><span class="line">            return number;</span><br><span class="line">        &#125;</span><br><span class="line">        int first = 1, second = 2, third = 0;</span><br><span class="line">        for(int i = 3; i &lt;= number; i++)&#123;</span><br><span class="line">            third = first + second;</span><br><span class="line">            first = second;</span><br><span class="line">            second = third;</span><br><span class="line">        &#125;</span><br><span class="line">        return third;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Python2.7：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">class Solution:</span><br><span class="line">    def rectCover(self, number):</span><br><span class="line">        # write code here</span><br><span class="line">        if number &lt;= 2:</span><br><span class="line">            return number</span><br><span class="line">        first, second, third = 1, 2, 0</span><br><span class="line">        for i in range(3, number+1):</span><br><span class="line">            third = first + second</span><br><span class="line">            first = second</span><br><span class="line">            second = third</span><br><span class="line">        return third</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -546,9 +532,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
+            <a href="/tags/笔试/" <i class="fa fa-tag"></i> 笔试</a>
           
-            <a href="/tags/模型评估/" <i class="fa fa-tag"></i> 模型评估</a>
+            <a href="/tags/剑指Offer/" <i class="fa fa-tag"></i> 剑指Offer</a>
+          
+            <a href="/tags/递归/" <i class="fa fa-tag"></i> 递归</a>
           
         </div>
       
@@ -561,8 +549,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/偏差、方差、噪声/" rel="next" title="偏差、方差、噪声">
-                <i class="fa fa-chevron-left"></i> 偏差、方差、噪声
+              <a href="/2018/09/01/剑指Offer（九）：变态跳台阶/" rel="next" title="剑指Offer（九）：变态跳台阶">
+                <i class="fa fa-chevron-left"></i> 剑指Offer（九）：变态跳台阶
               </a>
             
           </div>
@@ -570,10 +558,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/09/Mnist手写数字识别/" rel="prev" title="Mnist手写数字识别">
-                Mnist手写数字识别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -635,8 +619,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -894,6 +887,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、题目"><span class="nav-number">2.</span> <span class="nav-text">二、题目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、思路"><span class="nav-number">2.1.</span> <span class="nav-text">1、思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、代码"><span class="nav-number">2.2.</span> <span class="nav-text">2、代码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

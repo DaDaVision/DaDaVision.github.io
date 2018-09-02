@@ -4,15 +4,24 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/</loc>
-    <lastmod>2018-09-01T15:57:02.253Z</lastmod>
+    <loc>http://yoursite.com/2018/09/02/%E5%89%91%E6%8C%87Offer%EF%BC%88%E5%8D%81%EF%BC%89%EF%BC%9A%E7%9F%A9%E5%BD%A2%E8%A6%86%E7%9B%96/</loc>
+    <lastmod>2018-09-02T08:38:11.323Z</lastmod>
     <data>
         <display>
-        <title>剑指Offer（九）：变态跳台阶</title>
-        <pubTime>2018-09-01T15:42:23.000Z</pubTime>
+        <title>剑指Offer（十）：矩形覆盖</title>
+        <pubTime>2018-09-02T08:01:03.000Z</pubTime>
         
+        <tag>笔试</tag>
+         
+        <tag>剑指Offer</tag>
+         
+        <tag>递归</tag>
+         
          
            
+             
+              <breadCrumb title="剑指Offer" url="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+          
         </display>
     </data>
     </url>
@@ -20,11 +29,35 @@
     
   <url>
     <loc>http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E5%85%AB%EF%BC%89%EF%BC%9A%E8%B7%B3%E5%8F%B0%E9%98%B6/</loc>
-    <lastmod>2018-09-01T15:35:25.845Z</lastmod>
+    <lastmod>2018-09-02T08:05:07.039Z</lastmod>
     <data>
         <display>
         <title>剑指Offer（八）：跳台阶</title>
         <pubTime>2018-09-01T15:30:29.000Z</pubTime>
+        
+        <tag>笔试</tag>
+         
+        <tag>剑指Offer</tag>
+         
+        <tag>递归</tag>
+         
+         
+           
+             
+              <breadCrumb title="剑指Offer" url="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/09/01/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%B9%9D%EF%BC%89%EF%BC%9A%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/</loc>
+    <lastmod>2018-09-02T08:05:01.812Z</lastmod>
+    <data>
+        <display>
+        <title>剑指Offer（九）：变态跳台阶</title>
+        <pubTime>2018-09-01T15:42:23.000Z</pubTime>
         
         <tag>笔试</tag>
          
@@ -860,9 +893,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -884,9 +917,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
