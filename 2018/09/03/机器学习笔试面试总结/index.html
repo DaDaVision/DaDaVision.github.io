@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://dadavision.github.io"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next1.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next1.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next1.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "ec70280c"
+    });
+  daovoice('update');
+  </script>
+
+
+  <meta name="description" content="Q1. 下列说法正确的是？（多选） A. AdaGrad 使用的是一阶导数 B. L-BFGS 使用的是二阶导数 C. AdaGrad 使用的是二阶导数">
+<meta name="keywords" content="笔记,机器学习,笔试,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习笔试面试总结">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/机器学习笔试面试总结/index.html">
+<meta property="og:site_name" content="DaDaVision">
+<meta property="og:description" content="Q1. 下列说法正确的是？（多选） A. AdaGrad 使用的是一阶导数 B. L-BFGS 使用的是二阶导数 C. AdaGrad 使用的是二阶导数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-72719e5327ac8b1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-83efe7aa07c70bab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f6f31ede1eaafc51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f6f31ede1eaafc51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-48a462e1fe29342c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-5b857076a6456a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e1ce73a05c75fce0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-5946f97fb1555707.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-64c71d87b2a23885.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e407dc44d5888d06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-6b21ad91933d034e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-c469c4fe5e9dc986.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fc03e7e893d7eb39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-0c0deca260a65c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-e5efceb45b6dab94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-32f0dd9b646c9298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-dde5b5280cc26c44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f824a5250cab98b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-0fd152a1d71f7c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-1c12567aef4f9b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-93556aa2d3107428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-61e845f7b298f9b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-3066338bd93bb507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-ac45f3e8cfb10e2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-bc1ee5c524fbd792.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-fd966d40c0a2848c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-d48a982d7ae724c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-a5484827933b999f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-9efa7b49191ac4ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-1aaeddbdb1f9da6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-4dd8f7be18e93aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-f6de97674698194d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12654931-5755183c130bc9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-09-03T09:14:15.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习笔试面试总结">
+<meta name="twitter:description" content="Q1. 下列说法正确的是？（多选） A. AdaGrad 使用的是一阶导数 B. L-BFGS 使用的是二阶导数 C. AdaGrad 使用的是二阶导数">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/12654931-72719e5327ac8b1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="DaDaVision" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/机器学习笔试面试总结/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习笔试面试总结 | DaDaVision</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+		
+		
+		<a href="https://github.com/DaDaVision" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+		
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">DaDaVision</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/机器学习笔试面试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tengda Zhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://img1.ph.126.net/Xs_jpOoevKFqwxuIfkKGVA==/2984760653140182352.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="DaDaVision">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习笔试面试总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-03 09:19:17 / 修改时间：17:14:15" itemprop="dateCreated datePublished" datetime="2018-09-03T09:19:17+08:00">2018-09-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>Q1. 下列说法正确的是？（多选）</strong></p>
+<p>A. AdaGrad 使用的是一阶导数</p>
+<p>B. L-BFGS 使用的是二阶导数</p>
+<p>C. AdaGrad 使用的是二阶导数<br><a id="more"></a></p>
+<p>D. L-BFGS 使用的是一阶导数</p>
+<p><strong>答案</strong>：AB</p>
+<p><strong>解析</strong>：AdaGrad 是基于梯度下降算法的，AdaGrad算法能够在训练中自动的对学习速率 α 进行调整，对于出现频率较低参数采用较大的 α 更新；相反，对于出现频率较高的参数采用较小的 α 更新。Adagrad非常适合处理稀疏数据。很明显，AdaGrad 算法利用的是一阶导数。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-72719e5327ac8b1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>L-BFGS 是基于牛顿优化算法的，牛顿优化算法使用的是二阶导数。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-83efe7aa07c70bab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Q2. “增加卷积核的尺寸，一定能提高卷积神经网络的性能。” 这句话是否正确？</strong></p>
+<p>A. 正确</p>
+<p>B. 错误</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：卷积核的尺寸是超参数，不一定增加其尺寸就一定增加神经网络的性能，需要验证选择最佳尺寸。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f6f31ede1eaafc51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Q3. 假设你在卷积神经网络的第一层中有 5 个卷积核，每个卷积核尺寸为 7×7，具有零填充且步幅为 1。该层的输入图片的维度是 224×224×3。那么该层输出的维度是多少？</strong></p>
+<p>A. 217 x 217 x 3</p>
+<p>B. 217 x 217 x 8</p>
+<p>C. 218 x 218 x 5</p>
+<p>D. 220 x 220 x 7</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：一般地，如果原始图片尺寸为 nxn，filter 尺寸为 fxf，则卷积后的图片尺寸为 (n-f+1)x(n-f+1)，注意 f 一般为奇数。</p>
+<p>若考虑存在填充和步幅，用 s 表示 stride 长度，p 表示 padding 长度，如果原始图片尺寸为 nxn，filter 尺寸为 fxf，则卷积后的图片尺寸为：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f6f31ede1eaafc51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上式中，⌊⋯⌋ 表示向下取整。</p>
+<p>此例中， n=224，p=0，f=7，s=1，因此，该层输出的尺寸为 218x218。</p>
+<p>输出的第三个维度由滤波器的个数决定，即为 5。</p>
+<p><strong>Q4. 假如现在有个神经网络，激活函数是 ReLU，若使用线性激活函数代替 ReLU，那么该神经网络还能表征 XNOR 函数吗？</strong></p>
+<p>A. 可以</p>
+<p>B. 不可以</p>
+<p><strong>答案</strong>：B</p>
+<p>解析：异或（XNOR）关系是非线性的，线性激活函数只能解决线性问题，不能解决非线性问题。如果用线性激活代替 ReLU，则神经网络失去逼近非线性函数的能力。</p>
+<p><strong>Q5. 机器学习训练时，Mini-Batch 的大小优选为2个的幂，如 256 或 512。它背后的原因是什么？</strong></p>
+<p>A. Mini-Batch 为偶数的时候，梯度下降算法训练的更快</p>
+<p>B. Mini-Batch 设为 2 的 幂，是为了符合 CPU、GPU 的内存要求，利于并行化处理</p>
+<p>C. 不使用偶数时，损失函数是不稳定的</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>Q6. 下列哪种方法可以用来减小过拟合？（多选）</strong></p>
+<p>A. 更多的训练数据</p>
+<p>B. L1 正则化</p>
+<p>C. L2 正则化</p>
+<p>D. 减小模型的复杂度</p>
+<p><strong>答案</strong>：ABCD</p>
+<p><strong>解析</strong>：增加训练样本、L1正则化、L2 正则化、减小模型复杂度都能有效避免发生过拟合。</p>
+<p><strong>Q7. 下列说法错误的是？</strong></p>
+<p>A. 当目标函数是凸函数时，梯度下降算法的解一般就是全局最优解</p>
+<p>B. 进行 PCA 降维时，需要计算协方差矩阵</p>
+<p>C. 沿负梯度的方向一定是最优的方向</p>
+<p>D. 利用拉格朗日函数能解带约束的优化问题</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：沿负梯度的方向是函数值减少最快的方向但不一定就是最优方向。</p>
+<p><strong>Q8. K-Means 算法无法聚以下哪种形状的样本？</strong></p>
+<p>A. 圆形分布</p>
+<p>B. 螺旋分布</p>
+<p>C. 带状分布</p>
+<p>D. 凸多边形分布</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：K-Means 算法是基于距离测量的，无法聚非凸形状的样本。</p>
+<p><strong>Q9. 向量 X=[1,2,3,4,-9,0] 的 L1 范数为？</strong></p>
+<p>A. 1</p>
+<p>B. 19</p>
+<p>C. 6</p>
+<p>D. √111</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：L0 范数表示向量中所有非零元素的个数；L1 范数指的是向量中各元素的绝对值之和，又称“稀疏矩阵算子”；L2 范数指的是向量中各元素的平方和再求平方根。</p>
+<p>本例中，L0 范数为 5，L1 范数为 19，L2 范数为 √111。</p>
+<p><strong>Q10. 关于 L1、L2 正则化下列说法正确的是？</strong></p>
+<p>A. L2 正则化能防止过拟合，提升模型的泛化能力，但 L1 做不到这点</p>
+<p>B. L2 正则化技术又称为 Lasso Regularization</p>
+<p>C. L1 正则化得到的解更加稀疏</p>
+<p>D. L2 正则化得到的解更加稀疏</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：L1、L2 正则化都能防止过拟合，提升模型的泛化能力。L1 正则化技术又称为 Lasso Regularization。L1 正则化得到的解更加稀疏，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-48a462e1fe29342c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>以二维情况讨论，上图左边是 L2 正则化，右边是 L1 正则化。从另一个方面来看，满足正则化条件，实际上是求解蓝色区域与黄色区域的交点，即同时满足限定条件和 Ein 最小化。对于 L2 来说，限定区域是圆，这样，得到的解 w1 或 w2 为 0 的概率很小，很大概率是非零的。</p>
+<p>对于 L1 来说，限定区域是正方形，方形与蓝色区域相交的交点是顶点的概率很大，这从视觉和常识上来看是很容易理解的。也就是说，方形的凸点会更接近 Ein 最优解对应的 wlin 位置，而凸点处必有 w1 或 w2 为 0。这样，得到的解 w1 或 w2 为零的概率就很大了。所以，L1 正则化的解具有稀疏性。</p>
+<p>扩展到高维，同样的道理，L2 的限定区域是平滑的，与中心点等距；而 L1 的限定区域是包含凸点的，尖锐的。这些凸点更接近 Ein 的最优解位置，而在这些凸点上，很多 wj 为 0。</p>
+<p><strong>Q11. 有 N 个样本，一般用于训练，一般用于测试。若增大 N 值，则训练误差和测试误差之间的差距会如何变化？</strong></p>
+<p>A. 增大</p>
+<p>B. 减小</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：增加数据，能够有效减小过拟合，减小训练样本误差和测试样本误差之间的差距。</p>
+<p><strong>Q12. 假定你在神经网络中的隐藏层中使用激活函数 X。在特定神经元给定任意输入，你会得到输出 -0.01。X 可能是以下哪一个激活函数？</strong></p>
+<p>A. ReLU</p>
+<p>B. tanh </p>
+<p>C. Sigmoid</p>
+<p>D. 以上都有可能</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：ReLU 的输出范围是 [0,+∞)，tanh 的输出范围是 (-1,+1)，Sigmoid 的输出范围是 (0,+1)。</p>
+<p><strong>Q13. k-NN 最近邻方法在什么情况下效果较好？</strong></p>
+<p>A. 样本较多但典型性不好 </p>
+<p>B. 样本较少但典型性好 </p>
+<p>C. 样本呈团状分布 </p>
+<p>D. 样本呈链状分布 </p>
+<p><strong>答案</strong>：B </p>
+<p><strong>解析</strong>：K 近邻算法主要依靠的是周围的点，因此如果样本过多，则难以区分，典型性好的容易区分。</p>
+<p>样本呈团状或链状都具有迷惑性，这样 kNN 就发挥不出其求近邻的优势了，整体样本应该具有典型性好，样本较少，比较适宜。</p>
+<p><strong>Q14. 下列方法中，可以用于特征降维的方法包括？（多选）</strong></p>
+<p>A. 主成分分析 PCA </p>
+<p>B. 线性判别分析 LDA </p>
+<p>C. AutoEncoder </p>
+<p>D. 矩阵奇异值分解 SVD </p>
+<p>E. 最小二乘法 LeastSquares </p>
+<p><strong>答案</strong>：ABCD </p>
+<p><strong>解析</strong>：主成分分析 PCA 、线性判别分析 LDA 、AutoEncoder、矩阵奇异值分解 SVD 都是用于特征降维的方法。最小二乘法是解决线性回归问题的算法，但是并没有进行降维。</p>
+<p><strong>Q15. 以下哪些方法不可以直接来对文本分类？</strong></p>
+<p>A. K-Means</p>
+<p>B. 决策树</p>
+<p>C. 支持向量机</p>
+<p>D. kNN</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：K-Means 是无监督算法，它之所以不能称为分类是因为它之前并没有类别标签，因此只能聚类。</p>
+<p><strong>Q16. 在回归模型中，下列哪一项在权衡欠拟合（under-fitting）和过拟合（over-fitting）中影响最大？</strong></p>
+<p>A. 多项式阶数</p>
+<p>B. 更新权重 w 时，使用的是矩阵求逆还是梯度下降</p>
+<p>C. 使用常数项</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：选择合适的多项式阶数非常重要。如果阶数过大，模型就会更加复杂，容易发生过拟合；如果阶数较小，模型就会过于简单，容易发生欠拟合。如果有对过拟合和欠拟合概念不清楚的，见下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-5b857076a6456a6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Q17. 假设你有以下数据：输入和输出都只有一个变量。使用线性回归模型（y=wx+b）来拟合数据。那么使用留一法（Leave-One Out）交叉验证得到的均方误差是多少？</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-e1ce73a05c75fce0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A. 10/27</p>
+<p>B. 39/27</p>
+<p>C. 49/27</p>
+<p>D. 55/27</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：留一法，简单来说就是假设有 N 个样本，将每一个样本作为测试样本，其它 N-1 个样本作为训练样本。这样得到 N 个分类器，N 个测试结果。用这 N个结果的平均值来衡量模型的性能。</p>
+<p>对于该题，我们先画出 3 个样本点的坐标：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-5946f97fb1555707.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>使用两个点进行线性拟合，分成三种情况，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-64c71d87b2a23885.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>第一种情况下，回归模型是 y = 2，误差 E1 = 1。</p>
+<p>第二种情况下，回归模型是 y = -x + 4，误差 E2 = 2。</p>
+<p>第三种情况下，回归模型是 y = -1/3x + 2,误差 E3 = 2/3。</p>
+<p>则总的均方误差为：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-e407dc44d5888d06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Q18. 下列关于极大似然估计（Maximum Likelihood Estimate，MLE），说法正确的是（多选）？</strong></p>
+<p>A. MLE 可能并不存在</p>
+<p>B. MLE 总是存在</p>
+<p>C. 如果 MLE 存在，那么它的解可能不是唯一的</p>
+<p>D. 如果 MLE 存在，那么它的解一定是唯一的</p>
+<p><strong>答案</strong>：AC</p>
+<p><strong>解析</strong>：如果极大似然函数 L(θ) 在极大值处不连续，一阶导数不存在，则 MLE 不存在，如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-6b21ad91933d034e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>另一种情况是 MLE 并不唯一，极大值对应两个 θ。如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-c469c4fe5e9dc986.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>Q19. 如果我们说“线性回归”模型完美地拟合了训练样本（训练样本误差为零），则下面哪个说法是正确的？</strong></p>
+<p>A. 测试样本误差始终为零</p>
+<p>B. 测试样本误差不可能为零</p>
+<p>C. 以上答案都不对</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：根据训练样本误差为零，无法推断测试样本误差是否为零。值得一提是，如果测试样本样本很大，则很可能发生过拟合，模型不具备很好的泛化能力！</p>
+<p><strong>Q20. 在一个线性回归问题中，我们使用 R 平方（R-Squared）来判断拟合度。此时，如果增加一个特征，模型不变，则下面说法正确的是？</strong></p>
+<p>A. 如果 R-Squared 增加，则这个特征有意义</p>
+<p>B. 如果R-Squared 减小，则这个特征没有意义</p>
+<p>C. 仅看 R-Squared 单一变量，无法确定这个特征是否有意义。</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：线性回归问题中，R-Squared 是用来衡量回归方程与真实样本输出之间的相似程度。其表达式如下所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-fc03e7e893d7eb39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>上式中，分子部分表示真实值与预测值的平方差之和，类似于均方差 MSE；分母部分表示真实值与均值的平方差之和，类似于方差 Var。根据 R-Squared 的取值，来判断模型的好坏：如果结果是 0，说明模型拟合效果很差；如果结果是 1，说明模型无错误。一般来说，R-Squared 越大，表示模型拟合效果越好。R-Squared 反映的是大概有多准，因为，随着样本数量的增加，R-Square必然增加，无法真正定量说明准确程度，只能大概定量。</p>
+<p>对于本题来说，单独看 R-Squared，并不能推断出增加的特征是否有意义。通常来说，增加一个特征，R-Squared 可能变大也可能保持不变，两者不一定呈正相关。</p>
+<p>如果使用校正决定系数（Adjusted R-Square）：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-0c0deca260a65c33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，n 是样本数量，p 是特征数量。Adjusted R-Square 抵消样本数量对 R-Square的影响，做到了真正的 0~1，越大越好。</p>
+<p><strong>Q21. 下列关于线性回归分析中的残差（Residuals）说法正确的是？</strong></p>
+<p>A. 残差均值总是为零</p>
+<p>B. 残差均值总是小于零</p>
+<p>C. 残差均值总是大于零</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：线性回归分析中，目标是残差最小化。残差平方和是关于参数的函数，为了求残差极小值，令残差关于参数的偏导数为零，会得到残差和为零，即残差均值为零。</p>
+<p><strong>Q22. 下列关于异方差（Heteroskedasticity）说法正确的是？</strong></p>
+<p>A. 线性回归具有不同的误差项</p>
+<p>B. 线性回归具有相同的误差项</p>
+<p>C. 线性回归误差项为零</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：异方差性是相对于同方差（Homoskedasticity）而言的。所谓同方差，是为了保证回归参数估计量具有良好的统计性质，经典线性回归模型的一个重要假定：总体回归函数中的随机误差项满足同方差性，即它们都有相同的方差。如果这一假定不满足，即：随机误差项具有不同的方差，则称线性回归模型存在异方差性。</p>
+<p>通常来说，奇异值的出现会导致异方差性增大。</p>
+<p><strong>Q23. 下列哪一项能反映出 X 和 Y 之间的强相关性？</strong></p>
+<p>A. 相关系数为 0.9</p>
+<p>B. 对于无效假设 β=0 的 p 值为 0.0001</p>
+<p>C. 对于无效假设 β=0 的 t 值为 30</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：相关系数的概念我们很熟悉，它反映了不同变量之间线性相关程度，一般用 r 表示。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-e5efceb45b6dab94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，Cov(X,Y) 为 X 与 Y 的协方差，Var[X] 为 X 的方差，Var[Y] 为 Y 的方差。r 取值范围在 [-1,1] 之间，r 越大表示相关程度越高。A 选项中，r=0.9 表示 X 和 Y 之间有较强的相关性。</p>
+<p>而 p 和 t 的数值大小没有统计意义，只是将其与某一个阈值进行比对,以得到二选一的结论。例如，有两个假设：</p>
+<ul>
+<li>无效假设（null hypothesis）H0：两参量间不存在“线性”相关。</li>
+<li>备择假设（alternative hypothesis）H1：两参量间存在“线性”相关。</li>
+</ul>
+<p>如果阈值是 0.05，计算出的 p 值很小，比如为 0.001，则可以说“有非常显著的证据拒绝 H0 假设,相信 H1 假设。即两参量间存在“线性”相关。p 值只用于二值化判断，因此不能说 p=0.06 一定比 p=0.07 更好。</p>
+<p><strong>Q24. 下列哪些假设是我们推导线性回归参数时遵循的（多选）？</strong></p>
+<p>A. X 与 Y 有线性关系（多项式关系）</p>
+<p>B. 模型误差在统计学上是独立的</p>
+<p>C. 误差一般服从 0 均值和固定标准差的正态分布</p>
+<p>D. X 是非随机且测量没有误差的</p>
+<p><strong>答案</strong>：ABCD</p>
+<p><strong>解析</strong>：在进行线性回归推导和分析时，我们已经默认上述四个条件是成立的。</p>
+<p><strong>Q25. 为了观察测试 Y 与 X 之间的线性关系，X 是连续变量，使用下列哪种图形比较适合？</strong></p>
+<p>A. 散点图</p>
+<p>B. 柱形图</p>
+<p>C. 直方图</p>
+<p>D. 以上都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：散点图反映了两个变量之间的相互关系，在测试 Y 与 X 之间的线性关系时，使用散点图最为直观。</p>
+<p><strong>Q26. 一般来说，下列哪种方法常用来预测连续独立变量？</strong></p>
+<p>A. 线性回归</p>
+<p>B. 逻辑回顾</p>
+<p>C. 线性回归和逻辑回归都行</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：线性回归一般用于实数预测，逻辑回归一般用于分类问题。</p>
+<p><strong>Q27. 个人健康和年龄的相关系数是 -1.09。根据这个你可以告诉医生哪个结论？</strong></p>
+<p>A. 年龄是健康程度很好的预测器</p>
+<p>B. 年龄是健康程度很糟的预测器</p>
+<p>C. 以上说法都不对</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：因为相关系数的范围是 [-1,1] 之间，所以，-1.09 不可能存在。</p>
+<p><strong>Q28. 下列哪一种偏移，是我们在最小二乘直线拟合的情况下使用的？图中横坐标是输入 X，纵坐标是输出 Y。</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-32f0dd9b646c9298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A. 垂直偏移（vertical offsets）</p>
+<p>B. 垂向偏移（perpendicular offsets）</p>
+<p>C. 两种偏移都可以</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：线性回归模型计算损失函数，例如均方差损失函数时，使用的都是 vertical offsets。perpendicular offsets 一般用于主成分分析（PCA）中。</p>
+<p><strong>Q29. 假如我们利用 Y 是 X 的 3 阶多项式产生一些数据（3 阶多项式能很好地拟合数据）。那么，下列说法正确的是（多选）？</strong></p>
+<p>A. 简单的线性回归容易造成高偏差（bias）、低方差（variance）</p>
+<p>B. 简单的线性回归容易造成低偏差（bias）、高方差（variance）</p>
+<p>C. 3 阶多项式拟合会造成低偏差（bias）、高方差（variance）</p>
+<p>D. 3 阶多项式拟合具备低偏差（bias）、低方差（variance）</p>
+<p><strong>答案</strong>：AD</p>
+<p><strong>解析</strong>：偏差和方差是两个相对的概念，就像欠拟合和过拟合一样。如果模型过于简单，通常会造成欠拟合，伴随着高偏差、低方差；如果模型过于复杂，通常会造成过拟合，伴随着低偏差、高方差。</p>
+<p>用一张图来形象地表示偏差与方差的关系：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-dde5b5280cc26c44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>偏差（bias）可以看成模型预测与真实样本的差距，想要得到 low bias，就得复杂化模型，但是容易造成过拟合。方差（variance）可以看成模型在测试集上的表现，想要得到 low variance，就得简化模型，但是容易造成欠拟合。实际应用中，偏差和方差是需要权衡的。若模型在训练样本和测试集上都表现的不错，偏差和方差都会比较小，这也是模型比较理想的情况。</p>
+<p><strong>Q30. 假如你在训练一个线性回归模型，有下面两句话：</strong></p>
+<pre><code>**1. 如果数据量较少，容易发生过拟合。**
+
+**2. 如果假设空间较小，容易发生过拟合。**
+</code></pre><p><strong>关于这两句话，下列说法正确的是？</strong></p>
+<p>A. 1 和 2 都错误</p>
+<p>B. 1 正确，2 错误</p>
+<p>C. 1 错误，2 正确</p>
+<p>D. 1 和 2 都正确</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：先来看第 1 句话，如果数据量较少，容易在假设空间找到一个模型对训练样本的拟合度很好，容易造成过拟合，该模型不具备良好的泛化能力。</p>
+<p>再来看第 2 句话，如果假设空间较小，包含的可能的模型就比较少，也就不太可能找到一个模型能够对样本拟合得很好，容易造成高偏差、低方差，即欠拟合。</p>
+<p><strong>Q31. 假如我们使用 Lasso 回归来拟合数据集，该数据集输入特征有 100 个（X1，X2，…，X100）。现在，我们把其中一个特征值扩大 10 倍（例如是特征 X1），然后用相同的正则化参数对 Lasso 回归进行修正。</strong></p>
+<p><strong>那么，下列说法正确的是？</strong></p>
+<p>A. 特征 X1 很可能被排除在模型之外</p>
+<p>B. 特征 X1 很可能还包含在模型之中</p>
+<p>C. 无法确定特征 X1 是否被舍弃</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>： B</p>
+<p><strong>解析</strong>：Lasso 回归类似于线性回归，只不过它在线性回归的基础上，增加了一个对所有参数的数值大小约束，如下所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-f824a5250cab98b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，t 为正则化参数。Lasso 回归其实就是在普通线性回归的损失函数的基础上增加了个 β 的约束。那么 β 的约束为什么要使用这种形式，而不使用 β 的平方约束呢？原因就在于第一范数的约束下，一部分回归系数刚好可以被约束为 0。这样的话，就达到了特征选择的效果。如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-0fd152a1d71f7c9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>左边是第二范式，右边是第一范式。第一范数约束下，β 更有可能被约束成 0。这点非常类似于 L1 和 L2 正则化的区别。</p>
+<p>因此，Lasso 回归适用于样本数量较少，特征维度较大的情形，便于从较多特征中进行特征选择。例如 DNA 数据，特征维度很大，我们只希望通过 Lasso 回归找出与某些疾病有关的 DNA 片段。</p>
+<p>本题中，将特征 X1 数值扩大 10 倍，他对应的回归系数将相应会减小，但不为 0，以此来保证仍然满足 β 的正则化约束。</p>
+<p><strong>Q32. 关于特征选择，下列对 Ridge 回归和 Lasso 回归说法正确的是？</strong></p>
+<p>A. Ridge 回归适用于特征选择</p>
+<p>B. Lasso 回归适用于特征选择</p>
+<p>C. 两个都适用于特征选择</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：上一题我们已经介绍过，Lasso 回归会让一部分回归系数刚好可以被约束为 0，起到特征选择的效果。</p>
+<p>Ridge 回归又称岭回归，它是普通线性回归加上 L2 正则项，用来防止训练过程中出现的过拟合。L2 正则化效果类似上一题左图，限定区域是圆，这样，得到的回归系数为 0 的概率很小，很大概率是非零的。因此，比较来说，Lasso 回归更容易得到稀疏的回归系数，有利于舍弃冗余或无用特征，适用于特征选择。</p>
+<p><strong>Q33. 如果在线性回归模型中增加一个特征变量，下列可能发生的是（多选）？</strong></p>
+<p>A. R-squared 增大，Adjust R-squared 增大</p>
+<p>B. R-squared 增大，Adjust R-squared 减小</p>
+<p>C. R-squared 减小，Adjust R-squared 减小</p>
+<p>D. R-squared 减小，Adjust R-squared 增大</p>
+<p><strong>答案</strong>：AB</p>
+<p><strong>解析</strong>：线性回归问题中，R-Squared 是用来衡量回归方程与真实样本输出之间的相似程度。其表达式如下所示：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-1c12567aef4f9b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>上式中，分子部分表示真实值与预测值的平方差之和，类似于均方差 MSE；分母部分表示真实值与均值的平方差之和，类似于方差 Var。一般来说，R-Squared 越大，表示模型拟合效果越好。R-Squared 反映的是大概有多准，因为，随着样本数量的增加，R-Squared 必然增加，无法真正定量说明准确程度，只能大概定量。</p>
+<p>单独看 R-Squared，并不能推断出增加的特征是否有意义。通常来说，增加一个特征特征，R-Squared 可能变大也可能保持不变，两者不一定呈正相关。</p>
+<p>如果使用校正决定系数（Adjusted R-Squared）：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-93556aa2d3107428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>其中，n 是样本数量，p 是特征数量。Adjusted R-Squared 抵消样本数量对 R-Squared 的影响，做到了真正的 0~1，越大越好。</p>
+<p>增加一个特征变量，如果这个特征有意义，Adjusted R-Square 就会增大，若这个特征是冗余特征，Adjusted R-Squared 就会减小。</p>
+<p><strong>Q34. 下面三张图展示了对同一训练样本，使用不同的模型拟合的效果（蓝色曲线）。那么，我们可以得出哪些结论（多选）？</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-61e845f7b298f9b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A. 第 1 个模型的训练误差大于第 2 个、第 3 个模型</p>
+<p>B. 最好的模型是第 3 个，因为它的训练误差最小</p>
+<p>C. 第 2 个模型最为“健壮”，因为它对未知样本的拟合效果最好</p>
+<p>D. 第 3 个模型发生了过拟合</p>
+<p>E. 所有模型的表现都一样，因为我们并没有看到测试数据</p>
+<p><strong>答案</strong>：ACD</p>
+<p><strong>解析</strong>：1、2、3 模型分别对应的多项式阶数由小到大，即模型由简单到复杂。模型越简单，容易发生欠拟合；模型越复杂，容易发生过拟合。第 1 个模型过于简单，出现欠拟合；第 3 个模型过于复杂，对训练样本拟合得很好，但在测试样本上效果会很差，即过拟合；第 2 个模型最为“健壮”，在训练样本和测试样本上拟合效果都不错！</p>
+<p><strong>Q35. 下列哪些指标可以用来评估线性回归模型（多选）？</strong></p>
+<p>A. R-Squared</p>
+<p>B. Adjusted R-Squared</p>
+<p>C. F Statistics</p>
+<p>D. RMSE / MSE / MAE</p>
+<p><strong>答案</strong>：ABCD</p>
+<p><strong>解析</strong>：R-Squared 和 Adjusted R-Squared 的概念，我们在 Q3 有过介绍，它们都可以用来评估线性回归模型。F Statistics 是指在零假设成立的情况下，符合F分布的统计量，多用于计量统计学中。</p>
+<p>RMSE 指的是均方根误差：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-3066338bd93bb507.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>MSE 指的是均方误差：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-ac45f3e8cfb10e2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>MAE 指的是评价绝对误差：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-bc1ee5c524fbd792.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>以上指标都可以用来评估线性回归模型。</p>
+<p><strong>Q36. 线性回归中，我们可以使用正规方程（Normal Equation）来求解系数。下列关于正规方程说法正确的是？</strong></p>
+<p>A. 不需要选择学习因子</p>
+<p>B. 当特征数目很多的时候，运算速度会很慢</p>
+<p>C. 不需要迭代训练</p>
+<p><strong>答案</strong>：ABC</p>
+<p><strong>解析</strong>：求解线性回归系数，我们一般最常用的方法是梯度下降，利用迭代优化的方式。除此之外，还有一种方法是使用正规方程，原理是基于最小二乘法。下面对正规方程做简要的推导。</p>
+<p>已知线性回归模型的损失函数 Ein 为：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-fd966d40c0a2848c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对 Ein 计算导数，令 ∇Ein=0：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-d48a982d7ae724c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>然后就能计算出 W：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-a5484827933b999f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>以上就是使用正规方程求解系数 W 的过程。可以看到，正规方程求解过程不需要学习因子，也没有迭代训练过程。当特征数目很多的时候，XTX 矩阵求逆会很慢，这时梯度下降算法更好一些。</p>
+<p>如果 XTX 矩阵不可逆，是奇异矩阵怎么办呢？其实，大部分的计算逆矩阵的软件程序，都可以处理这个问题，也会计算出一个逆矩阵。所以，一般伪逆矩阵是可解的。</p>
+<p><strong>Q37. 如果 Y 是 X（X1，X2，…，Xn）的线性函数：</strong></p>
+<p><strong>Y = β0 + β1X1 + β2X2 + ··· + βnXn</strong></p>
+<p><strong>则下列说法正确的是（多选）？</strong></p>
+<p>A. 如果变量 Xi 改变一个微小变量 ΔXi，其它变量不变。那么 Y 会相应改变 βiΔXi。</p>
+<p>B. βi 是固定的，不管 Xi 如何变化</p>
+<p>C. Xi 对 Y 的影响是相互独立的，且 X 对 Y 的总的影响为各自分量 Xi 之和</p>
+<p><strong>答案</strong>：ABC</p>
+<p><strong>解析</strong>：这题非常简单，Y 与 X（X1，X2，…，Xn）是线性关系，故能得出 ABC 结论。</p>
+<p><strong>Q38. 构建一个最简单的线性回归模型需要几个系数（只有一个特征）？</strong></p>
+<p>A. 1 个</p>
+<p>B. 2 个</p>
+<p>C. 3 个</p>
+<p>D. 4 个</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：最简单的线性回归模型，只有一个特征，即 Y = aX + b，包含 a 和 b 两个系数。</p>
+<p><strong>Q39. 下面两张图展示了两个拟合回归线（A 和 B），原始数据是随机产生的。现在，我想要计算 A 和 B 各自的残差之和。注意：两种图中的坐标尺度一样。</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-9efa7b49191ac4ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>关于 A 和 B 各自的残差之和，下列说法正确的是？</strong></p>
+<p>A. A 比 B 高</p>
+<p>B. A 比 B 小</p>
+<p>C. A 与 B 相同</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：A 和 B 中各自的残差之和应该是相同的。线性回归模型的损失函数为：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-1aaeddbdb1f9da6b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>对损失函数求导，并令 ∇J=0，即可得到 XW-Y=0，即残差之和始终为零。</p>
+<p><strong>Q40. 如果两个变量相关，那么它们一定是线性关系吗？</strong></p>
+<p>A. 是</p>
+<p>B. 不是</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：相关不一定是线性关系，也有可能是非线性相关。</p>
+<p><strong>Q41. 两个变量相关，它们的相关系数 r 可能为 0。这句话是否正确？</strong></p>
+<p>A. 正确</p>
+<p>B. 错误</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：一般来说，相关系数 r=0 是两变量相互独立的必要不充分条件。也就是说，如果两个变量相互独立，那么相关系数 r 一定为 0，如果相关系数 r=0，则不一定相互独立。相关系数 r=0 只能说明两个变量之间不存在线性关系，仍然可能存在非线性关系。</p>
+<p>那么，若两个变量相关，存在非线性关系，那么它们的相关系数 r 就为 0。</p>
+<p><strong>Q42. 加入使用逻辑回归对样本进行分类，得到训练样本的准确率和测试样本的准确率。现在，在数据中增加一个新的特征，其它特征保持不变。然后重新训练测试。则下列说法正确的是？</strong></p>
+<p>A. 训练样本准确率一定会降低</p>
+<p>B. 训练样本准确率一定增加或保持不变</p>
+<p>C. 测试样本准确率一定会降低</p>
+<p>D. 测试样本准确率一定增加或保持不变</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：在模型中增加更多特征一般会增加训练样本的准确率，减小 bias。但是测试样本准确率不一定增加，除非增加的特征是有效特征。</p>
+<p>这题对应的知识点也包括了增加模型复杂度，虽然会减小训练样本误差，但是容易发生过拟合。</p>
+<p><strong>Q43. 下面这张图是一个简单的线性回归模型,图中标注了每个样本点预测值与真实值的残差。计算 SSE 为多少？</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-4dd8f7be18e93aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A. 3.02</p>
+<p>B. 0.75</p>
+<p>C. 1.01</p>
+<p>D. 0.604</p>
+<p><strong>答案</strong>：A</p>
+<p><strong>解析</strong>：SSE 是平方误差之和（Sum of Squared Error），SSE = (-0.2)^2 + (0.4)^2 + (-0.8)^2 + (1.3)^2 + (-0.7)^2 = 3.02</p>
+<p><strong>Q44. 假设变量 Var1 和 Var2 是正相关的，那么下面那张图是正确的？图中，横坐标是 Var1，纵坐标是 Var2，且对 Var1 和 Var2 都做了标准化处理。</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-f6de97674698194d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>A. Plot 1</p>
+<p>B. Plot 2</p>
+<p><strong>答案</strong>：B</p>
+<p>解析：显然，Plot 2 显示出 Var2 与 Var1 是正相关的，例如 Var2 = Var1。Plot 1 显示出 Var2 与 Var1 是负相关的，例如 Var2 = -Var1。</p>
+<p><strong>Q45. 假设一个公司的薪资水平中位数是 $35,000，排名第 25% 和 75% 的薪资分别是 $21,000 和 $ 53,000。如果某人的薪水是 $1，那么它可以被看成是异常值（Outlier）吗？</strong></p>
+<p>A. 可以</p>
+<p>B. 不可以</p>
+<p>C. 需要更多的信息才能判断</p>
+<p>D. 以上说法都不对</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：异常值（Outlier）指样本中的个别值，其数值明显偏离它（或他们）所属样本的其余观测值，也称异常数据，离群值。目前人们对异常值的判别与剔除主要采用物理判别法和统计判别法两种方法。</p>
+<p>所谓物理判别法就是根据人们对客观事物已有的认识，判别由于外界干扰、人为误差等原因造成实测数据值偏离正常结果，在实验过程中随时判断，随时剔除。</p>
+<p>统计判别法是给定一个置信概率，并确定一个置信限，凡超过此限的误差，就认为它不属于随机误差范围，将其视为异常值剔除。当物理识别不易判断时，一般采用统计识别法。</p>
+<p>该题中，所给的信息量过少，无法肯定一定是异常值。</p>
+<p><strong>Q46. 关于“回归（Regression）”和“相关（Correlation）”，下列说法正确的是？注意：x 是自变量，y 是因变量。</strong></p>
+<p>A. 回归和相关在 x 和 y 之间都是互为对称的</p>
+<p>B. 回归和相关在 x 和 y 之间都是非对称的</p>
+<p>C. 回归在 x 和 y 之间是非对称的，相关在 x 和 y 之间是互为对称的</p>
+<p>D. 回归在 x 和 y 之间是对称的，相关在 x 和 y 之间是非对称的</p>
+<p><strong>答案</strong>：C</p>
+<p><strong>解析</strong>：相关（Correlation）是计算两个变量的线性相关程度，是对称的。也就是说，x 与 y 的相关系数和 y 与 x 的相关系数是一样的，没有差别。</p>
+<p>回归（Regression）一般是利用 特征 x 预测输出 y，是单向的、非对称的。</p>
+<p><strong>Q47. 仅仅知道变量的均值（Mean）和中值（Median），能计算的到变量的偏斜度（Skewness）吗？</strong></p>
+<p>A. 可以</p>
+<p>B. 不可以</p>
+<p><strong>答案</strong>：B</p>
+<p><strong>解析</strong>：偏斜度是对统计数据分布偏斜方向及程度的度量。偏斜度是利用 3 阶矩定义的，其计算公式如下：<br><img src="https://upload-images.jianshu.io/upload_images/12654931-5755183c130bc9de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+		<div>
+		
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+		
+			</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/机器学习/" <i class="fa fa-tag"></i> 机器学习</a>
+          
+            <a href="/tags/笔试/" <i class="fa fa-tag"></i> 笔试</a>
+          
+            <a href="/tags/面试/" <i class="fa fa-tag"></i> 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/02/剑指Offer（十一）：二进制中1的个数/" rel="next" title="剑指Offer（十一）：二进制中1的个数">
+                <i class="fa fa-chevron-left"></i> 剑指Offer（十一）：二进制中1的个数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/03/深度学习笔试面试总结/" rel="prev" title="深度学习笔试面试总结">
+                深度学习笔试面试总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b3069fc2bf55067" async = "async" ></script>
+</div>
+
+			
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzU5Mi8xNDEyNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://img1.ph.126.net/Xs_jpOoevKFqwxuIfkKGVA==/2984760653140182352.jpg"
+                alt="Tengda Zhao" />
+            
+              <p class="site-author-name" itemprop="name">Tengda Zhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/DaDaVision" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="zhaotengda@whu.edu.cn" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/DaDaVisionWHU" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/dadavisionwhu" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dadavision.tuchong.com/" title="我的图虫" target="_blank">我的图虫</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tengda Zhao</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.3.0</div>
+-->
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共75.4k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="热度">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+	
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+	
+</body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
