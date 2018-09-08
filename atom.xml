@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-08T12:57:47.442Z</updated>
+  <updated>2018-09-08T13:49:25.461Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>剑指Offer（四十四）：翻转单词顺序序列</title>
+    <link href="http://yoursite.com/2018/09/08/%E5%89%91%E6%8C%87Offer%EF%BC%88%E5%9B%9B%E5%8D%81%E5%9B%9B%EF%BC%89%EF%BC%9A%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F%E5%BA%8F%E5%88%97/"/>
+    <id>http://yoursite.com/2018/09/08/剑指Offer（四十四）：翻转单词顺序序列/</id>
+    <published>2018-09-08T13:47:12.000Z</published>
+    <updated>2018-09-08T13:49:25.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>摘要</p><p>翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.”</p><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本系列文章为《剑指Offer》刷题笔记。</p><p>刷题平台：牛客网</p><h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。后来才意识到，这家伙原来把句子单词的顺序翻转了，正确的句子应该是“I am a student.”。Cat对一一的翻转这些单词顺序可不在行，你能帮助他么？</p><!--more>### 1、思路观察字符串变化规律，你会发现这道题很简单。只需要对每个单词做翻转，然后再整体做翻转就得到了正确的结果。### 2、代码**C++：**<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">ReverseSentence</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> result = str;</span><br><span class="line">        <span class="keyword">int</span> length = result.size();</span><br><span class="line">        <span class="keyword">if</span>(length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 追加一个空格，作为反转标志位</span></span><br><span class="line">        result += <span class="string">' '</span>;</span><br><span class="line">        <span class="keyword">int</span> mark = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 根据空格，反转所有单词</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length + <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">                Reverse(result, mark, i - <span class="number">1</span>);</span><br><span class="line">                mark = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 去掉添加的空格</span></span><br><span class="line">        result = result.substr(<span class="number">0</span>, length);</span><br><span class="line">        <span class="comment">// 整体反转</span></span><br><span class="line">        Reverse(result, <span class="number">0</span>, length - <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Reverse</span><span class="params">(<span class="built_in">string</span> &amp;str, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">            swap(str[begin++], str[end--]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><strong>Python：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ReverseSentence</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        s_list = s.split(<span class="string">' '</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">' '</span>.join(s_list[::<span class="number">-1</span>])</span><br></pre></td></tr></table></figure></p>-->]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;摘要&lt;/p&gt;
+&lt;p&gt;翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.”&lt;/p&gt;
+&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/
+      
+    
+    </summary>
+    
+      <category term="剑指Offer" scheme="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+      <category term="笔试" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AF%95/"/>
+    
+      <category term="剑指Offer" scheme="http://yoursite.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>剑指Offer（四十三）：左旋转字符串</title>
@@ -584,48 +615,6 @@
       <category term="协方差" scheme="http://yoursite.com/tags/%E5%8D%8F%E6%96%B9%E5%B7%AE/"/>
     
       <category term="相关系数" scheme="http://yoursite.com/tags/%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DeepIOT神经网络压缩</title>
-    <link href="http://yoursite.com/2018/08/24/DeepIOT%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/"/>
-    <id>http://yoursite.com/2018/08/24/DeepIOT神经网络压缩/</id>
-    <published>2018-08-24T10:48:33.000Z</published>
-    <updated>2018-08-27T12:01:06.884Z</updated>
-    
-    <content type="html"><![CDATA[<!-- DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic FrameworkShuochao YaoUniversity of Illinois Urbana ChampaignYiran ZhaoUniversity of Illinois Urbana ChampaignAston ZhangUniversity of Illinois Urbana ChampaignLu SuState University of New York at BualoTarek AbdelzaherUniversity of Illinois Urbana Champaign --><p>​    物联网在我们的日常感知场景中越来越受欢迎，有很多应用，比如智能家居/城市，在我们的日常生活中有大量的嵌入式/移动设备，下一个自然的步骤是构建能够集体学习的智能感知系统 。另一方面，DL最近在复杂的传感和识别任务上取得了很大进展 。</p><p>​    然而,挑战仍然存在,当我们部署先进的dl模型在低端很多设备参考这个数字从一篇分析先进的图像识别cnn模型,这些模型通常需要大约10 Giga-operations和100 mb的大小会导致记忆的问题,时间,能量消耗物联网设备上部署这些模型时。<br><a id="more"></a><br><img src="https://upload-images.jianshu.io/upload_images/12654931-1133a30c19324047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    深度学习的最新进展激发了在传感应用中使用深度中立网络的动力，但是在<strong>受限的嵌入式设备</strong>上的<strong>过度的资源需求</strong>仍然是一个重要的障碍。最近探索的解决方案空间是在设备使用前，以某种方式<strong>压缩(近似或简化)深层神经网络</strong>。一种新的<strong>压缩解决方案</strong>，叫做<strong>DeepIoT</strong>，它在这个空间中做出了两个关键的贡献。</p><ul><li><p>首先，与目前针对压缩特殊性型神经网络的解决方案不同的是，DeepIoT提出了一种统一普适的方法，它<strong>压缩了所有常用的用于传感应用的深度学习结构</strong>，包括完<strong>全连接的、卷积的和递归的神经网络</strong>，<strong>以及它们的组合</strong>。</p></li><li><p>其次，与<strong>稀疏加权矩阵</strong>或<strong>假定加权矩阵内的线性结构</strong>的解决方案不同，DeepIoT通过<strong>寻找最少数量的非冗余隐藏元素（例如每层所需的滤波器和维度</strong>）<strong>将神经网络结构压缩为更小的密集矩阵</strong>，<strong>同时保留传感应用的性能相同</strong>。即不降低准确率。重要的是，它使用一种方法来<strong>获得参数冗余的全局视图</strong>，该方法被证明可以产生更好的压缩。</p></li></ul><p>由DeepIoT生成的压缩模型可以直接使用现有的深度学习库，这些库在嵌入式和移动系统上运行，无需进一步的修改。结果表明了<strong>深度神经网络在资源受限的嵌入式设备上的开发潜力</strong>。</p><p><strong>一、已有方法介绍</strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-4eb2b88e8d6697fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    <strong>1、大密度参数矩阵——&gt;稀疏矩阵</strong></p><p>​    有研究试图解决这个问题，现有的最先进的压缩算法是一种基于量级的修剪方法如上所示，该算法查看权重矩阵，并迭代地删除小于3列的实体。最终，它将把这个大而密集的矩阵转换成一个大而稀疏的矩阵。通常这种方法只能将参数的数量减少到10个。</p><ul><li><strong>基于幅值</strong></li></ul><p>1、<strong>基于幅度的fine-tuning压缩方法</strong>。</p><p>​    该方法是<strong>迭代地去除低幅度的重量连接</strong>;然而，它<strong>需要更多的资源消耗实现稀疏矩阵</strong>。</p><p>2、<strong>剪枝</strong></p><p>​    积极的修剪方法增加了不可挽回的网络损害的潜在风险。虽然有一种连接拼接的压缩算法，为一定的阈值提供了恢复的机会然而，该算法仍然侧重于权重水平而不是结构水平。</p><ul><li><strong>基于因子分解</strong></li></ul><p>  除了基于幅度的方法之外，另一系列作品着重于基于因子分解的方法，其通过<strong>利用参数中的低秩结构来降低神经网络的复杂性</strong>。 </p><p>3、利用各种<strong>矩阵分解</strong>方法和fine-tunning近似卷积运算，以减少神经网络的执行时间。 </p><p>4、应用<strong>稀疏编码</strong>和基于矩阵分解的方法分别降低全连接层和卷积层的复杂度。</p><p>​    主要原因是稀疏矩阵实现效率低。一方面，<strong>稀疏矩阵需要记录</strong>，这导致了2倍的内存消耗。另一方面，<strong>稀疏矩阵相乘很难优化</strong> 。</p><p>​    然而，基于分解的方法与基于量值的方法相比通常获得较低的压缩比，并且低等级假设可能损害最终网络性能。 </p><p>5、应用<strong>频域信息</strong>进行模型压缩。然而，需要额外的实现来加速频域表示，并且该方法不适用于具有小卷积滤波器大小的现代CNN。 </p><p>6、Hinton等人提出了一个<strong>teacher-student框架</strong>，将整个模型中的知识提炼成一个模型。然而，框架更侧重于将模型集合压缩为单一模型而不是结构压缩。</p><p><strong>二、系统介绍</strong></p><p>​    DeepIoT通过<strong>决定每层中最小元素的数量来压缩常用的深度神经网络结构以用于传感应用</strong>。 先前关于神经网络压缩的照明研究使疏密密集将参数矩阵转换为大型稀疏矩阵。 相比之下，<strong>DeepIoT最大限度地减少了每层中的元素数量，从而将参数转化为一组小密集矩阵</strong>。<strong>小密集矩阵不需要为元素索引额外存储</strong>，并且对处理进行了有效优化。</p><p>​    DeepIoT借用了广泛使用的被称为<strong>Dropout</strong>的<strong>深度学习正则化方法隐藏元素</strong>的想法。 <strong>Dropout操作给每个隐藏元素一个Dropout概率</strong>。 在<strong>dropout过程</strong>中，<strong>隐藏元素可根据其dropout概率进行修剪</strong>。 可以生成“<strong>细化</strong>”的网络结构。 但是，这些dropout概率通常设置为预定义值，例如0.5。 这种预定义的值不是最优的概率，从而导致对解空间的有效探索较少。如果我们能够<strong>获得每个隐藏元素的最优dropout概率</strong>，那么我们就有可能<strong>生成 最优的薄网络结构，在保留了传感应用的精度，同时最大限度地降低了传感系统的资源消耗</strong>。DeepIoT的一个重要目的是<strong>为神经网络中的每个隐藏元素找到最优的dropout概率</strong>。</p><p>​    注意，Dropout可以很容易地应用于所有常用的神经网络结构。</p><p>​    1、在<strong>全连接的神经网络</strong>中，神经元在每一<strong>层</strong>都被丢弃;</p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-b911647b450f5464.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p><strong>直接删除隐藏的元素/神经元，而不是权重</strong>。最后，我们将一个大的稠密权矩阵转化为一个细网络结构的小密度权矩阵。因此，我们可以绕过稀疏矩阵的表示 .</p><p><strong>一开始没有最优压缩决策，所以前期是计算梯度变化，抑制dropout概率，并逐渐压缩，而不是直接删除。</strong></p><p>​    2、在<strong>卷积神经网络</strong>中，<strong>卷积核</strong>被丢弃在每一层;<br><img src="https://upload-images.jianshu.io/upload_images/12654931-20ce37c77a5f48ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    对于CNN的每一层，都有一组卷积核来学习输入图像的特征。DeepIoT尝试删除冗余卷积核，以减少CNN层的卷积核数量。 </p><p>​    3、并且在<strong>递归神经网络</strong>中，减小每层的<strong>维度</strong>。<br><img src="https://upload-images.jianshu.io/upload_images/12654931-0bed97057f74ccdd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>对于RNN层，DeepIoT直接降低了RNN的维度，用于模型压缩。 </p><p>​    意味着<strong>DeepIoT可以应用于所有常用的神经网络结构及其组合</strong>。</p><p>​    DeepIoT的贡献在于<strong>利用新颖的压缩器神经网络将每个层的模型参数作为输入，学习参数冗余，并相应地生成Dropout概率</strong>。<strong>由于不同层之间存在参数互联，因此我们设计压缩神经网络作为递归神经网络，能够全局共享冗余信息并逐层生成dropout概率</strong>。</p><p><strong>压缩机神经网络</strong>与原神经网络<strong>协同优化</strong>，通过<strong>compressor-critic框架</strong>进行压缩，<strong>尽量减小原始传感应用程序的损失功能</strong>。actor-critic框架模拟了著名的基于增强学习的actor-critic算法的思想，以<strong>迭代的方式</strong>优化了两个网络。</p><p>评估实验。</p><p>1、首先由三个任务组成，这三个任务使嵌入式系统能够以基本模式（包括<strong>手写文本</strong>，<strong>视觉</strong>和<strong>语音</strong>）与人类进行交互，与其他类似尺寸的神经网络相比，我们生成的神经网络具有更高的准确性。</p><p>2、第二组提供了两个应用压缩神经网络来解决<strong>以人为中心的情境感知任务</strong>的例子;即资源受限情景中的<strong>人类活动识别</strong>和<strong>用户识别</strong>。</p><p>DeepIOT特性：</p><ul><li>由于压缩过程是迭代进行的，<strong>必须具有恢复能力</strong>以提高最终性能。</li><li>以前的方法主要依赖于一些特定的压缩度量，我们希望DeepIoT<strong>基于参数冗余进行压缩</strong>。</li><li>深度神经网络是一种深层结构，因此深度神经网络应该具有<strong>全局性</strong>，<strong>必须了解全局冗余度</strong>。</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/12654931-30483f2f5494237f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>上图我们使用一个压缩3层全连接神经网络结构的例子来说明DeepIoT的整个流程。 （绿色方框表示原始神经网络的参数。橙色代表dropout操作）所示。使用DeepIoT压缩传感应用的神经网络结构的基本步骤可概括如下：</p><p>（1）   <strong>插入操作</strong>。将概率$p^{(l)}$随机置零的隐藏元素(图1中的红色方框)插入到原始神经网络的内部层中。  </p><p>（2）   <strong>构建压缩神经网络</strong>。它将图层中的<strong>原始神经网络权重矩阵$W^{l}​$ </strong>（图1中的绿框）<strong>作为输入进行压缩</strong>，<strong>在不同层之间学习和共享参数冗余，并生成最优dropout概率$p^{(l)}​$</strong>，<strong>然后送回到原始神经网络中的dropout操作</strong>。</p><p>（3）  用<strong>compressor-critic框架对压缩神经网络和原始神经网络进行</strong>迭代优化<strong>。 </strong>对压缩神经网络进行迭代优化，使其产生更好的退出概率，从而为原神经网络生成更有效的网络结构。 </p><p>​    </p><p>​    <strong><em>学习参数冗余 </em></strong>（橙色）<br><img src="https://upload-images.jianshu.io/upload_images/12654931-3a5db6cbaa29bc0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    基于参数冗余的DeepIOT。在理想的情况下，DeepIoT可以学习一个带参数的最优压缩机$\mu$，函数从神经网络中获取权重矩阵W。学习参数冗余，并生成可用于压缩的隐藏神经元的最优Dropout概率 。</p><p>​    <strong><em>参数冗余的全局视图</em></strong><br><img src="https://upload-images.jianshu.io/upload_images/12654931-59f84a197fb5b9a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    但我们如何设计这个最优压缩函数与参数冗余的全局视图。我们知道深神经网络本身就是完美函数逼近器。只要有足够的容量，它就可以逼近所有已有的连续函数。因此，我们将<strong>压缩函数设计成一种递归神经网络。</strong>它<strong>从原始神经网络中逐层提取权重矩阵，了解全局冗余信息，生成压缩dropout概率</strong>。这里我们称压缩函数、压缩器和要压缩的原始神经网络为“critic”，因为critic向压缩器提供反馈，让它知道根据“监督”得出的dropout概率是好是坏 。</p><p><strong>Compressor-Critic Framework</strong></p><p><img src="https://upload-images.jianshu.io/upload_images/12654931-53bd25e684eb5f0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>​    DeepIoT的目标函数是根据compressor学习到的损失概率来学习压缩模型的期望损失。我们反复训练，这意味着当训练compressor时，我们把所有的东西都固定在critic，反之亦然 。</p><p>​    对原神经网络和压缩神经网络进行迭代优化，使压缩神经网络以<strong>软删除</strong>的方式逐渐压缩原神经网络。 </p><p>​    我们把最初的神经网络称为$F_{W}(x|z)$，我们称之为Critic。它将x作为输入，并基于二进制dropout 记为Z和模型参数w生成预测，这些参数w指的是一组权重$W=w^{(l)}$。 。我们假设$F_{W}(x|z)$是一个预先训练好的模型。$z~\mu_{\phi}(W)$表示压缩神经网络。它将Critic的权重作为输入，并根据其自身参数生成mask向量Z的概率分布。为了优化压缩器，使其在Critic中去掉隐藏元素，DeepIoT遵循了上图的目标函数。</p><p>​    其中$l$是Critic的目标函数。目标函数可以解释为原始神经网络的期望损失乘以压缩机产生的dropout概率。</p><p>​    DeeploT以迭代的方式优化Compressor和Critic。通过对Compressor采用梯度下降法，迭代求解，降低了目标函数中定义的期望损失。如何去做？由于存在<strong>离散采样操作</strong>，在计算图中，反向传播不直接适用。因此，我们使用<strong>无偏似然比估计量</strong>来计算。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;!-- DeepIoT: Compressing Deep Neural Network Structures for Sensing Systems with a Compressor-Critic Framework
-
-Shuochao Yao
-University of Illinois Urbana Champaign
-Yiran Zhao
-University of Illinois Urbana Champaign
-Aston Zhang
-University of Illinois Urbana Champaign
-Lu Su
-State University of New York at Bualo
-Tarek Abdelzaher
-University of Illinois Urbana Champaign
- --&gt;
-&lt;p&gt;​    物联网在我们的日常感知场景中越来越受欢迎，有很多应用，比如智能家居/城市，在我们的日常生活中有大量的嵌入式/移动设备，下一个自然的步骤是构建能够集体学习的智能感知系统 。另一方面，DL最近在复杂的传感和识别任务上取得了很大进展 。&lt;/p&gt;
-&lt;p&gt;​    然而,挑战仍然存在,当我们部署先进的dl模型在低端很多设备参考这个数字从一篇分析先进的图像识别cnn模型,这些模型通常需要大约10 Giga-operations和100 mb的大小会导致记忆的问题,时间,能量消耗物联网设备上部署这些模型时。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="深度学习" scheme="http://yoursite.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="神经网络" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    
-      <category term="深度学习" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-      <category term="神经网络压缩" scheme="http://yoursite.com/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%8B%E7%BC%A9/"/>
     
   </entry>
   

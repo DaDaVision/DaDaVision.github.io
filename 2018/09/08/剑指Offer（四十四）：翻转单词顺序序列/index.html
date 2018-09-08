@@ -143,18 +143,18 @@
   </script>
 
 
-  <meta name="description" content="题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。说明：分隔时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入:s = “catsanddog”wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]输出:[“cat">
-<meta name="keywords" content="算法,动态规划,LeetCode">
+  <meta name="description" content="摘要 翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.” 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。后来才">
+<meta name="keywords" content="笔试,剑指Offer,字符串">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DP+回溯-单词拆分 II">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/DP+回溯-单词拆分 II/index.html">
+<meta property="og:title" content="剑指Offer（四十四）：翻转单词顺序序列">
+<meta property="og:url" content="http://yoursite.com/2018/09/08/剑指Offer（四十四）：翻转单词顺序序列/index.html">
 <meta property="og:site_name" content="DaDaVision">
-<meta property="og:description" content="题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。说明：分隔时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入:s = “catsanddog”wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]输出:[“cat">
+<meta property="og:description" content="摘要 翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.” 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。后来才">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-11T05:04:25.619Z">
+<meta property="og:updated_time" content="2018-09-08T13:49:25.461Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DP+回溯-单词拆分 II">
-<meta name="twitter:description" content="题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。说明：分隔时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入:s = “catsanddog”wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]输出:[“cat">
+<meta name="twitter:title" content="剑指Offer（四十四）：翻转单词顺序序列">
+<meta name="twitter:description" content="摘要 翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.” 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。后来才">
 
 
 
@@ -163,7 +163,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/09/DP+回溯-单词拆分 II/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/08/剑指Offer（四十四）：翻转单词顺序序列/"/>
 
 
 
@@ -173,7 +173,7 @@
   };
 </script>
 
-  <title>DP+回溯-单词拆分 II | DaDaVision</title>
+  <title>剑指Offer（四十四）：翻转单词顺序序列 | DaDaVision</title>
   
 
 
@@ -385,7 +385,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/DP+回溯-单词拆分 II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/08/剑指Offer（四十四）：翻转单词顺序序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tengda Zhao">
@@ -402,7 +402,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DP+回溯-单词拆分 II
+          <h1 class="post-title" itemprop="name headline">剑指Offer（四十四）：翻转单词顺序序列
               
             
           </h1>
@@ -427,24 +427,12 @@
                 
               
 
-              <time title="创建时间：2018-06-09 18:32:02" itemprop="dateCreated datePublished" datetime="2018-06-09T18:32:02+08:00">2018-06-09</time>
+              <time title="创建时间：2018-09-08 21:47:12 / 修改时间：21:49:25" itemprop="dateCreated datePublished" datetime="2018-09-08T21:47:12+08:00">2018-09-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-11 13:04:25" itemprop="dateModified" datetime="2018-06-11T13:04:25+08:00">2018-06-11</time>
               
             
           </span>
@@ -461,7 +449,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/剑指Offer/" itemprop="url" rel="index"><span itemprop="name">剑指Offer</span></a></span>
 
                 
                 
@@ -503,12 +491,23 @@
       
 
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a><strong>题目描述</strong></h2><p>给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，在字符串中增加空格来构建一个句子，使得句子中所有的单词都在词典中。返回所有这些可能的句子。<br>说明：<br>分隔时可以重复使用字典中的单词。<br>你可以假设字典中没有重复的单词。<br>示例 1：<br>输入:<br>s = “catsanddog”<br>wordDict = [“cat”, “cats”, “and”, “sand”, “dog”]<br>输出:<br>[<br>“cats and dog”,<br>“cat sand dog”<br>]</p>
-<a id="more"></a>
-<p>示例 2：<br>输入:<br>s = “pineapplepenapple”<br>wordDict = [“apple”, “pen”, “applepen”, “pine”, “pineapple”]<br>输出:<br>[<br>“pine apple pen apple”,<br>“pineapple pen apple”,<br>“pine applepen apple”<br>]<br>解释: 注意你可以重复使用字典中的单词。</p>
-<p>示例 3：<br>输入:<br>s = “catsandog”<br>wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]<br>输出:<br>[]</p>
-<h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a><strong>算法思路</strong></h3><p>这道题类似 Word Break I 判断是否能把字符串拆分为字典里的单词 @LeetCode 只不过要求计算的并不仅仅是是否能拆分，而是要求出所有的拆分方案。因此用递归。<br>但是直接递归做会超时，原因是LeetCode里有几个很长但是无法拆分的情况，所以就先跑一遍Word Break I，先判断能否拆分，然后再进行拆分。</p>
-<h3 id="DP实现"><a href="#DP实现" class="headerlink" title="DP实现"></a><strong>DP实现</strong></h3> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">boolean</span>[] canBreak = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>];  </span><br><span class="line">        canBreak[<span class="number">0</span>] = <span class="keyword">true</span>;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=s.length(); i++) &#123;  </span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;  </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;i; j++) &#123;  </span><br><span class="line">                <span class="keyword">if</span>(canBreak[j] &amp;&amp; wordDict.contains(s.substring(j,i))) &#123;  </span><br><span class="line">                    flag = <span class="keyword">true</span>;  </span><br><span class="line">                    <span class="keyword">break</span>;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">            canBreak[i] = flag;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> canBreak[s.length()];  </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(String s, List&lt;String&gt; wordDict, String str, <span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">        String result = str;            <span class="comment">//记录字符串状态</span></span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        String tmp = s.substring(index, len);</span><br><span class="line">        <span class="keyword">if</span>(wordDict.contains(tmp))&#123;     <span class="comment">//最后一段存在于字典中，则保存结果</span></span><br><span class="line">            str += tmp;</span><br><span class="line">            res.add(str);</span><br><span class="line">        &#125;</span><br><span class="line">        List&lt;Integer&gt; listIndex = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        List&lt;String&gt; listStr = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = index; i &lt; len; i++)&#123;</span><br><span class="line">            String temp = s.substring(index, i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span>(wordDict.contains(temp))&#123;</span><br><span class="line">                listIndex.add(i+<span class="number">1</span>);</span><br><span class="line">                listStr.add(temp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        String temp = result;   <span class="comment">//保存递归前的字符串状态，以便回溯</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; listIndex.size(); i++)&#123;</span><br><span class="line">            result += listStr.get(i) + <span class="string">" "</span>;</span><br><span class="line">            dfs(s, wordDict, result, listIndex.get(i));</span><br><span class="line">            result = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    List&lt;String&gt; res = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">wordBreak</span><span class="params">(String s, List&lt;String&gt; wordDict)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isBreak(s, wordDict)) <span class="keyword">return</span> res;</span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line">        dfs(s, wordDict, str, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>摘要</p>
+<p>翻转单词顺序序列，将“student. a am I”翻转成正确的“I am a student.”</p>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>本系列文章为《剑指Offer》刷题笔记。</p>
+<p>刷题平台：牛客网</p>
+<h2 id="二、题目"><a href="#二、题目" class="headerlink" title="二、题目"></a>二、题目</h2><p>牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。后来才意识到，这家伙原来把句子单词的顺序翻转了，正确的句子应该是“I am a student.”。Cat对一一的翻转这些单词顺序可不在行，你能帮助他么？</p>
+<!--more>
+
+### 1、思路
+
+观察字符串变化规律，你会发现这道题很简单。只需要对每个单词做翻转，然后再整体做翻转就得到了正确的结果。
+
+### 2、代码
+
+**C++：**
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">ReverseSentence</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> result = str;</span><br><span class="line">        <span class="keyword">int</span> length = result.size();</span><br><span class="line">        <span class="keyword">if</span>(length == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 追加一个空格，作为反转标志位</span></span><br><span class="line">        result += <span class="string">' '</span>;</span><br><span class="line">        <span class="keyword">int</span> mark = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 根据空格，反转所有单词</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length + <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(result[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">                Reverse(result, mark, i - <span class="number">1</span>);</span><br><span class="line">                mark = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 去掉添加的空格</span></span><br><span class="line">        result = result.substr(<span class="number">0</span>, length);</span><br><span class="line">        <span class="comment">// 整体反转</span></span><br><span class="line">        Reverse(result, <span class="number">0</span>, length - <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Reverse</span><span class="params">(<span class="built_in">string</span> &amp;str, <span class="keyword">int</span> begin, <span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(begin &lt; end)&#123;</span><br><span class="line">            swap(str[begin++], str[end--]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Python：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">ReverseSentence</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        s_list = s.split(<span class="string">' '</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">' '</span>.join(s_list[::<span class="number">-1</span>])</span><br></pre></td></tr></table></figure></p>
+-->
       
     </div>
 
@@ -537,11 +536,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" <i class="fa fa-tag"></i> 算法</a>
+            <a href="/tags/笔试/" <i class="fa fa-tag"></i> 笔试</a>
           
-            <a href="/tags/动态规划/" <i class="fa fa-tag"></i> 动态规划</a>
+            <a href="/tags/剑指Offer/" <i class="fa fa-tag"></i> 剑指Offer</a>
           
-            <a href="/tags/LeetCode/" <i class="fa fa-tag"></i> LeetCode</a>
+            <a href="/tags/字符串/" <i class="fa fa-tag"></i> 字符串</a>
           
         </div>
       
@@ -554,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/09/Python爬虫/" rel="next" title="Python爬虫">
-                <i class="fa fa-chevron-left"></i> Python爬虫
+              <a href="/2018/09/08/剑指Offer（四十三）：左旋转字符串/" rel="next" title="剑指Offer（四十三）：左旋转字符串">
+                <i class="fa fa-chevron-left"></i> 剑指Offer（四十三）：左旋转字符串
               </a>
             
           </div>
@@ -563,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/09/偏差、方差、噪声/" rel="prev" title="偏差、方差、噪声">
-                偏差、方差、噪声 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -910,7 +905,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思路"><span class="nav-number">1.1.</span> <span class="nav-text">算法思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DP实现"><span class="nav-number">1.2.</span> <span class="nav-text">DP实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、题目"><span class="nav-number">2.</span> <span class="nav-text">二、题目</span></a></li></ol></div>
             
 
           </div>
