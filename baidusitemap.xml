@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/09/08/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%B8%89%E5%8D%81%E5%9B%9B%EF%BC%89%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</loc>
+    <lastmod>2018-09-08T12:28:23.093Z</lastmod>
+    <data>
+        <display>
+        <title>剑指Offer（三十四）：第一个只出现一次的字符</title>
+        <pubTime>2018-09-08T12:26:06.000Z</pubTime>
+        
+        <tag>笔试</tag>
+         
+        <tag>剑指Offer</tag>
+         
+        <tag>字符串</tag>
+         
+         
+           
+             
+              <breadCrumb title="剑指Offer" url="http://yoursite.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/09/08/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%8C%E5%8D%81%E4%B8%83%EF%BC%89%EF%BC%9A%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%8E%92%E5%88%97/</loc>
     <lastmod>2018-09-08T12:11:01.584Z</lastmod>
     <data>
@@ -947,9 +971,9 @@
         <title>Python爬虫</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>爬虫</tag>
-         
         <tag>Python</tag>
+         
+        <tag>爬虫</tag>
          
          
            
@@ -1043,9 +1067,9 @@
         
         <tag>深度学习</tag>
          
-        <tag>Python</tag>
-         
         <tag>Keras</tag>
+         
+        <tag>Python</tag>
          
          
            
