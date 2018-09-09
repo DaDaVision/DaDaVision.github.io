@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[剑指Offer（五十三）：表示数值的字符串]]></title>
+    <url>%2F2018%2F09%2F09%2F%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%94%E5%8D%81%E4%B8%89%EF%BC%89%EF%BC%9A%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指Offer（五十三）：表示数值的字符串]]></title>
+    <url>%2F2018%2F09%2F09%2F%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%94%E5%8D%81%E4%B8%89%EF%BC%89%EF%BC%9A%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2-1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指Offer（五十三）：表示数值的字符串]]></title>
+    <url>%2F2018%2F09%2F09%2F%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%94%E5%8D%81%E4%B8%89%EF%BC%89%EF%BC%9A%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[摘要 请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。例如，字符串”+100”,”5e2”,”-123”,”3.1416”和”-1E-16”都表示数值。 但是”12e”,”1a3.14”,”1.2.3”,”+-5”和”12e+4.3”都不是。 1、思路这道题还是比较简单的。表示数值的字符串遵循如下模式： [sign]integral-digits.[fractional-digits]exponential-digits] 其中，(‘[‘和’]’之间的为可有可无的部分)。 在数值之前可能有一个表示正负的’+’或者’-‘。接下来是若干个0到9的数位表示数值的整数部分（在某些小数里可能没有数值的整数部分）。如果数值是一个小数，那么在小数后面可能会有若干个0到9的数位表示数值的小数部分。如果数值用科学记数法表示，接下来是一个’e’或者’E’，以及紧跟着的一个整数（可以有正负号）表示指数。 判断一个字符串是否符合上述模式时，首先看第一个字符是不是正负号。如果是，在字符串上移动一个字符，继续扫描剩余的字符串中0到9的数位。如果是一个小数，则将遇到小数点。另外，如果是用科学记数法表示的数值，在整数或者小数的后面还有可能遇到’e’或者’E’。 2、代码C++：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657class Solution &#123;public: // 数字的格式可以用A[.[B]][e|EC]或者.B[e|EC]表示， // 其中A和C都是整数（可以有正负号，也可以没有） // 而B是一个无符号整数 bool isNumeric(char* string) &#123; // 非法输入处理 if(string == NULL || *string == '\0')&#123; return false; &#125; // 正负号判断 if(*string == '+' || *string == '-')&#123; ++string; &#125; bool numeric = true; scanDigits(&amp;string); if(*string != '\0')&#123; // 小数判断 if(*string == '.')&#123; ++string; scanDigits(&amp;string); if(*string == 'e' || *string == 'E')&#123; numeric = isExponential(&amp;string); &#125; &#125; // 整数判断 else if(*string == 'e' || *string == 'E')&#123; numeric = isExponential(&amp;string); &#125; else&#123; numeric = false; &#125; &#125; return numeric &amp;&amp; *string == '\0'; &#125;private: // 扫描数字，对于合法数字，直接跳过 void scanDigits(char** string)&#123; while(**string != '\0' &amp;&amp; **string &gt;= '0' &amp;&amp; **string &lt;= '9')&#123; ++(*string); &#125; &#125; // 用来潘达un科学计数法表示的数值的结尾部分是否合法 bool isExponential(char** string)&#123; ++(*string); if(**string == '+' || **string == '-')&#123; ++(*string); &#125; if(**string == '\0')&#123; return false; &#125; scanDigits(string); // 判断是否结尾，如果没有结尾，说明还有其他非法字符串 return (**string == '\0') ? true : false; &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指Offer</category>
+      </categories>
+      <tags>
+        <tag>笔试</tag>
+        <tag>剑指Offer</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[剑指Offer（五十二）：正则表达式匹配]]></title>
+    <url>%2F2018%2F09%2F09%2F%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%94%E5%8D%81%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%2F</url>
+    <content type="text"><![CDATA[摘要 请实现一个函数用来匹配包括’.’和’*’的正则表达式。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目请实现一个函数用来匹配包括’.’和’‘的正则表达式。模式中的字符’.’表示任意一个字符，而’‘表示它前面的字符可以出现任意次（包含0次）。 在本题中，匹配是指字符串的所有字符匹配整个模式。例如，字符串”aaa”与模式”a.a”和”abaca”匹配，但是与”aa.a”和”ab*a”均不匹配。 1、思路这道题有些绕，需要好好思考下。 我们先来分析下如何匹配一个字符，现在只考虑字符’.’，不考虑’*’看一下： 如果字符串和模式串的当前字符相等，那么我们继续匹配它们的下一个字符；如果模式串中的字符是’.’，那么它可以匹配字符串中的任意字符，我们也可以继续匹配它们的下一个字符。 接下来，把字符’*’考虑进去，它可以匹配任意次的字符，当然出现0次也可以。 我们分两种情况来看： 模式串的下一个字符不是’*’，也就是上面说的只有字符’.’的情况。 如果字符串中的第一个字符和模式串中的第一个字符相匹配，那么字符串的模式串都向后移动一个字符，然后匹配剩余的字符串和模式串。如果字符串中的第一个字符和模式中的第一个字符不相匹配，则直接返回false。 模式串的下一个字符是’*’，此时就要复杂一些。 因为可能有多种不同的匹配方式。 选择一：无论字符串和模式串当前字符相不相等，我们都将模式串后移两个字符，相当于把模式串中的当前字符和’‘忽略掉，因为’‘可以匹配任意次的字符，所以出现0次也可以。 选择二：如果字符串和模式串当前字符相等，则字符串向后移动一个字符。而模式串此时有两个选择： 1、我们可以在模式串向后移动两个字符，继续匹配； 2、也可以保持模式串不变，这样相当于用字符’‘继续匹配字符串，也就是模式串中的字符’‘匹配字符串中的字符多个的情况。 用一张图表示如下： 如上图所示，当匹配进入状态2，并且字符串中的字符是’a’时，我们有两个选择：可以进入状态3（在模式串向后移动两个字符），也可以回到状态2（模式串保持不变）。 除此之外，还要注意对空指针的处理。 2、代码C++：123456789101112131415161718192021222324252627282930313233343536373839404142434445class Solution &#123;public: bool match(char* str, char* pattern) &#123; // 指针为空，返回false if(str == NULL || pattern == NULL)&#123; return false; &#125; return matchCore(str, pattern); &#125;private: bool matchCore(char* str, char* pattern)&#123; // 字符串和模式串都运行到了结尾，返回true if(*str == '\0' &amp;&amp; *pattern == '\0')&#123; return true; &#125; // 字符串没有到结尾，模式串到了，则返回false // 模式串没有到结尾，字符串到了，则根据后续判断进行，需要对'*'做处理 if((*str != '\0' &amp;&amp; *pattern == '\0'))&#123; return false; &#125; // 如果模式串的下一个字符是'*'，则进入状态机的匹配 if(*(pattern + 1) == '*')&#123; // 如果字符串和模式串相等，或者模式串是'.'，并且字符串没有到结尾，则继续匹配 if(*str == *pattern || (*pattern == '.' &amp;&amp; *str != '\0'))&#123; // 进入下一个状态，就是匹配到了一个 return matchCore(str + 1, pattern + 2) || // 保持当前状态，就是继续那这个'*'去匹配 matchCore(str + 1, pattern) || // 跳过这个'*' matchCore(str, pattern + 2); &#125; // 如果字符串和模式串不相等，则跳过当前模式串的字符和'*'，进入新一轮的匹配 else&#123; // 跳过这个'*' return matchCore(str, pattern + 2); &#125; &#125; // 如果字符串和模式串相等，或者模式串是'.'，并且字符串没有到结尾，则继续匹配 if(*str == *pattern || (*pattern == '.' &amp;&amp; *str != '\0'))&#123; return matchCore(str + 1, pattern + 1); &#125; return false; &#125;&#125;;]]></content>
+      <categories>
+        <category>剑指Offer</category>
+      </categories>
+      <tags>
+        <tag>笔试</tag>
+        <tag>剑指Offer</tag>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[剑指Offer（四十九）：把字符串转换成整数]]></title>
     <url>%2F2018%2F09%2F08%2F%E5%89%91%E6%8C%87Offer%EF%BC%88%E5%9B%9B%E5%8D%81%E4%B9%9D%EF%BC%89%EF%BC%9A%E6%8A%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B4%E6%95%B0%2F</url>
     <content type="text"><![CDATA[摘要 将一个字符串转换成一个整数，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目将一个字符串转换成一个整数，要求不能使用字符串转换整数的库函数。 数值为0或者字符串不是一个合法的数值则返回0。 输入描述： 输入一个字符串,包括数字字母符号,可以为空 输出描述： 如果是合法的数值表达则返回该数字，否则返回0 示例1 输入 +2147483647 1a33 输出 2147483647 0 1、思路这道题要考虑全面，对异常值要做出处理。 对于这个题目，需要注意的要点有： 指针是否为空指针以及字符串是否为空字符串； 字符串对于正负号的处理； 输入值是否为合法值，即小于等于’9’，大于等于’0’； int为32位，需要判断是否溢出； 使用错误标志，区分合法值0和非法值0。 代码中用两个函数来实现该功能，其中标志位g_nStatus用来表示是否为异常输出，minus标志位用来表示是否为负数。 2、代码C++：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Solution &#123;public: enum Status&#123;kValid = 0, kInValid&#125;; int g_nStatus = kValid; int StrToInt(string str) &#123; g_nStatus = kInValid; long long num = 0; const char* cstr = str.c_str(); // 判断是否为指针和是否为空字符串 if(cstr != NULL &amp;&amp; *cstr != '\0')&#123; // 正负号标志位，默认是加号 bool minus = false; if(*cstr == '+')&#123; cstr++; &#125; else if(*cstr == '-')&#123; minus = true; cstr++; &#125; if(*cstr != '\0')&#123; num = StrToIntCore(cstr, minus); &#125; &#125; return (int)num; &#125;private: long long StrToIntCore(const char* cstr, bool minus)&#123; long long num = 0; while(*cstr != '\0')&#123; // 判断是否是非法值 if(*cstr &gt;= '0' &amp;&amp; *cstr &lt;= '9')&#123; int flag = minus ? -1 : 1; num = num * 10 + flag * (*cstr - '0'); // 判断是否溢出,32位 if((!minus &amp;&amp; num &gt; 0x7fffffff) || (minus &amp;&amp; num &lt; (signed int)0x80000000))&#123; num = 0; break; &#125; cstr++; &#125; else&#123; num = 0; break; &#125; &#125; // 判断是否正常结束 if(*cstr == '\0')&#123; g_nStatus = kValid; &#125; return num; &#125;&#125;; Python：123456789101112131415161718192021222324252627# -*- coding:utf-8 -*-class Solution: def StrToInt(self, s): # write code here length = len(s) if length == 0: return 0 else: minus = False flag = False if s[0] == '+': flag = True if s[0] == '-': flag = True minus = True begin = 0 if flag: begin = 1 num = 0 minus = -1 if minus else 1 for each in s[begin:]: if each &gt;= '0' and each &lt;= '9': num = num * 10 + minus * (ord(each) - ord('0')) else: num = 0 break return num]]></content>
@@ -480,8 +516,8 @@
       </categories>
       <tags>
         <tag>深度学习</tag>
-        <tag>Keras</tag>
         <tag>Python</tag>
+        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -510,19 +546,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[DP-单词拆分 I]]></title>
-    <url>%2F2018%2F06%2F09%2FDP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I%2F</url>
-    <content type="text"><![CDATA[题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。说明：拆分时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入: s = “leetcode”, wordDict = [“leet”, “code”]输出: true解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。 示例 2：输入: s = “applepenapple”, wordDict = [“apple”, “pen”]输出: true解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。注意你可以重复使用字典中的单词。 示例 3：输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]输出: false 算法思路动态规划的思路：将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。用公式表示就是： dp[j]&amp;&amp;s.substring[j,i+1]∈dict DP实现123456789101112131415class Solution &#123; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123;; boolean [] dp = new boolean[s.length()+1]； dp[0] = true; for(int i = 0; i &lt; s.length(); i++)&#123; for(int j = 0; j &lt;= i; j++)&#123; if(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+1)))&#123; dp[i+1] = true; break; &#125; &#125; &#125; return dp[s.length()]; &#125;&#125; DFS解法，超时1234567891011121314151617181920212223242526class Solution &#123; boolean dfs(String s, List&lt;String&gt; wordDict, int index)&#123; // 超时 String left = s.substring(index, s.length()); if(wordDict.contains(left))&#123; return true; &#125; List&lt;Integer&gt; list = new ArrayList(); for(int i = index; i &lt; s.length(); i++)&#123; String temp = s.substring(index, i+1); if(wordDict.contains(temp))&#123; list.add(i+1); &#125; &#125; for(Integer each:list) &#123; if(dfs(s, wordDict, each))&#123; return true; &#125; &#125; return false; &#125; boolean flag = false; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123; return dfs(s, wordDict, 0); &#125;&#125;]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>动态规划</tag>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[查准率precision和查全率recall、F1]]></title>
     <url>%2F2018%2F06%2F09%2F%E6%9F%A5%E5%87%86%E7%8E%87precision%E5%92%8C%E6%9F%A5%E5%85%A8%E7%8E%87recall%E3%80%81F1%2F</url>
     <content type="text"><![CDATA[真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵： 真实情况 预测结果 正例 反例 正例 TP（真正例） FN（假反例） 反例 FP（假正例） TN（真反例） 查准率（precision）：被认定为正例的里面，判断正确的比例。 查全率（recall）：真实正例里，被判断出为正例的比例。 查准率和查全率是一对矛盾的度量.一般来说，查准率高时，查全率往往偏低;而查全率高时，查准率往往偏低,可以通过P-R曲线来取两者的平衡值 若一个学习器P-R曲线被另一个学习器的曲线完全”包住“,则可断言后者的性能优于前者， 例如图中学习器A 的性能优于学习器C; 如果两个学习器的P-R 曲线发生了交叉7,例如图中的A 与B ，则难以一般性地断言两者孰优孰劣，只能在具体的查准率或查全率条件下进行比较然而，在很多情形下，人们往往仍希望把学习器A 与B 比出个高低. 这时一个比较合理的判据是比较P-R 曲线节面积的大小。 “平衡点“是”查准率=查全率“时的取值。 但更常用的使用F1来衡量查准率与查全率； F1基于查准率与查全率的调和平均： ，sum为样例总数， 具体应用中可能对P和R有不同的倚重。比如商品推荐中，为了尽可能少打扰用户，更希望推荐内容确是用户感兴趣的，这时候查准率更重要。而在逃犯检索系统中，更希望尽可能少漏掉逃犯，此时查全率更重要。 F1度量的一般形式F**β（加权调和平均**）就可以表达这种偏好。 即 ß = 1时退化为标准的F1,当β&gt;1意味着P占比重更大，反之则是R。 ROC、AUCROC:全称“受试者工作特征”，表达了模型的泛化能力。其纵坐标为“TPR真正例率”；横坐标为“FPR假正例率”。 ROC曲线根据模型的排序结果，一个个划分正负，每次得出两个值TPR,FPR。很多学习器是为测试样本产生一个实值或概率预测，然后将这个预测值与一个分类阈值进行比较，若大于阈值则分为正类，否则为反类。为啥在ROC曲线画一个y=x呢，那表示随机猜测的ROC。 AUC:ROC曲线下的面积.AUC=1,是完美分类器(并不存在)；0.5。AUC 越大，意味着辨别能力越强。 与P-R图相似，如果一条ROC曲线包含另一条ROC曲线，则前者的学习器性能更优越。如果曲线有交叉，则可以通过计算AUC大小得到。 代价敏感错误率、代价曲线代价敏感错误率：为不同错误类型赋予不同的权重。不同类型的错误所造成的后果不同.例如在医疗诊断中，错误地把患者诊断为健康人与错误地把健康人诊断为患者，看起来都是犯了”一次错误”但后者的影响是增加了进一步检查的麻烦，前者的后果却可能是丧失了拯救生命的最佳时机;再如，门禁系统错误地把可通行人员拦在门外，将使得用户体验不佳，但错误地把陌生人放进门内，则会造成严重的安全事故.为权衡不同类型错误所造成的不同损失，可为错误赋予”非均等代价” 。 在非均等代价下， ROC 曲线不能直接反映出学习器的期望总体代价，而”代价曲线“ 则可达到该目的.代价曲线图的横轴是取值为[0，1]的正例概率代价;纵轴是取值为[0，1] 的归一化代价。]]></content>
@@ -536,16 +559,16 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[最长公共子串-最长公共子序列]]></title>
-    <url>%2F2018%2F06%2F09%2F%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%2F</url>
-    <content type="text"><![CDATA[最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &#123; int result = 0; int index = 0; int len1 = str1.length(); int len2 = str2.length(); int [][] dp = new int [len1][len2]; for(int i = 0; i &lt; len1; ++i) &#123; for(int j = 0; j &lt; len2; ++j) &#123; if(str1.charAt(i) == str2.charAt(j)) &#123; if(i &gt; 0 &amp;&amp; j &gt; 0) &#123; dp[i][j] = dp[i-1][j-1] + 1; // 状态转移 if(dp[i][j] &gt; result) &#123; result = dp[i][j]; index = i; // 记录最大子串的最后一个下标 &#125; // result = result &gt; dp[i][j] ? result : dp[i][j]; &#125;else &#123; dp[i][j] = 1; result = result &gt; dp[i][j] ? result : dp[i][j]; &#125; &#125; &#125; &#125; System.out.println(result); for(int i = index - result + 1; i &lt;= index; i++) &#123; System.out.print(str1.charAt(i) + " "); &#125; return result;&#125; 最长公共子序列####动态规划假设Z=&lt;z1,z2,⋯,zk&gt;是X与Y的LCS， 我们观察到如果Xm=Yn，则Zk=Xm=Yn，有Zk−1是Xm−1与Yn−1的LCS；如果Xm≠Yn，则Zk是Xm与Yn−1的LCS，或者是Xm−1与Yn的LCS。因此，求解LCS的问题则变成递归求解的两个子问题。但是，上述的递归求解的办法中，重复的子问题多，效率低下。改进的办法——用空间换时间，用数组保存中间状态，方便后面的计算。这就是动态规划（DP)的核心思想了。DP求解LCS用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程 DP实现1234567891011121314151617181920public static int maxSubSequence(String str1, String str2) &#123; int len1 = str1.length(); int len2 = str2.length(); int [][] dp = new int[len1][len2]; for(int i = 0; i &lt; len1; ++i) &#123; for(int j = 0; j &lt; len2; ++j) &#123; if(i &gt; 0 &amp;&amp; j &gt; 0) &#123; if(str1.charAt(i) == str2.charAt(j)) &#123; dp[i][j] = dp[i-1][j-1] + 1; &#125;else &#123; dp[i][j] = dp[i-1][j] &gt; dp[i][j-1] ? dp[i-1][j] : dp[i][j-1]; &#125; &#125;else if(str1.charAt(i) == str2.charAt(j)) &#123; dp[i][j] = 1; &#125; &#125; &#125; System.out.println(dp[len1 - 1][len2 - 1]); return dp[len1-1][len2-1];&#125;]]></content>
+    <title><![CDATA[DP-单词拆分 I]]></title>
+    <url>%2F2018%2F06%2F09%2FDP-%E5%8D%95%E8%AF%8D%E6%8B%86%E5%88%86%20I%2F</url>
+    <content type="text"><![CDATA[题目描述给定一个非空字符串 s 和一个包含非空单词列表的字典 wordDict，判定 s 是否可以被空格拆分为一个或多个在字典中出现的单词。说明：拆分时可以重复使用字典中的单词。你可以假设字典中没有重复的单词。示例 1：输入: s = “leetcode”, wordDict = [“leet”, “code”]输出: true解释: 返回 true 因为 “leetcode” 可以被拆分成 “leet code”。 示例 2：输入: s = “applepenapple”, wordDict = [“apple”, “pen”]输出: true解释: 返回 true 因为 “applepenapple” 可以被拆分成 “apple pen apple”。注意你可以重复使用字典中的单词。 示例 3：输入: s = “catsandog”, wordDict = [“cats”, “dog”, “sand”, “and”, “cat”]输出: false 算法思路动态规划的思路：将问题拆分成更小的子问题。用dp[i]表示0到i的子字符串是否可以拆分成满足条件的单词，在计算dp[i]的时候，我们已经知道dp[0],dp[1],…,dp[i-1],如果以i为结尾的j~i子串是满足条件的，并且0~j的子串也是在字典中的，那么dp[i]就是true。用公式表示就是： dp[j]&amp;&amp;s.substring[j,i+1]∈dict DP实现123456789101112131415class Solution &#123; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123;; boolean [] dp = new boolean[s.length()+1]； dp[0] = true; for(int i = 0; i &lt; s.length(); i++)&#123; for(int j = 0; j &lt;= i; j++)&#123; if(dp[j] &amp;&amp; wordDict.contains(s.substring(j, i+1)))&#123; dp[i+1] = true; break; &#125; &#125; &#125; return dp[s.length()]; &#125;&#125; DFS解法，超时1234567891011121314151617181920212223242526class Solution &#123; boolean dfs(String s, List&lt;String&gt; wordDict, int index)&#123; // 超时 String left = s.substring(index, s.length()); if(wordDict.contains(left))&#123; return true; &#125; List&lt;Integer&gt; list = new ArrayList(); for(int i = index; i &lt; s.length(); i++)&#123; String temp = s.substring(index, i+1); if(wordDict.contains(temp))&#123; list.add(i+1); &#125; &#125; for(Integer each:list) &#123; if(dfs(s, wordDict, each))&#123; return true; &#125; &#125; return false; &#125; boolean flag = false; public boolean wordBreak(String s, List&lt;String&gt; wordDict) &#123; return dfs(s, wordDict, 0); &#125;&#125;]]></content>
       <categories>
-        <category>面试题</category>
+        <category>算法</category>
       </categories>
       <tags>
+        <tag>动态规划</tag>
         <tag>算法</tag>
-        <tag>回溯</tag>
-        <tag>Java</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -556,8 +579,21 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>爬虫</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[最长公共子串-最长公共子序列]]></title>
+    <url>%2F2018%2F06%2F09%2F%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E4%B8%B2-%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97%2F</url>
+    <content type="text"><![CDATA[最长公共子串DP实现1234567891011121314151617181920212223242526272829public static int maxSubStr(String str1, String str2) &#123; int result = 0; int index = 0; int len1 = str1.length(); int len2 = str2.length(); int [][] dp = new int [len1][len2]; for(int i = 0; i &lt; len1; ++i) &#123; for(int j = 0; j &lt; len2; ++j) &#123; if(str1.charAt(i) == str2.charAt(j)) &#123; if(i &gt; 0 &amp;&amp; j &gt; 0) &#123; dp[i][j] = dp[i-1][j-1] + 1; // 状态转移 if(dp[i][j] &gt; result) &#123; result = dp[i][j]; index = i; // 记录最大子串的最后一个下标 &#125; // result = result &gt; dp[i][j] ? result : dp[i][j]; &#125;else &#123; dp[i][j] = 1; result = result &gt; dp[i][j] ? result : dp[i][j]; &#125; &#125; &#125; &#125; System.out.println(result); for(int i = index - result + 1; i &lt;= index; i++) &#123; System.out.print(str1.charAt(i) + " "); &#125; return result;&#125; 最长公共子序列####动态规划假设Z=&lt;z1,z2,⋯,zk&gt;是X与Y的LCS， 我们观察到如果Xm=Yn，则Zk=Xm=Yn，有Zk−1是Xm−1与Yn−1的LCS；如果Xm≠Yn，则Zk是Xm与Yn−1的LCS，或者是Xm−1与Yn的LCS。因此，求解LCS的问题则变成递归求解的两个子问题。但是，上述的递归求解的办法中，重复的子问题多，效率低下。改进的办法——用空间换时间，用数组保存中间状态，方便后面的计算。这就是动态规划（DP)的核心思想了。DP求解LCS用二维数组c[i][j]记录串x1x2⋯xi与y1y2⋯yj的LCS长度，则可得到状态转移方程 DP实现1234567891011121314151617181920public static int maxSubSequence(String str1, String str2) &#123; int len1 = str1.length(); int len2 = str2.length(); int [][] dp = new int[len1][len2]; for(int i = 0; i &lt; len1; ++i) &#123; for(int j = 0; j &lt; len2; ++j) &#123; if(i &gt; 0 &amp;&amp; j &gt; 0) &#123; if(str1.charAt(i) == str2.charAt(j)) &#123; dp[i][j] = dp[i-1][j-1] + 1; &#125;else &#123; dp[i][j] = dp[i-1][j] &gt; dp[i][j-1] ? dp[i-1][j] : dp[i][j-1]; &#125; &#125;else if(str1.charAt(i) == str2.charAt(j)) &#123; dp[i][j] = 1; &#125; &#125; &#125; System.out.println(dp[len1 - 1][len2 - 1]); return dp[len1-1][len2-1];&#125;]]></content>
+      <categories>
+        <category>面试题</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>回溯</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
