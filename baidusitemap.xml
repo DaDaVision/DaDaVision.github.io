@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yoursite.com/2018/09/09/%E5%89%91%E6%8C%87Offer%EF%BC%88%E4%BA%94%E5%8D%81%E4%B8%89%EF%BC%89%EF%BC%9A%E8%A1%A8%E7%A4%BA%E6%95%B0%E5%80%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2018-09-09T10:28:40.060Z</lastmod>
@@ -1137,9 +1138,9 @@
         <title>DP-单词拆分 I</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
@@ -1161,9 +1162,9 @@
         <title>DP+回溯-单词拆分 II</title>
         <pubTime>2018-06-09T10:32:02.000Z</pubTime>
         
-        <tag>动态规划</tag>
-         
         <tag>算法</tag>
+         
+        <tag>动态规划</tag>
          
         <tag>LeetCode</tag>
          
