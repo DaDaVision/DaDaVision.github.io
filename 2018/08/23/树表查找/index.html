@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="​    线性表的查找的顺序查找和折半查找作为查找表的组织形式，其中折半查找效率较高。但由于折半查找要求表中记录按关键字有序排列，且不能用链表做存储结构，因此当表的插入或删除操作频繁时，为维护表的有序性，需要移动表中很多记录。这种由移动记录引用的额外时间开销，就会抵消折半查找的优点。 ​    所以，线性表的查找更适用于静态查找表，若要对动态查找表进行高效率的查找，可采用几种特殊的二叉树作为查找表">
 <meta name="keywords" content="算法,数据结构,查找算法,树表查找，二叉树">
 <meta property="og:type" content="article">

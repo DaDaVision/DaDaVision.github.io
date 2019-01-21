@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="注意事项 Anaconda会自带python3.6，所以为了避免环境配置乱套，删除本机独立安装的python。  不要按网上配置虚拟环境，比如TensorFlow配置一个虚拟环境，pytorch配置一个虚拟环境……keras……cafee……只要一个环境即可。  win10+Anaconda3-5.2.0+tensorflow1.8+pytorch0.4.0  在windows PowerShel">
 <meta name="keywords" content="深度学习,Anaconda,tensorflow,pytorch,环境配置">
 <meta property="og:type" content="article">

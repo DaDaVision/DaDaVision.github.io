@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="真正例（true positive）、假正例（false positive）、真反例（true negative）、假反例（false negative），分别用TP、FP、TN、FN表示相应样例数，样例总数=TP+FP+TN+FN；分类结果混淆矩阵：    真实情况 预测结果      正例 反例    正例 TP（真正例） FN（假反例）   反例 FP（假正例） TN（真反例）">
 <meta name="keywords" content="笔记,机器学习,性能评估">
 <meta property="og:type" content="article">

@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="问题描述：有 N (N&amp;gt;1000000)个数,求出其中的前K个最小的数（又被称作topK问题）。 针对topK类问题，通常比较好的方案是【分治+trie树/hash+小顶堆】，即先将数据集按照hash算法分解成多个小数据集，然后使用trie树或者hash表统计每个小数据集中的query词频，之后用小顶堆求出每个数据集中出频率最高的前K个数，最后在所有top K中求出最终的top K。">
 <meta name="keywords" content="算法,笔试,海量数据,topK">
 <meta property="og:type" content="article">

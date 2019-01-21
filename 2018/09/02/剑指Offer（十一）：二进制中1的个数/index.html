@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="摘要 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。">
 <meta name="keywords" content="笔试,剑指Offer,其它">
 <meta property="og:type" content="article">

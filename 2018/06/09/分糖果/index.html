@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="题目描述o 分糖果：科大讯飞第二道编程题 o 小明和小红是好朋友，但最近遇到一个棘手的问题，有一盒糖果要分成两份但是每颗糖果质量都不尽相同， o 但为了分配的公平每份糖的糖果数量相差不得超过1，在此条件下两份糖果的质量差距尽可能小。 o 输入一行数，包含一个数n，代表糖果数量，后面一次是n个整数一次表示每个糖果的质量，每个糖果的质量都是1到450 o 之间的一个整数，每盒最多有20个糖果。 o 输">
 <meta name="keywords" content="算法,Python,回溯">
 <meta property="og:type" content="article">

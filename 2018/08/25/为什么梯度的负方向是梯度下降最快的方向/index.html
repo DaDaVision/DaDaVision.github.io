@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="什么是梯度？​    对于梯度下降算法（Gradient Descent Algorithm），我们都已经很熟悉了。无论是在线性回归（Linear Regression）、逻辑回归（Logistic Regression）还是神经网络（Neural Network）等等，都会用到梯度下降算法。我们先来看一下梯度下降算法的直观解释： ​    假设我们位于山的某个山腰处，山势连绵不绝，不知道怎么下山">
 <meta name="keywords" content="笔记,机器学习,梯度下降">
 <meta property="og:type" content="article">

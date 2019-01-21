@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="[RNN] [LSTM网络] [LSTM核心思想] [逐步理解LSTM] [遗忘门] [输入门] [输出门]   [LSTM变体] [多层LSTM] LSTM实现手写数字 [设置LSTM参数] [初始化权值参数]">
 <meta name="keywords" content="深度学习,笔记,LSTM,RNN">
 <meta property="og:type" content="article">

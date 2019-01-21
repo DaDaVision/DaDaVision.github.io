@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="pytorch0.4支持了Windows系统的开发，在首页即可使用pip安装pytorch和torchvision。 说白了，以下文字就是来自官方文档60分钟入门的简要翻译. pytorch是啥python的科学计算库，使得NumPy可用于GPU计算，并提供了一个深度学习平台使得灵活性和速度最大化 入门Tensors(张量)">
 <meta name="keywords" content="深度学习,Pytorch,Pytorch0.4.0">
 <meta property="og:type" content="article">

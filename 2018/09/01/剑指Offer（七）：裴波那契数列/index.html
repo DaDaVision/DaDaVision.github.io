@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="摘要 大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。（n&amp;lt;=39） 一、前言本系列文章为《剑指Offer》刷题笔记。 刷题平台：牛客网 二、题目大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项。（n&amp;lt;=39）">
 <meta name="keywords" content="笔试,剑指Offer,递归">
 <meta property="og:type" content="article">

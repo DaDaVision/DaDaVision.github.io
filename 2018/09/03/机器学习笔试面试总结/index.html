@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="Q1. 下列说法正确的是？（多选） A. AdaGrad 使用的是一阶导数 B. L-BFGS 使用的是二阶导数 C. AdaGrad 使用的是二阶导数">
 <meta name="keywords" content="笔记,机器学习,笔试,面试">
 <meta property="og:type" content="article">

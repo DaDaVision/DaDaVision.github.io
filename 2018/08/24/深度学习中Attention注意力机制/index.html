@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="​    最近两年，注意力模型（Attention Model）被广泛使用在自然语言处理、图像识别及语音识别等各种不同类型的深度学习任务中，是深度学习技术中最值得关注与深入了解的核心技术之一。 ​    本文以机器翻译为例，深入浅出地介绍了深度学习中注意力机制的原理及关键计算机制，同时也抽象出其本质思想，并介绍了注意力模型在图像及语音等领域的典型应用场景。 ​    注意力模型最近几年在深度学习各">
 <meta name="keywords" content="深度学习,笔记,Attention,注意力机制">
 <meta property="og:type" content="article">

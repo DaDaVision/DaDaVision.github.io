@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="理解朴素贝叶斯（1）先验概率、后验概率、联合概率、全概率如果我对这个西瓜没有任何了解，包括瓜的颜色、形状、瓜蒂是否脱落。按常理来说，西瓜成熟的概率大概是 60%。那么，这个概率 P(瓜熟) 就被称为先验概率。 即，先验概率是根据以往经验和分析得到的概率，先验概率无需样本数据，不受任何条件的影响。就像只根据常识而不根据西瓜状态来判断西瓜是否熟，这就是先验概率。 一个判断西瓜是否成熟的常识，就是看瓜蒂">
 <meta name="keywords" content="机器学习,朴素贝叶斯,西瓜书">
 <meta property="og:type" content="article">

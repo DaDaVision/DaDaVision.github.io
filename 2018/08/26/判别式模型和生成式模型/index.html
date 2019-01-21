@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="判别式模型 与 生成式模型生成式模型(Generative Model)与判别式模型(Discrimitive Model)是分类器常遇到的概念，它们的区别在于： 对于输入x，类别标签y：  判别式模型估计条件概率分布$P(y|x)$（y在x下的概率 ），直接对条件概率$p(y|x;θ)$建模 。  举例：要确定一个羊是山羊还是绵羊，用判别模型的方法是从历史数据中学习到模型，然后通过提取这只羊的特">
 <meta name="keywords" content="笔记,机器学习,判别式模型,生成式模型">
 <meta property="og:type" content="article">

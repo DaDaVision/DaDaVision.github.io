@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="子集树与排列树当所给问题是从n个元素的集合S中找出满足某种性质的子集时，解空间为子集树。例如：0-1背包问题 (选或不选问题)当所给问题是从n个元素的集合S中找出满足某种性质的排列时，解空间为排列树。例如：旅行售货员问题（选择顺序问题） 算法结构">
 <meta name="keywords" content="算法,回溯">
 <meta property="og:type" content="article">

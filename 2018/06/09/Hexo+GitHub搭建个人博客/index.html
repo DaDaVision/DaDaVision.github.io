@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="Hexo+GitHub搭建个人博客目录： 前言：  ​    准备工作  搭建github博客  ​    创建仓库   ​    绑定域名  配置SSH key  ​    测试是否成功  使用hexo写博客  ​    hexo简介   ​    原理    注意事项     安装     初始化 ​    修改主题 ​    上传到github     保留CNAME、README.md等文">
 <meta name="keywords" content="个人博客,Hexo,GitHub,next,教程">
 <meta property="og:type" content="article">
@@ -753,8 +769,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/09/偏差、方差、噪声/" rel="prev" title="偏差、方差、噪声">
-                偏差、方差、噪声 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/09/最长公共子串-最长公共子序列/" rel="prev" title="最长公共子串-最长公共子序列">
+                最长公共子串-最长公共子序列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

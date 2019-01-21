@@ -143,6 +143,22 @@
   </script>
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
   <meta name="description" content="一、重大核心变化包括  Tensor/Variable 合并 零维张量 数据类型 迁移指南  二、现添加的新特征包括  Tensors： 全面支持高级索引 快速傅立叶变换 神经网络： 计算时的存储权衡 bottleneck-识别代码中热点（hotspots）的工具 torch.distributions 24 个基础的概率分布 增加cdf、方差、信息熵、困惑度等 分布式训练">
 <meta name="keywords" content="深度学习,笔记,PyTorch,机器学习">
 <meta property="og:type" content="article">
